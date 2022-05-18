@@ -1,0 +1,63 @@
+
+.containers{
+
+    background-color: white;
+    padding: 25px 25px;
+    border-radius: 5px;
+    border: outset rgb(255, 255, 255);
+    box-shadow: 0px -5px rgb(120, 132, 146);
+    
+    
+  }
+.thead-box{
+        background-color: rgb(178, 178, 182);
+        align-items: center;
+        text-align: center;
+        position: sticky; top:0;
+}
+
+.box-corner {
+    border-radius: 25px;
+    border: 2px solid #d4dfe5;
+    padding-right: 20px; 
+    padding-left: 20px; 
+    width: 75%;
+    height: 40px;
+    outline: none;
+    margin-left: 50px;
+
+}
+
+#button-save{
+   
+    padding-right: 50px; 
+    padding-left: 50px; 
+    border-radius: 25px;
+   
+}
+
+#button-update{
+   
+    padding-right: 40px; 
+    padding-left: 40px; 
+    border-radius: 25px;
+   
+
+}
+
+#clear-button{
+
+    padding-left: 40px; 
+    padding-right:40px;
+    border-radius: 25px;
+    
+}
+
+input:focus {
+    border-color:rgb(15, 86, 162);
+
+  }
+
+input:hover{
+    background-color:#d3d8e7;
+}
