@@ -1,0 +1,117 @@
+body {
+    margin: auto;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1f3040;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-sizing: border-box;
+}
+
+form {
+    height: 500px;
+    width: 300px;
+    background: white;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 10px;
+    box-shadow: -3px 3px 10px rgba(0, 0, 0, 0.4);
+}
+
+.container_box {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    align-content: center;
+    text-align: center;
+
+}
+
+.img-box {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border-color: black;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    border: 4px solid #1f3040;
+    margin-top: 50px;
+}
+
+
+
+.input-fields {
+    position: relative;
+    width: 250px;
+    height: 40px;
+    margin-top: 15px;
+}
+
+.input-fields input {
+    width: 100%;
+    height: 100%;
+    outline: 1.4px solid black;
+    border: none;
+    border-radius: 8px;
+    padding: 5px 10px;
+    font-size: 15px;
+}
+
+.input-fields input:focus {
+    outline: 2px solid #1f3040;
+    
+}
+
+.input-fields input:focus+label {
+    top: -10px;
+    color: #1f3040;
+    font-size: 12px;
+}
+
+
+
+.input-fields label {
+    position: absolute;
+    top: 8px;
+    left: 5px;
+    font-size: 15px;
+    padding: 0 5px;
+    pointer-events: none;
+    transition: top .2s;
+    background-color: white;
+    color: rgb(99, 99, 99);
+}
+
+.input-fields span {
+    position: absolute;
+    top: 15px;
+    left: 400px;
+}
+
+#btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    color: white;
+    background-color: #1f3040;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+hr {
+    border: 2px solid black;
+    width: 70%;
+    margin: auto;
+    border-bottom: none;
+    border-right: none;
+    border-left: none;
+
+}
