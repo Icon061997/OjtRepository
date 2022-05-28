@@ -18,43 +18,8 @@
 
 <body class="active">
   <?php include 'Navside.php' ?>
-  <section>
+  <section id="content">
 
-  <main>
-
-
-      <ul class="box-info">
-        <li>
-          <i class='bx bx-coin-stack'></i>
-          <span class="text">
-            <h3>10000</h3>
-            <p>Total Sales</p>
-          </span>
-        </li>
-        <li>
-          <i class='bx bxs-group'></i>
-          <span class="text">
-            <h3>7</h3>
-            <p>Total Users</p>
-          </span>
-        </li>
-        <li>
-          <i class='bx bx-package'></i>
-          <span class="text">
-            <h3>140</h3>
-            <p>Total Items</p>
-          </span>
-        </li>
-        <li>
-          <i class='bx bx-category-alt'></i>
-          <span class="text">
-            <h3>78</h3>
-            <p>Total Categories</p>
-          </span>
-        </li>
-      </ul>
-
-    </main>
 
     <!-- MAIN -->
     <main>
