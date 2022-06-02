@@ -81,11 +81,10 @@
     <!-- NAVBAR -->
     <nav>
       <i class='bx bx-menu'></i>
-      <a href="#" class="nav-link">Categories</a>
+
       <form action="#">
         <div class="form-input">
-          <input type="search" placeholder="Search...">
-          <button type="submit" class="search-btn"><i class='bx bx-search'></i></button>
+
         </div>
       </form>
       <input type="checkbox" id="switch-mode" hidden>
@@ -94,130 +93,96 @@
         <i class='bx bxs-bell'></i>
         <span class="num">8</span>
       </a>
-      <a href="#" class="profile">
-        <img src="img/people.png">
-      </a>
+      <div class="dropdown-nav">
+        <button class="dropdown-btn" onclick="myFunction()">
+          <img src="images/user.png" class="profile-pic" alt="">
+          <div class="username admin">
+            <font><b>Jimuel Leal</b><br> Admin </font>
+          </div>
+          <i class='bx bx-chevron-down' style="font-size: 24px;"></i>
+        </button>
+
+        <div id="myDropdown" class="dropdown-content">
+          <a href="#">My account</a>
+          <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+      </div>
     </nav>
     <!-- NAVBAR -->
 
     <!-- MAIN -->
     <main>
-
-
-      <ul class="box-info">
-        <li>
-          <i class='bx bxs-calendar-check'></i>
-          <span class="text">
-            <h3>1020</h3>
-            <p>New Order</p>
-          </span>
-        </li>
-        <li>
-          <i class='bx bxs-group'></i>
-          <span class="text">
-            <h3>2834</h3>
-            <p>Visitors</p>
-          </span>
-        </li>
-        <li>
-          <i class='bx bxs-dollar-circle'></i>
-          <span class="text">
-            <h3>$2543</h3>
-            <p>Total Sales</p>
-          </span>
-        </li>
-      </ul>
-
-
-      <div class="table-data">
-        <div class="order">
-          <div class="head">
-            <h3>Recent Orders</h3>
-            <i class='bx bx-search'></i>
-            <i class='bx bx-filter'></i>
+      <app-suppliers _nghost-dxr-c4="">
+        <div _ngcontent-dxr-c4="" class="container-fluid">
+          <div _ngcontent-dxr-c4="" class="row my-4">
+            <div _ngcontent-dxr-c4="" class="col-sm-12 my-2">
+              <div _ngcontent-dxr-c4="" class="card-container">
+                <div _ngcontent-dxr-c4="" class="card-title">Suppliers</div>
+                <div _ngcontent-dxr-c4="" class="row my-2">
+                  <div _ngcontent-dxr-c4="" class="col-sm-auto my-2"><button _ngcontent-dxr-c4="" class="pos-btn pos-btn-accent" data-target="#addSupplier" data-toggle="modal"><i _ngcontent-dxr-c4="" class="fas fa-plus"></i> Add</button></div>
+                </div>
+                <div _ngcontent-dxr-c4="" class="table-responsive">
+                  <table _ngcontent-dxr-c4="" class="table table-hover striped table-bordered">
+                    <thead _ngcontent-dxr-c4="">
+                      <tr _ngcontent-dxr-c4="">
+                        <th _ngcontent-dxr-c4="">ID</th>
+                        <th _ngcontent-dxr-c4="">Name</th>
+                        <th _ngcontent-dxr-c4="">No. of Items</th>
+                        <th _ngcontent-dxr-c4="">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody _ngcontent-dxr-c4="">
+                      <tr _ngcontent-dxr-c4="">
+                        <td _ngcontent-dxr-c4="">23423</td>
+                        <td _ngcontent-dxr-c4="">ABC Merchandise</td>
+                        <td _ngcontent-dxr-c4="">123</td>
+                        <td _ngcontent-dxr-c4=""><a _ngcontent-dxr-c4="" data-target="#editSupplier" data-toggle="modal"><i _ngcontent-dxr-c4="" class="fas fa-pen text-info mx-2"></i></a><a _ngcontent-dxr-c4=""><i _ngcontent-dxr-c4="" class="fas fa-trash text-danger mx-2"></i></a></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
           </div>
-          <table>
-            <thead>
-              <tr>
-                <th>User</th>
-                <th>Date Order</th>
-                <th>Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <img src="img/people.png">
-                  <p>John Doe</p>
-                </td>
-                <td>01-10-2021</td>
-                <td><span class="status completed">Completed</span></td>
-              </tr>
-              <tr>
-                <td>
-                  <img src="img/people.png">
-                  <p>John Doe</p>
-                </td>
-                <td>01-10-2021</td>
-                <td><span class="status pending">Pending</span></td>
-              </tr>
-              <tr>
-                <td>
-                  <img src="img/people.png">
-                  <p>John Doe</p>
-                </td>
-                <td>01-10-2021</td>
-                <td><span class="status process">Process</span></td>
-              </tr>
-              <tr>
-                <td>
-                  <img src="img/people.png">
-                  <p>John Doe</p>
-                </td>
-                <td>01-10-2021</td>
-                <td><span class="status pending">Pending</span></td>
-              </tr>
-              <tr>
-                <td>
-                  <img src="img/people.png">
-                  <p>John Doe</p>
-                </td>
-                <td>01-10-2021</td>
-                <td><span class="status completed">Completed</span></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="todo">
-          <div class="head">
-            <h3>Todos</h3>
-            <i class='bx bx-plus'></i>
-            <i class='bx bx-filter'></i>
+          <div _ngcontent-dxr-c4="" class="my-4">
+            <app-footer _ngcontent-dxr-c4="" _nghost-dxr-c3=""><b _ngcontent-dxr-c3="">simplePos</b><br _ngcontent-dxr-c3=""><small _ngcontent-dxr-c3=""><i _ngcontent-dxr-c3="">Made with <i _ngcontent-dxr-c3="" class="fas fa-heart"></i> by jericNuez © 2020</i></small></app-footer>
           </div>
-          <ul class="todo-list">
-            <li class="completed">
-              <p>Todo List</p>
-              <i class='bx bx-dots-vertical-rounded'></i>
-            </li>
-            <li class="completed">
-              <p>Todo List</p>
-              <i class='bx bx-dots-vertical-rounded'></i>
-            </li>
-            <li class="not-completed">
-              <p>Todo List</p>
-              <i class='bx bx-dots-vertical-rounded'></i>
-            </li>
-            <li class="completed">
-              <p>Todo List</p>
-              <i class='bx bx-dots-vertical-rounded'></i>
-            </li>
-            <li class="not-completed">
-              <p>Todo List</p>
-              <i class='bx bx-dots-vertical-rounded'></i>
-            </li>
-          </ul>
         </div>
-      </div>
+        <div _ngcontent-dxr-c4="" aria-hidden="true" aria-labelledby="staticBackdropLabel" class="modal fade" data-backdrop="static" data-keyboard="false" id="addSupplier" tabindex="-1">
+          <div _ngcontent-dxr-c4="" class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div _ngcontent-dxr-c4="" class="modal-content">
+              <div _ngcontent-dxr-c4="" class="modal-header">
+                <h5 _ngcontent-dxr-c4="" class="modal-title" id="staticBackdropLabel"><b _ngcontent-dxr-c4="">Add Supplier</b></h5><button _ngcontent-dxr-c4="" aria-label="Close" class="close" data-dismiss="modal" type="button"><span _ngcontent-dxr-c4="" aria-hidden="true">×</span></button>
+              </div>
+              <div _ngcontent-dxr-c4="" class="modal-body">
+                <div _ngcontent-dxr-c4="" class="container-fluid">
+                  <div _ngcontent-dxr-c4="" class="form-group row">
+                    <div _ngcontent-dxr-c4="" class="col-sm-4 col-form-label px-0">Name:</div><input _ngcontent-dxr-c4="" class="pos-input col-sm-8" type="text">
+                  </div>
+                </div>
+              </div>
+              <div _ngcontent-dxr-c4="" class="modal-footer"><button _ngcontent-dxr-c4="" class="pos-btn pos-btn-gray" data-dismiss="modal" type="button">Cancel</button><button _ngcontent-dxr-c4="" class="pos-btn pos-btn-accent" type="button">Save</button></div>
+            </div>
+          </div>
+        </div>
+        <div _ngcontent-dxr-c4="" aria-hidden="true" aria-labelledby="staticBackdropLabel" class="modal fade" data-backdrop="static" data-keyboard="false" id="editSupplier" tabindex="-1">
+          <div _ngcontent-dxr-c4="" class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div _ngcontent-dxr-c4="" class="modal-content">
+              <div _ngcontent-dxr-c4="" class="modal-header">
+                <h5 _ngcontent-dxr-c4="" class="modal-title" id="staticBackdropLabel"><b _ngcontent-dxr-c4="">Edit Supplier</b></h5><button _ngcontent-dxr-c4="" aria-label="Close" class="close" data-dismiss="modal" type="button"><span _ngcontent-dxr-c4="" aria-hidden="true">×</span></button>
+              </div>
+              <div _ngcontent-dxr-c4="" class="modal-body">
+                <div _ngcontent-dxr-c4="" class="container-fluid">
+                  <div _ngcontent-dxr-c4="" class="form-group row">
+                    <div _ngcontent-dxr-c4="" class="col-sm-4 col-form-label px-0">Name:</div><input _ngcontent-dxr-c4="" class="pos-input col-sm-8" type="text">
+                  </div>
+                </div>
+              </div>
+              <div _ngcontent-dxr-c4="" class="modal-footer"><button _ngcontent-dxr-c4="" class="pos-btn pos-btn-gray" data-dismiss="modal" type="button">Cancel</button><button _ngcontent-dxr-c4="" class="pos-btn pos-btn-accent" type="button">Save</button></div>
+            </div>
+          </div>
+        </div>
+      </app-suppliers>
     </main>
     <!-- MAIN -->
   </section>
@@ -226,7 +191,7 @@
   </script>
 
   <script src="js/script.js"></script>
-  
+
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </body>

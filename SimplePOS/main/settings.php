@@ -81,11 +81,10 @@
     <!-- NAVBAR -->
     <nav>
       <i class='bx bx-menu'></i>
-      <a href="#" class="nav-link">Categories</a>
+
       <form action="#">
         <div class="form-input">
-          <input type="search" placeholder="Search...">
-          <button type="submit" class="search-btn"><i class='bx bx-search'></i></button>
+
         </div>
       </form>
       <input type="checkbox" id="switch-mode" hidden>
@@ -94,9 +93,20 @@
         <i class='bx bxs-bell'></i>
         <span class="num">8</span>
       </a>
-      <a href="#" class="profile">
-        <img src="img/people.png">
-      </a>
+      <div class="dropdown-nav">
+        <button class="dropdown-btn" onclick="myFunction()">
+          <img src="images/user.png" class="profile-pic" alt="">
+          <div class="username admin">
+            <font><b>Jimuel Leal</b><br> Admin </font>
+          </div>
+          <i class='bx bx-chevron-down' style="font-size: 24px;"></i>
+        </button>
+
+        <div id="myDropdown" class="dropdown-content">
+          <a href="#">My account</a>
+          <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+      </div>
     </nav>
     <!-- NAVBAR -->
 
