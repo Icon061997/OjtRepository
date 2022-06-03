@@ -14,7 +14,7 @@
     <!-- My CSS -->
     <link rel="stylesheet" href="css/navside.css">
 
-    <title>Dashboard</title>
+    <title>My Account</title>
 
     Jimuel Erellana Mendoza Leal
     <style>

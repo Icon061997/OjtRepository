@@ -1,14 +1,11 @@
-<?php
-
-@include 'config.php';
+<?php 
 
 session_start();
 
-if (!isset($_SESSION['admin_name'])) {
-  header('location:dashboard.php');
-}
+
 
 ?>
+
 
 
 
@@ -23,7 +20,8 @@ if (!isset($_SESSION['admin_name'])) {
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
   <!-- CSS only -->
-  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">  
+  <script src="https://your-site-or-cdn.com/fontawesome/v6.1.1/js/all.js" data-search-pseudo-elements></script>
+  <script src="https://your-site-or-cdn.com/fontawesome/v6.1.1/js/all.js" data-auto-a11y="true"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
   <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
@@ -116,14 +114,15 @@ if (!isset($_SESSION['admin_name'])) {
         <button class="dropdown-btn" onclick="myFunction()">
           <img src="images/user.png" class="profile-pic" alt="">
           <div class="username admin">
-            <font><b>Jimuel Leal</b><br> Admin </font>
+            <b>Jimuel Leal</b><br> Admin
           </div>
           <i class='bx bx-chevron-down' style="font-size: 24px;"></i>
         </button>
 
         <div id="myDropdown" class="dropdown-content">
-          <a href="account.php"> <i class='bx bxs-user-rectangle' ></i>My Account</a>
-          <a href="logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i>Logout</a>
+
+          <a href="account.php"><i class='bx bxs-user'></i> My Account</a>
+          <a href="logout.php"><i class='bx bx-log-out bx-rotate-180'></i> Logout</a>
         </div>
       </div>
     </nav>

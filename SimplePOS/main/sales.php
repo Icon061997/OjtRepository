@@ -14,7 +14,7 @@
   <!-- My CSS -->
   <link rel="stylesheet" href="css/navside.css">
 
-  <title>Dashboard</title>
+  <title>Sales</title>
 </head>
 
 <body>

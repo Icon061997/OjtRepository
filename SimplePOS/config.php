@@ -1,12 +1,14 @@
-<?php
-	const DBHOST = 'localhost';
-	const DBUSER = 'root';
-	const DBPASS = '';
-	const DBNAME = 'pointofsale';
+<?php 
 
-	$conn = new mysqli(DBHOST, DBUSER, DBPASS, DBNAME);
+$server = "localhost";
+$user = "root";
+$pass = "";
+$database = "pointofsale";
 
-	if ($conn->connect_error) {
-	  die('Could not connect to the database!' . $conn->connect_error);
-	
-	}
+$conn = mysqli_connect($server, $user, $pass, $database);
+
+if (!$conn) {
+    die("<script>alert('Connection Failed.')</script>");
+}
+
+?>

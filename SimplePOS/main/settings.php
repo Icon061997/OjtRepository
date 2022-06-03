@@ -12,7 +12,67 @@
   <!-- My CSS -->
   <link rel="stylesheet" href="css/navside.css">
 
-  <title>Dashboard</title>
+  <style>
+    .mytabs {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      color: var(--dark);
+
+    }
+
+    .mytabs input[type="radio"] {
+      display: none;
+    }
+
+    .mytabs label {
+      padding: 25px 25px 20px 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .mytabs .tab {
+      width: 100%;
+      order: 1;
+      display: none;
+      transition: 1;
+      margin-bottom: 2px;
+    }
+
+    .mytabs .tab h2 {
+      font-size: 3em;
+    }
+
+    .mytabs input[type='radio']:checked+label+.tab {
+      display: block;
+    }
+
+    .mytabs input[type="radio"]:checked+label {
+      border: 5px solid lightblue;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+    }
+
+    td {
+      border: 2px solid var(--dark);
+      text-align: center;
+
+    }
+
+    thead {
+      border: 2px solid var(--dark);
+    }
+
+    .bx {
+      font-size: 25px;
+    }
+  </style>
+
+
+
+
+  <title>Settings</title>
 </head>
 
 <body>
@@ -113,8 +173,116 @@
     <!-- MAIN -->
     <main>
 
+      <div class="table-data">
+        <div class="order">
+          <div class="row my-2">
+            <div class="col-12">
+              <div class="head" style="margin-bottom: 0;">
+                <h3>Settings</h3>
+              </div>
+              <!-- user roles tabss -->
+              <div class="mytabs">
+                <input type="radio" id="tabfree" name="mytabs" checked="checked">
+                <label for="tabfree">User Roles</label>
+                <div class="tab">
 
-    
+                  <div class="order">
+                    <div class="row">
+                      <div class="head">
+                        <button class="btn btn-outline-primary btn-block" id="myBtn" type="button"><i class='bx bx-add-to-queue' style="font-size: 24px ;"></i> Add</button>
+                      </div>
+                    </div>
+                    <table style="border:2px solid;">
+                      <thead>
+                        <th>ID</th>
+                        <th>Role Name</th>
+                        <th>Status</th>
+                        <th>action</th>
+                      </thead>
+                      <tbody>
+                        </tr>
+                        <td>1</td>
+                        <td>222222</td>
+                        <td>@username</td>
+                        <td><i class="bx bx-pencil">
+                            <i class="bx bx-trash"></td>
+                      </tbody>
+                    </table>
+                  </div>
+
+                </div>
+                <!--   ******************************************user tabs -->
+                <input type="radio" id="tabsilver" name="mytabs">
+                <label for="tabsilver">Users</label>
+                <div class="tab">
+
+                  <div class="order">
+                    <div class="row">
+                      <div class="head">
+                        <button class="btn btn-outline-primary btn-block" type="button"><i class='bx bx-add-to-queue' style="font-size: 24px"></i> Add </button>
+                      </div>
+                    </div>
+                    <table>
+                      <thead>
+                        <th>ID</th>
+                        <th>Username</th>
+                        <th>Role</th>
+                        <th>Email</th>
+                        <th>status</th>
+                        <th>Action</th>
+                      </thead>
+                      <tbody>
+                        </tr>
+                        <td> 1002 </td>
+                        <td> joj1920</td>
+                        <td>admin</td>
+                        <td>jojo@gmail.com</td>
+                        <td>active</td>
+                        <td><i class="bx bx-pencil"> <i class="bx bx-trash"></td>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <!-- accounting tabs 8 -->
+                <input type="radio" id="tabgold" name="mytabs">
+                <label for="tabgold">Accounting</label>
+                <div class="tab">
+                  <div class="order">
+                    <div class="row">
+                      <div class="head">
+                        <h3>tax rules</h3>
+                        <button class="btn btn-outline-primary btn-block" type="button"><i class='bx bx-add-to-queue'></i> Add </button>
+                      </div>
+                    </div>
+                    <table>
+                      <thead>
+                        <th>ID</th>
+                        <th>name</th>
+                        <th>Price Inclusive</th>
+                        <th>Value</th>
+                        <th>Action</th>
+                      </thead>
+                      <tbody>
+                        </tr>
+                        <td>1</td>
+                        <td>222222</td>
+                        <td>@username</td>
+                        <td>10%</>
+                        <td><i class="bx bx-pencil"> <i class="bx bx-trash"></td>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+
     </main>
     <!-- MAIN -->
   </section>
@@ -123,7 +291,7 @@
   </script>
 
   <script src="js/script.js"></script>
-  
+
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </body>

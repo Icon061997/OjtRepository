@@ -1,3 +1,12 @@
+<?php
+
+@include 'main/config.php';
+
+session_start();
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +21,7 @@
   <!-- My CSS -->
   <link rel="stylesheet" href="css/navside.css">
 
-  <title>Dashboard</title>
+  <title>Suppliers</title>
 </head>
 
 <body>

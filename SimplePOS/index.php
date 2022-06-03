@@ -1,43 +1,33 @@
-<?php
-$msg = "";
-@include 'main/config.php';
+<?php 
+
+include 'config.php';
 
 session_start();
 
-if (isset($_POST["submit"])) {
+error_reporting(0);
 
-    $usermail = $_POST["username"];
-    $usermail = $_POST["email"];
-    $password = $_POST['password'];
-    $cpassword = $_POST['cpassword'];
-    $user_type = $_POST['user_type'];
+if (isset($_SESSION['username'])) {
+    header("Location: index.php");
+}
 
-    $conn = mysqli_connect('localhost', 'root', '', 'pointofsale');
+if (isset($_POST['submit'])) {
+	$email = $_POST['email'];
+	$password = $_POST['password'];
 
-    $select = " SELECT * FROM user WHERE email = '$usermail' OR username = '$usermail' && password = '$password' ";
-
-    $result = mysqli_query($conn, $select);
-
-    if (mysqli_num_rows($result) == 1) {
-
-        $row = mysqli_fetch_array($result);
-
-        if ($row['user_type'] == 'admin') {
-
-            $_SESSION['admin_name'] = $row['name'];
-            header('location:main/dashboard.php');
-        } elseif ($row['user_type'] == 'user') {
-
-            $_SESSION[' '] = $row['name'];
-            header('location:main/dashboard.php');
-        }
-    } else {
-        $error[] = 'incorrect email or password!';
-    }
-};
-
+	$sql = "SELECT * FROM user WHERE email='$email' AND password='$password'";
+	$result = mysqli_query($conn, $sql);
+	if ($result->num_rows > 0) {
+		$row = mysqli_fetch_assoc($result);
+		$_SESSION['username'] = $row['username'];
+		header("Location: main/dashboard.php");
+	} else {
+		echo "<script>alert('Woops! Email or Password is Wrong.')</script>";
+	}
+}
 
 ?>
+
+
 
 
 <!DOCTYPE html>
@@ -46,21 +36,14 @@ if (isset($_POST["submit"])) {
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
-    <title>Login</title>
     <link rel="stylesheet" href="main/css/style.css">
-
-
-
-
-
+    <title>Login</title>
 </head>
 
 <body>
@@ -79,12 +62,12 @@ if (isset($_POST["submit"])) {
 
 
                 <div class="input-fields inputWithIcon ">
-                    <input type="text" name="email" id="email" placeholder="   " required>
+                    <input type="text" name="email"  value="<?php echo $email; ?>" placeholder="   " required autocomplete="off">
                     <label for="email">Username or Email</label>
 
                 </div>
                 <div class="input-fields">
-                    <input type="password" name="password" id="password" placeholder="  " required>
+                    <input type="password" name="password"  value="<?php echo $_POST['password']; ?>"  placeholder="  " required autocomplete="off">
                     <label for="password">Password</label>
                     <span class="eye" onclick="myFunction()">
                         <i id="hide1" class='bx bx-show'></i>
@@ -93,7 +76,7 @@ if (isset($_POST["submit"])) {
                     </span>
 
                 </div>
-                <input type="submit" value="Login" name="submit" id="btn">
+                <input type="submit" value="submit" name="submit" id="btn">
 
             </form>
         </div>
