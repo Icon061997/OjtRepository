@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 session_start();
 
@@ -18,6 +18,7 @@ session_start();
 
   <!-- Boxicons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+
   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
   <!-- CSS only -->
   <script src="https://your-site-or-cdn.com/fontawesome/v6.1.1/js/all.js" data-search-pseudo-elements></script>
@@ -30,6 +31,13 @@ session_start();
 
   <title>Dashboard</title>
 
+
+  <style>
+    .btn .btn-secondary .dropdown-toggle {
+      background: transparent;
+      color: transparent;
+    }
+  </style>
 </head>
 
 <body>
@@ -110,8 +118,11 @@ session_start();
         <i class='bx bxs-bell'></i>
         <span class="num">8</span>
       </a>
+
+
+
       <div class="dropdown-nav">
-        <button class="dropdown-btn" onclick="myFunction()">
+        <button class="dropdown-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
           <img src="images/user.png" class="profile-pic" alt="">
           <div class="username admin">
             <b>Jimuel Leal</b><br> Admin
@@ -119,11 +130,10 @@ session_start();
           <i class='bx bx-chevron-down' style="font-size: 24px;"></i>
         </button>
 
-        <div id="myDropdown" class="dropdown-content">
-
-          <a href="account.php"><i class='bx bxs-user'></i> My Account</a>
-          <a href="logout.php"><i class='bx bx-log-out bx-rotate-180'></i> Logout</a>
-        </div>
+        <ul class="dropdown-menu dropdown-menu-lg-end">
+          <a  class=" dropdown-item" href="account.php"><i class='bx bxs-user'></i> My Account</a>
+          <a class="dropdown-item" href="logout.php"><i class='bx bx-log-out bx-rotate-180'></i> Logout</a>
+        </ul>
       </div>
     </nav>
     <!-- NAVBAR -->
@@ -406,6 +416,7 @@ session_start();
       }
     }
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </body>

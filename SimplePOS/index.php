@@ -1,31 +1,28 @@
-<?php 
-
-include 'config.php';
+<?php
+$msg = "";
+@include 'config.php';
 
 session_start();
+if (isset($_POST["username"])) {
 
-error_reporting(0);
+    $username = $_POST["username"];
+    $password = $_POST['password'];
 
-if (isset($_SESSION['username'])) {
-    header("Location: index.php");
+    $conn = mysqli_connect('localhost', 'root', '', 'pointofsale');
+
+    $sql = "SELECT * FROM user WHERE username = '$username' && password = '$password' ";
+
+    $result = mysqli_query($conn, $sql);
+
+    if (mysqli_num_rows($result) == 1) {
+
+        header("location:main/dashboard.php");
+    } else {
+        $msg = "Login failed. Try agawith another email";
+    }
 }
-
-if (isset($_POST['submit'])) {
-	$email = $_POST['email'];
-	$password = $_POST['password'];
-
-	$sql = "SELECT * FROM user WHERE email='$email' AND password='$password'";
-	$result = mysqli_query($conn, $sql);
-	if ($result->num_rows > 0) {
-		$row = mysqli_fetch_assoc($result);
-		$_SESSION['username'] = $row['username'];
-		header("Location: main/dashboard.php");
-	} else {
-		echo "<script>alert('Woops! Email or Password is Wrong.')</script>";
-	}
-}
-
 ?>
+
 
 
 
@@ -62,12 +59,12 @@ if (isset($_POST['submit'])) {
 
 
                 <div class="input-fields inputWithIcon ">
-                    <input type="text" name="email"  value="<?php echo $email; ?>" placeholder="   " required autocomplete="off">
-                    <label for="email">Username or Email</label>
+                    <input type="text" name="username" id="username" placeholder="   " required autocomplete="off">
+                    <label for="username">Username or Email</label>
 
                 </div>
                 <div class="input-fields">
-                    <input type="password" name="password"  value="<?php echo $_POST['password']; ?>"  placeholder="  " required autocomplete="off">
+                    <input type="password" name="password" id="password" placeholder="  " required autocomplete="off">
                     <label for="password">Password</label>
                     <span class="eye" onclick="myFunction()">
                         <i id="hide1" class='bx bx-show'></i>
@@ -86,7 +83,7 @@ if (isset($_POST['submit'])) {
 <script>
     function myFunction() {
         var x = document.getElementById("password");
-        var y = document.getElementById("hide1");
+        var y = document.getElementById("hide1");   
         var z = document.getElementById("hide2");
 
         if (x.type === 'password') {
