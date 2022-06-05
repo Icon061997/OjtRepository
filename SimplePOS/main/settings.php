@@ -718,7 +718,7 @@
   </section>
   <!-- CONTENT -->
 
-  <script>
+   <script type="text/javascript">
     function myFunction() {
       document.getElementById("myDropdown").classList.toggle("show");
     }
