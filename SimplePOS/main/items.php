@@ -129,19 +129,21 @@
         <span class="num">8</span>
       </a>
       <div class="dropdown-nav">
-        <button class="dropdown-btn" onclick="myFunction()">
+        <button class="dropdown-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
           <img src="images/user.png" class="profile-pic" alt="">
           <div class="username admin">
-            <font><b>Jimuel Leal</b><br> Admin </font>
+            <b>Jimuel Leal</b><br> Admin
           </div>
           <i class='bx bx-chevron-down' style="font-size: 24px;"></i>
         </button>
 
-        <div id="myDropdown" class="dropdown-content">
-          <a href="#">My account</a>
-          <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
-        </div>
+        <ul class="dropdown-menu dropdown-menu-lg-end">
+          <a  class=" dropdown-item" href="account.php"><i class='bx bxs-user'></i> My Account</a>
+          <a class="dropdown-item" href="logout.php"><i class='bx bx-log-out bx-rotate-180'></i> Logout</a>
+        </ul>
       </div>
+    </nav>
+    <!-- NAVBAR -->
     </nav>
     <!-- NAVBAR -->
 
