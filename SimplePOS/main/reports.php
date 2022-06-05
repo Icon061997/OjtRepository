@@ -16,6 +16,18 @@
 
   <title>Reports</title>
 </head>
+<style>
+  input:hover, input:focus{
+      border: 2px solid royalblue;
+
+  }
+  
+  select:hover{
+
+    border: 2px solid royalblue;
+
+  }
+</style>
 
 <body>
   <!-- SIDEBAR -->
@@ -95,22 +107,19 @@
         <i class='bx bxs-bell'></i>
         <span class="num">8</span>
       </a>
-
-
-
       <div class="dropdown-nav">
-        <button class="dropdown-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <button class="dropdown-btn" onclick="myFunction()">
           <img src="images/user.png" class="profile-pic" alt="">
           <div class="username admin">
-            <b>Jimuel Leal</b><br> Admin
+            <font><b>Jimuel Leal</b><br> Admin </font>
           </div>
           <i class='bx bx-chevron-down' style="font-size: 24px;"></i>
         </button>
 
-        <ul class="dropdown-menu dropdown-menu-lg-end">
-          <a  class=" dropdown-item" href="account.php"><i class='bx bxs-user'></i> My Account</a>
-          <a class="dropdown-item" href="logout.php"><i class='bx bx-log-out bx-rotate-180'></i> Logout</a>
-        </ul>
+        <div id="myDropdown" class="dropdown-content">
+          <a href="#">My account</a>
+          <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
       </div>
     </nav>
     <!-- NAVBAR -->
@@ -130,8 +139,8 @@
                 <h3>REPORTS</h3>
                 
               </div>
-
-              <div class="col-md-8 my-2">
+              <div class="row">
+              <div class="col-md-auto my-2">
                 <form class="form-group row">
                   <div class="col-sm-auto col-form-label">
                     View by:
@@ -146,22 +155,7 @@
                 </form>
 
               </div>
-              <div class="col-sm-auto">
-                <div class="dropdown">
-                  <button class="btn btn-outline-success dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class='bx bx-printer'></i> Export
-                  </button>
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                    <button class="dropdown-item" type="button">Action</button>
-                    <button class="dropdown-item" type="button">Another action</button>
-                    <button class="dropdown-item" type="button">Something else here</button>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-sm-auto">
-                <button class="btn btn-outline-primary btn-block" type="button"><i class='bx bx-printer'></i> print</button>
-              </div>
+            
 
               <div class="col-sm-auto my-2">
                 <div class="form-group row">
@@ -182,16 +176,31 @@
 
                 </div>
 
+              </div>
+              <div class="col-sm-auto my-2">
+                <div class="dropdown">
+                  <button class="btn btn-outline-success dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class='bx bx-printer'></i> Export
+                  </button>
+                  <div class="dropdown-menu">
+                  <button class="dropdown-item" type="button"><i class="icon bi bi-filetype-csv"></i> CSV</button>
+                  <button class="dropdown-item" type="button"><i class="icon bi bi-filetype-pdf"></i> PDF</button>
+                 
+                  </div>
+                </div>
+              </div>
 
-
+              <div class="col-sm-auto my-2">
+                <button class="btn btn-outline-primary btn-block" type="button"><i class='bx bx-printer'></i> print</button>
+              </div>
               </div>
 
 
 
             </div>
             <hr>
-            <table>
-              <thead style="text-align: center;">
+            <table class="table-bordered">
+              <thead style="text-align: center; background-color:lightgrey; border:1px solid grey; " >
                 <th>Name</th>
                 <th>No. sold</th>
                 <th>Discount</th>
@@ -258,13 +267,33 @@
   </section>
   <!-- CONTENT -->
 
+  
+  <script>
+    function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    // Close the dropdown menu if the user clicks outside of it
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropdown-btn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
   </script>
 
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
   <script src="js/script.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-  <!-- JavaScript Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </body>
 
 </html>

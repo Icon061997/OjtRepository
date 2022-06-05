@@ -4,13 +4,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <!-- Boxicons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
-  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
   <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-  <!-- My CSS -->
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
   <link rel="stylesheet" href="css/navside.css">
+  <!-- chart import -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 
   <title>Categories</title>
 </head>
@@ -93,30 +95,58 @@
         <i class='bx bxs-bell'></i>
         <span class="num">8</span>
       </a>
-
-
-
       <div class="dropdown-nav">
-        <button class="dropdown-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <button class="dropdown-btn" onclick="myFunction()">
           <img src="images/user.png" class="profile-pic" alt="">
           <div class="username admin">
-            <b>Jimuel Leal</b><br> Admin
+            <font><b>Jimuel Leal</b><br> Admin </font>
           </div>
           <i class='bx bx-chevron-down' style="font-size: 24px;"></i>
         </button>
 
-        <ul class="dropdown-menu dropdown-menu-lg-end">
-          <a  class=" dropdown-item" href="account.php"><i class='bx bxs-user'></i> My Account</a>
-          <a class="dropdown-item" href="logout.php"><i class='bx bx-log-out bx-rotate-180'></i> Logout</a>
-        </ul>
+        <div id="myDropdown" class="dropdown-content">
+          <a href="#">My account</a>
+          <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
       </div>
     </nav>
     <!-- NAVBAR -->
 
     <!-- MAIN -->
     <main>
-
-
+      <div class="table-data">
+        <div class="order">
+          <div class="row my-2">
+            <div class="col-12">
+              <div class="head" style="margin-bottom: 0;">
+                <h3>Categories</h3>
+              </div>
+              <div class="row">
+                <div class="head">
+                  <button class="btn btn-outline-primary btn-block" id="myBtn" type="button" data-toggle="modal" data-target="#modalroles"><i class='bx bx-add-to-queue' style="font-size: 24px ;"></i> Add</button>
+                </div>
+              </div>
+              <table class="table-bordered">
+                <thead>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>No of items</th>
+                  <th>action</th>
+                </thead>
+                <tbody>
+                  </tr>
+                  <td>1</td>
+                  <td>Heath</td>
+                  <td>200</td>
+                  <td><i class="bx bx-pencil " data-toggle="modal" data-target="#editmodalcat"></i>
+                    <i class="bx bx-trash">
+                  </td>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
 
     </main>
     <!-- MAIN -->
@@ -124,11 +154,35 @@
   <!-- CONTENT -->
 
   </script>
+  <script>
+    function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
 
+    // Close the dropdown menu if the user clicks outside of it
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropdown-btn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+  </script>
+
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script src="js/script.js"></script>
-
-
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="js/script.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 </body>
 
 </html>

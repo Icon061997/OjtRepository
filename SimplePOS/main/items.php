@@ -14,8 +14,41 @@
   <!-- My CSS -->
   <link rel="stylesheet" href="css/navside.css">
 
+
   <title>Items</title>
 </head>
+
+<style>
+  .sim-input {
+    padding: 5px;
+    width: 200px;
+    height: 40px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    border: 2px solid grey;
+    outline-color: royalblue;
+
+  }
+
+  .formgroup {
+    display: flex;
+    text-align: left;
+  }
+
+  .textarea {
+    padding: 5px;
+    width: 200px;
+    height: 100px;
+    border-radius: 10px;
+    outline: none;
+    margin-bottom: 5px;
+
+  }
+
+  input.sim-input:hover {
+    background-color: lightgrey;
+  }
+</style>
 
 <body>
   <!-- SIDEBAR -->
@@ -95,22 +128,19 @@
         <i class='bx bxs-bell'></i>
         <span class="num">8</span>
       </a>
-
-
-
       <div class="dropdown-nav">
-        <button class="dropdown-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <button class="dropdown-btn" onclick="myFunction()">
           <img src="images/user.png" class="profile-pic" alt="">
           <div class="username admin">
-            <b>Jimuel Leal</b><br> Admin
+            <font><b>Jimuel Leal</b><br> Admin </font>
           </div>
           <i class='bx bx-chevron-down' style="font-size: 24px;"></i>
         </button>
 
-        <ul class="dropdown-menu dropdown-menu-lg-end">
-          <a  class=" dropdown-item" href="account.php"><i class='bx bxs-user'></i> My Account</a>
-          <a class="dropdown-item" href="logout.php"><i class='bx bx-log-out bx-rotate-180'></i> Logout</a>
-        </ul>
+        <div id="myDropdown" class="dropdown-content">
+          <a href="#">My account</a>
+          <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
       </div>
     </nav>
     <!-- NAVBAR -->
@@ -123,78 +153,76 @@
         <div class="col-lg-4 col-md-4 col-sm-12">
           <div class="table-data">
             <div class="order">
-              <div class="form-group row">
-                <label class="col-sm-4 col-form-label px-0">Name:</label>
-                <input class="form-control col-sm-4" type="text">
-              </div>
+              <form method="" action="">
+                <div class="formgroup row">
+                  <label class="col-sm-4 col-form-label">Name:</label>
+                  <input class="sim-input col-sm-4" type="text" id="additemname">
+                </div>
 
-              <div class="form-group row">
-                <label class="col-sm-4 col-form-label px-0">Description:</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-              </div>
+                <div class="formgroup row">
+                  <label class="col-sm-4 col-form-label ">Description:</label>
+                  <textarea class="textarea" id="additemdescription" rows="3"></textarea>
+                </div>
 
-              <div class="form-group row">
-                <label class="col-sm-4 col-form-label px-0">unit cost:</label>
-                <input class="form-control col-sm-4" type="text">
-              </div>
-
-
-              <div class="form-group row">
-                <label class="col-sm-4 col-form-label px-0">Unit price:</label>
-                <input class="form-control col-sm-4" type="text">
-              </div>
-
-              <div class="form-group row">
-                <label class="col-sm-4 col-form-label px-0">tax:</label>
-                <select class="form-select mb-3" aria-label=".form-select-lg example">
-                  <option value="1">Vat</option>
-                  <option value="2">GST</option>
-                </select>
-              </div>
-
-              <div class="form-group row">
-                <label class="col-sm-4 col-form-label px-0"> Quantity:</label>
-                <input class="form-control col-sm-4" type="text">
-              </div>
-
-              <div class="form-group row">
-                <label class="col-sm-4 col-form-label px-0">Stock:</label>
-                <input class="form-control col-sm-4" type="text">
-              </div>
-
-              <div class="form-group row">
-                <label class="col-sm-4 col-form-label px-0">Category:</label>
-                <select class="form-select mb-3" aria-label=".form-select-lg example">
-                  <option value="1">Items</option>
-                  <option value="2">instrument</option>
-                  <option value="2">Health</option>
-                  <option value="2">Furniature</option>
-                </select>
-              </div>
-
-              <div class="form-group row">
-                <label class="col-sm-4 col-form-label px-0">Supplier:</label>
-                <select class="form-select mb-3" aria-label=".form-select-lg example">
-                  <option value="1">Vat</option>
-                  <option value="2">GST</option>
-                </select>
-              </div>
+                <div class="formgroup row">
+                  <label class="col-sm-4 col-form-label ">unit cost:</label>
+                  <input class="sim-input col-sm-4" type="text" id="itemunitcost">
+                </div>
 
 
-              <div class="form-group row">
-                <label class="col-sm-4 col-form-label px-0">Picture:</label>
-                <input type="file" class="form-control-file" id="exampleFormControlFile1">
-              </div>
+                <div class="formgroup row">
+                  <label class="col-sm-4 col-form-label ">Unit price:</label>
+                  <input class="sim-input col-sm-4" type="text" id="itemunitprice">
+                </div>
 
-              <div class="row my-3 ">
-                <button class="col-sm-auto btn btn-secondary"> cancel</button>
-                <button class="col-sm-auto btn btn-outline-success mr-2" style="margin-left: 2px ;"> Save</button>
-              </div>
+                <div class="formgroup row">
+                  <label class="col-sm-4 col-form-label">tax:</label>
+                  <select class="sim-input mb-3" aria-label=".form-select-lg" id="itemtax">
+                    <option value="1">Vat</option>
+                    <option value="2">GST</option>
+                  </select>
+                </div>
 
+                <div class="formgroup row">
+                  <label class="col-sm-4 col-form-label "> Quantity:</label>
+                  <input class="sim-input col-sm-4" type="text" id="itemquantity">
+                </div>
+
+                <div class="formgroup row">
+                  <label class="col-sm-4 col-form-label ">Stock:</label>
+                  <input class="sim-input col-sm-4" type="text" id="itemstock">
+                </div>
+
+                <div class="formgroup row">
+                  <label class="col-sm-4 col-form-label ">Category:</label>
+                  <select class="sim-input mb-3" aria-label=".form-select-lg" id="itemcategory">
+                    <option value="1">Items</option>
+                    <option value="2">instrument</option>
+                    <option value="2">Health</option>
+                    <option value="2">Furniature</option>
+                  </select>
+                </div>
+
+                <div class="formgroup row">
+                  <label class="col-sm-4 col-form-label">Supplier:</label>
+                  <select class="sim-input mb-3" aria-label=".form-select-lg" id="itemmsuplier">
+                    <option value="1">Vat</option>
+                    <option value="2">GST</option>
+                  </select>
+                </div>
+
+
+                <div class="formgroup row">
+                  <label class="col-sm-4 col-form-label">Picture:</label>
+                  <input type="file" class="form-control-file" id="itempicture">
+                </div>
+
+                <div class="row my-3 px-10">
+                  <button class="col-sm-auto btn btn-secondary"> cancel</button>
+                  <button class="col-sm-auto btn btn-outline-success mr-2" style="margin-left: 2px ;"> Save</button>
+                </div>
+              </form>
             </div>
-
-
-
           </div>
 
 
@@ -203,11 +231,11 @@
           <div class="table-data">
             <div class="order">
               <div class="head">
-                <h3>Recent Orders</h3>
+                <h3>Items</h3>
                 <i class='bx bx-search'></i>
                 <i class='bx bx-filter'></i>
               </div>
-              <table>
+              <table class="table-bordered">
                 <thead>
                   <tr>
                     <th>Id</th>
@@ -216,7 +244,6 @@
                     <th>Category</th>
                     <th>Supplier</th>
                     <th>Action</th>
-
                   </tr>
                 </thead>
                 <tbody>
@@ -226,16 +253,109 @@
                     <td>20</td>
                     <td>Health</td>
                     <td>Si kuya mo eruc</td>
-                    <td><i class='bx bx-pencil solid' style="font-size:24px;"></i> <i class='bx bx-trash solid' style="font-size:24px;"></i> </td>
+                    <td><i class='bx bx-pencil solid' style="font-size:24px;" data-toggle="modal" data-target="#editmodalitems"></i> <i class='bx bx-trash solid' style="font-size:24px;"></i> </td>
                   </tr>
                 </tbody>
               </table>
             </div>
-
-
           </div>
         </div>
       </div>
+      <!-- modal fot edit items -->
+      <div class="modal fade" id="editmodalitems" tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="false">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="header"> Edit items </h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="border: none; background:none;">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="container">
+                <form action="" method="">
+                  <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                      <div class="formgroup row">
+                        <label class="col-sm-4 col-form-label">Name:</label>
+                        <input class="sim-input col-sm-4" type="text" id="additemname">
+                      </div>
+
+                      <div class="formgroup row">
+                        <label class="col-sm-4 col-form-label ">Description:</label>
+                        <textarea class="textarea" id="additemdescription" rows="3"></textarea>
+                      </div>
+
+                      <div class="formgroup row">
+                        <label class="col-sm-4 col-form-label ">unit cost:</label>
+                        <input class="sim-input col-sm-4" type="text" id="itemunitcost">
+                      </div>
+
+
+                      <div class="formgroup row">
+                        <label class="col-sm-4 col-form-label ">Unit price:</label>
+                        <input class="sim-input col-sm-4" type="text" id="itemunitprice">
+                      </div>
+
+                      <div class="formgroup row">
+                        <label class="col-sm-4 col-form-label">tax:</label>
+                        <select class="sim-input mb-3" aria-label=".form-select-lg" id="itemtax">
+                          <option value="1">Vat</option>
+                          <option value="2">GST</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-sm-12 px-4">
+
+                      <div class="formgroup row">
+                        <label class="col-sm-4 col-form-label "> Quantity:</label>
+                        <input class="sim-input col-sm-4" type="text" id="itemquantity">
+                      </div>
+
+                      <div class="formgroup row">
+                        <label class="col-sm-4 col-form-label ">Stock:</label>
+                        <input class="sim-input col-sm-4" type="text" id="itemstock">
+                      </div>
+
+                      <div class="formgroup row">
+                        <label class="col-sm-4 col-form-label ">Category:</label>
+                        <select class="sim-input mb-3" aria-label=".form-select-lg" id="itemcategory">
+                          <option value="1">Items</option>
+                          <option value="2">instrument</option>
+                          <option value="2">Health</option>
+                          <option value="2">Furniature</option>
+                        </select>
+                      </div>
+
+                      <div class="formgroup row">
+                        <label class="col-sm-4 col-form-label">Supplier:</label>
+                        <select class="sim-input mb-3" aria-label=".form-select-lg" id="itemmsuplier">
+                          <option value="1">Vat</option>
+                          <option value="2">GST</option>
+                        </select>
+                      </div>
+
+
+                      <div class="formgroup row">
+                        <label class="col-sm-4 col-form-label">Picture:</label>
+                        <input type="file" class="form-control-file" id="itempicture">
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
     </main>
     <!-- MAIN -->
   </section>
@@ -245,8 +365,33 @@
 
   <script src="js/script.js"></script>
 
+  <script>
+    function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
 
+    // Close the dropdown menu if the user clicks outside of it
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropdown-btn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+  </script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="js/script.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 </body>
 
 </html>

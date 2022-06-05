@@ -51,6 +51,17 @@
       border-left: none;
       border-right: none;
     }
+    input,  select{
+    border-radius: 5px;
+    outline-color: royalblue;
+    border-color: lightgrey;
+  }
+
+  input:hover, textarea:hover, select:hover, input[type="radio"]:hover{
+    background-color: whitesmoke;
+    border: 2px solid royalblue;
+  }
+
 
     td {
 
@@ -94,7 +105,6 @@
       color: var(--dark);
     } */
   </style>
-
 
 
 
@@ -180,22 +190,19 @@
         <i class='bx bxs-bell'></i>
         <span class="num">8</span>
       </a>
-
-
-
       <div class="dropdown-nav">
-        <button class="dropdown-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <button class="dropdown-btn" onclick="myFunction()">
           <img src="images/user.png" class="profile-pic" alt="">
           <div class="username admin">
-            <b>Jimuel Leal</b><br> Admin
+            <font><b>Jimuel Leal</b><br> Admin </font>
           </div>
           <i class='bx bx-chevron-down' style="font-size: 24px;"></i>
         </button>
 
-        <ul class="dropdown-menu dropdown-menu-lg-end">
-          <a  class=" dropdown-item" href="account.php"><i class='bx bxs-user'></i> My Account</a>
-          <a class="dropdown-item" href="logout.php"><i class='bx bx-log-out bx-rotate-180'></i> Logout</a>
-        </ul>
+        <div id="myDropdown" class="dropdown-content">
+          <a href="#">My account</a>
+          <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
       </div>
     </nav>
     <!-- NAVBAR -->
@@ -276,7 +283,7 @@
                   <div class="row">
                     <div class="head">
                       <h3>tax rules</h3>
-                      <button class="btn btn-outline-primary btn-block" type="button" data-toggle="modal" data-target="#modalaccounting"><i class='bx bx-add-to-queue'></i> Add </button>
+                      <button class="btn btn-outline-primary btn-block" type="button" data-toggle="modal" data-target="#modalaccounting" style="float: left;"><i class='bx bx-add-to-queue'></i> Add </button>
                     </div>
                   </div>
                   <table>

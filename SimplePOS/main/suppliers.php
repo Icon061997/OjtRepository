@@ -17,12 +17,29 @@ session_start();
   <!-- Boxicons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <!-- CSS only -->
+  <script src="https://your-site-or-cdn.com/fontawesome/v6.1.1/js/all.js" data-search-pseudo-elements></script>
+  <script src="https://your-site-or-cdn.com/fontawesome/v6.1.1/js/all.js" data-auto-a11y="true"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
   <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
   <!-- My CSS -->
   <link rel="stylesheet" href="css/navside.css">
-
   <title>Suppliers</title>
 </head>
+<style>
+  input{
+    border-radius: 5px;
+    outline-color: royalblue;
+    border-color: lightgrey;
+  }
+
+  input:hover{
+    background-color: whitesmoke;
+    border: 2px solid royalblue;
+  }
+
+</style>
 
 <body>
   <!-- SIDEBAR -->
@@ -102,110 +119,152 @@ session_start();
         <i class='bx bxs-bell'></i>
         <span class="num">8</span>
       </a>
-
-
-
       <div class="dropdown-nav">
-        <button class="dropdown-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <button class="dropdown-btn" onclick="myFunction()">
           <img src="images/user.png" class="profile-pic" alt="">
           <div class="username admin">
-            <b>Jimuel Leal</b><br> Admin
+            <font><b>Jimuel Leal</b><br> Admin </font>
           </div>
           <i class='bx bx-chevron-down' style="font-size: 24px;"></i>
         </button>
 
-        <ul class="dropdown-menu dropdown-menu-lg-end">
-          <a  class=" dropdown-item" href="account.php"><i class='bx bxs-user'></i> My Account</a>
-          <a class="dropdown-item" href="logout.php"><i class='bx bx-log-out bx-rotate-180'></i> Logout</a>
-        </ul>
+        <div id="myDropdown" class="dropdown-content">
+          <a href="#">My account</a>
+          <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
       </div>
     </nav>
     <!-- NAVBAR -->
-
     <!-- MAIN -->
     <main>
-      <app-suppliers _nghost-dxr-c4="">
-        <div _ngcontent-dxr-c4="" class="container-fluid">
-          <div _ngcontent-dxr-c4="" class="row my-4">
-            <div _ngcontent-dxr-c4="" class="col-sm-12 my-2">
-              <div _ngcontent-dxr-c4="" class="card-container">
-                <div _ngcontent-dxr-c4="" class="card-title">Suppliers</div>
-                <div _ngcontent-dxr-c4="" class="row my-2">
-                  <div _ngcontent-dxr-c4="" class="col-sm-auto my-2"><button _ngcontent-dxr-c4="" class="pos-btn pos-btn-accent" data-target="#addSupplier" data-toggle="modal"><i _ngcontent-dxr-c4="" class="fas fa-plus"></i> Add</button></div>
-                </div>
-                <div _ngcontent-dxr-c4="" class="table-responsive">
-                  <table _ngcontent-dxr-c4="" class="table table-hover striped table-bordered">
-                    <thead _ngcontent-dxr-c4="">
-                      <tr _ngcontent-dxr-c4="">
-                        <th _ngcontent-dxr-c4="">ID</th>
-                        <th _ngcontent-dxr-c4="">Name</th>
-                        <th _ngcontent-dxr-c4="">No. of Items</th>
-                        <th _ngcontent-dxr-c4="">Action</th>
-                      </tr>
-                    </thead>
-                    <tbody _ngcontent-dxr-c4="">
-                      <tr _ngcontent-dxr-c4="">
-                        <td _ngcontent-dxr-c4="">23423</td>
-                        <td _ngcontent-dxr-c4="">ABC Merchandise</td>
-                        <td _ngcontent-dxr-c4="">123</td>
-                        <td _ngcontent-dxr-c4=""><a _ngcontent-dxr-c4="" data-target="#editSupplier" data-toggle="modal"><i _ngcontent-dxr-c4="" class="fas fa-pen text-info mx-2"></i></a><a _ngcontent-dxr-c4=""><i _ngcontent-dxr-c4="" class="fas fa-trash text-danger mx-2"></i></a></td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div _ngcontent-dxr-c4="" class="my-4">
-            <app-footer _ngcontent-dxr-c4="" _nghost-dxr-c3=""><b _ngcontent-dxr-c3="">simplePos</b><br _ngcontent-dxr-c3=""><small _ngcontent-dxr-c3=""><i _ngcontent-dxr-c3="">Made with <i _ngcontent-dxr-c3="" class="fas fa-heart"></i> by jericNuez © 2020</i></small></app-footer>
-          </div>
-        </div>
-        <div _ngcontent-dxr-c4="" aria-hidden="true" aria-labelledby="staticBackdropLabel" class="modal fade" data-backdrop="static" data-keyboard="false" id="addSupplier" tabindex="-1">
-          <div _ngcontent-dxr-c4="" class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-            <div _ngcontent-dxr-c4="" class="modal-content">
-              <div _ngcontent-dxr-c4="" class="modal-header">
-                <h5 _ngcontent-dxr-c4="" class="modal-title" id="staticBackdropLabel"><b _ngcontent-dxr-c4="">Add Supplier</b></h5><button _ngcontent-dxr-c4="" aria-label="Close" class="close" data-dismiss="modal" type="button"><span _ngcontent-dxr-c4="" aria-hidden="true">×</span></button>
-              </div>
-              <div _ngcontent-dxr-c4="" class="modal-body">
-                <div _ngcontent-dxr-c4="" class="container-fluid">
-                  <div _ngcontent-dxr-c4="" class="form-group row">
-                    <div _ngcontent-dxr-c4="" class="col-sm-4 col-form-label px-0">Name:</div><input _ngcontent-dxr-c4="" class="pos-input col-sm-8" type="text">
-                  </div>
-                </div>
-              </div>
-              <div _ngcontent-dxr-c4="" class="modal-footer"><button _ngcontent-dxr-c4="" class="pos-btn pos-btn-gray" data-dismiss="modal" type="button">Cancel</button><button _ngcontent-dxr-c4="" class="pos-btn pos-btn-accent" type="button">Save</button></div>
-            </div>
-          </div>
-        </div>
-        <div _ngcontent-dxr-c4="" aria-hidden="true" aria-labelledby="staticBackdropLabel" class="modal fade" data-backdrop="static" data-keyboard="false" id="editSupplier" tabindex="-1">
-          <div _ngcontent-dxr-c4="" class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-            <div _ngcontent-dxr-c4="" class="modal-content">
-              <div _ngcontent-dxr-c4="" class="modal-header">
-                <h5 _ngcontent-dxr-c4="" class="modal-title" id="staticBackdropLabel"><b _ngcontent-dxr-c4="">Edit Supplier</b></h5><button _ngcontent-dxr-c4="" aria-label="Close" class="close" data-dismiss="modal" type="button"><span _ngcontent-dxr-c4="" aria-hidden="true">×</span></button>
-              </div>
-              <div _ngcontent-dxr-c4="" class="modal-body">
-                <div _ngcontent-dxr-c4="" class="container-fluid">
-                  <div _ngcontent-dxr-c4="" class="form-group row">
-                    <div _ngcontent-dxr-c4="" class="col-sm-4 col-form-label px-0">Name:</div><input _ngcontent-dxr-c4="" class="pos-input col-sm-8" type="text">
-                  </div>
-                </div>
-              </div>
-              <div _ngcontent-dxr-c4="" class="modal-footer"><button _ngcontent-dxr-c4="" class="pos-btn pos-btn-gray" data-dismiss="modal" type="button">Cancel</button><button _ngcontent-dxr-c4="" class="pos-btn pos-btn-accent" type="button">Save</button></div>
-            </div>
-          </div>
-        </div>
-      </app-suppliers>
-    </main>
-    <!-- MAIN -->
-  </section>
-  <!-- CONTENT -->
 
+
+      <div class="table-data">
+        <div class="order">
+          <div class="col-12 my-2">
+            <div class="row my-2">
+              <div class="head">
+                <h3>SUPPLIER</h3>
+              </div>
+                <div class="col-sm-auto col-form-label">
+                  <button class="btn btn-outline-success" data-toggle="modal" data-target="#modaladdsupplier"><i class="bx bx-add"></i> Add Supplier</button>
+                </div>
+              </div>
+            </div>
+            <hr>
+            <!-- *************************tablee *********************************************8-->
+            <table class="table-bordered">
+              <thead style="text-align: center;">
+                <th>ID</th>
+                <th>NAME</th>
+                <th>NO. OF ITEMS</th>
+                <th>ACTION</th>
+
+              </thead>
+              <tbody style="text-align: center;">
+                <tr>
+                  <td>011101</td>
+                  <td>JUAN DELACUS</td>
+                  <td>1000</td>
+                  <td><i class="bx bx-pencil" data-toggle="modal" data-target="#modaleditcostumer"></i> <i class="bx bx-trash"></i></td>
+
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ******************************************************************** -->
+      <div class="modal fade modal-static" id="modaladdsupplier" tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="header"> ADD SUPLLIER </h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="border: none; background:none;">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="container">
+                <form action="" method="">
+
+
+                  <div class="form-group row mb-2">
+                    <div class="col-sm-5 col-form-label">NAME:</div>
+                    <input class="col-sm-7 pos-input" type="text">
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">ADD</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- for editing -->
+      <div class="modal fade modal-static" id="modaleditcostumer" tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="header"> Edit Supplier</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="border: none; background:none;">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="container">
+                <form action="" method="">
+
+
+                  <div class="form-group row mb-2">
+                    <div class="col-sm-5 col-form-label">NAME:</div>
+                    <input class="col-sm-7 pos-input" type="text">
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">ADD</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </section>
+
+  <script>
+    function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    // Close the dropdown menu if the user clicks outside of it
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropdown-btn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
   </script>
 
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
   <script src="js/script.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </body>
 
 </html>

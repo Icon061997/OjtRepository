@@ -8,14 +8,21 @@
   <!-- Boxicons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
   <!-- CSS only -->
-  <!-- CSS only -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
   <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
   <!-- My CSS -->
   <link rel="stylesheet" href="css/navside.css">
 
   <title>Sales</title>
 </head>
+
+<style>
+  .icon {
+    font-size: 20px;
+    font-weight: 200;
+  }
+</style>
 
 <body>
   <!-- SIDEBAR -->
@@ -94,22 +101,19 @@
         <i class='bx bxs-bell'></i>
         <span class="num">8</span>
       </a>
-
-
-
       <div class="dropdown-nav">
-        <button class="dropdown-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <button class="dropdown-btn" onclick="myFunction()">
           <img src="images/user.png" class="profile-pic" alt="">
           <div class="username admin">
-            <b>Jimuel Leal</b><br> Admin
+            <font><b>Jimuel Leal</b><br> Admin </font>
           </div>
           <i class='bx bx-chevron-down' style="font-size: 24px;"></i>
         </button>
 
-        <ul class="dropdown-menu dropdown-menu-lg-end">
-          <a class=" dropdown-item" href="account.php"><i class='bx bxs-user'></i> My Account</a>
-          <a class="dropdown-item" href="logout.php"><i class='bx bx-log-out bx-rotate-180'></i> Logout</a>
-        </ul>
+        <div id="myDropdown" class="dropdown-content">
+          <a href="#">My account</a>
+          <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
       </div>
     </nav>
     <!-- NAVBAR -->
@@ -126,18 +130,15 @@
             <div class="head">
               <h3>Sales</h3>
             </div>
-            <label style="font-style: italic; align-items:left; margin-bottom: 20px;">
-              View and Search POS transactions </label>
-
             <div class="col-sm-auto">
               <div class="dropdown">
-                <button class="btn btn-outline-success dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" button onclick="myFunction()">
-                  <i class='bx bx-export'></i> export
+                <button class="btn btn-outline-success dropdown-toggle" type="button" id="export" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class='bx bx-export'></i> Export
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                  <a type="button">Action</button>
-                    <button class="dropdown-item" type="button">Another action</button>
-                    <button class="dropdown-item" type="button">Something else here</button>
+                  <button class="dropdown-item" type="button"><i class="icon bi bi-filetype-csv"></i> CSV</button>
+                  <button class="dropdown-item" type="button"><i class="icon bi bi-filetype-pdf"></i> PDF</button>
+
                 </div>
               </div>
             </div>
@@ -153,7 +154,7 @@
 
           </div>
 
-          <table>
+          <table class="table-bordered">
             <thead>
               <th>ID</th>
               <th>Reference No.</th>
@@ -162,27 +163,31 @@
               <th>Date and time</th>
               <th>Total</th>
               <th>Status</th>
-              <th>action</th>
+              <th>Action</th>
+
             </thead>
             <tbody>
+              <tr>
+                <td>1</td>
+                <td>222222</td>
+                <td>@username</td>
+                <td>100</td>
+                <td>May 19 2021, 9:58 am</td>
+                <td>200</td>
+                <td><span class="status pending">Pending</span></td>
+                <td><a href="invo.php"><i class="bi bi-eye-fill"></i></a></td>
               </tr>
-              <td>1</td>
-              <td>222222</td>
-              <td>@username</td>
-              <td>100</td>
-              <td>May 19 2021, 9:58 am</td>
-              <td>200</td>
-              <td><span class="status pending">Pending</span></td>
-              <td><i class="fas fa-eye"></td>
+
+              <tr>
+                <td>1</td>
+                <td>333333</td>
+                <td>@username</td>
+                <td>100</td>
+                <td>May 19 2021, 9:58 am</td>
+                <td>200</td>
+                <td> <span class="status completed"> completed </span></td>
+                <td><a href="invo.php"><i class="bi bi-eye-fill"></i></a></td>
               </tr>
-              <td>1</td>
-              <td>333333</td>
-              <td>@username</td>
-              <td>100</td>
-              <td>May 19 2021, 9:58 am</td>
-              <td>200</td>
-              <td> <span class="status completed"> completed </span></td>
-              <td><i class="fas fa-eye"></td>
 
               <tr>
                 <td>1</td>
@@ -192,7 +197,9 @@
                 <td>May 19 2021, 9:58 am</td>
                 <td>200</td>
                 <td><span class="status process">Process</span></td>
-                <td><i class="fas fa-eye"></td>
+                <td><a href="invo.php"><i class="bi bi-eye-fill"></i></a></td>
+              </tr>
+
 
 
             </tbody>
@@ -203,18 +210,14 @@
     <!-- MAIN -->
   </section>
   <!-- CONTENT -->
-  <!-- JavaScript Bundle with Popper -->
-
   <script>
-    /* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
     function myFunction() {
       document.getElementById("myDropdown").classList.toggle("show");
     }
 
-    // Close the dropdown if the user clicks outside of it
+    // Close the dropdown menu if the user clicks outside of it
     window.onclick = function(event) {
-      if (!event.target.matches('.dropbtn')) {
+      if (!event.target.matches('.dropdown-btn')) {
         var dropdowns = document.getElementsByClassName("dropdown-content");
         var i;
         for (i = 0; i < dropdowns.length; i++) {
@@ -226,8 +229,12 @@ toggle between hiding and showing the dropdown content */
       }
     }
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
   <script src="js/script.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 </body>
 
 </html>
