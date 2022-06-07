@@ -51,6 +51,17 @@
       border-left: none;
       border-right: none;
     }
+    input,  select{
+    border-radius: 5px;
+    outline-color: royalblue;
+    border-color: lightgrey;
+  }
+
+  input:hover, textarea:hover, select:hover, input[type="radio"]:hover{
+    background-color: whitesmoke;
+    border: 2px solid royalblue;
+  }
+
 
     td {
 
@@ -90,11 +101,10 @@
       font-size: 24px;
     }
 
-    /* .modalcontent {
+    .modalcontent {
       color: var(--dark);
-    } */
+    }
   </style>
-
 
 
 
@@ -180,9 +190,6 @@
         <i class='bx bxs-bell'></i>
         <span class="num">8</span>
       </a>
-
-
-
       <div class="dropdown-nav">
         <button class="dropdown-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
           <img src="images/user.png" class="profile-pic" alt="">
@@ -197,6 +204,8 @@
           <a class="dropdown-item" href="logout.php"><i class='bx bx-log-out bx-rotate-180'></i> Logout</a>
         </ul>
       </div>
+    </nav>
+    <!-- NAVBAR -->
     </nav>
     <!-- NAVBAR -->
 
@@ -248,7 +257,7 @@
                       <button class="btn btn-outline-primary btn-block" type="button" data-toggle="modal" data-target="#modaluser"><i class='bx bx-add-to-queue' style="font-size: 24px"></i> Add </button>
                     </div>
                   </div>
-                  <table>
+                  <table style="border:2px solid;" class="table-bordered">
                     <thead>
                       <th>ID</th>
                       <th>Username</th>
@@ -276,10 +285,10 @@
                   <div class="row">
                     <div class="head">
                       <h3>tax rules</h3>
-                      <button class="btn btn-outline-primary btn-block" type="button" data-toggle="modal" data-target="#modalaccounting"><i class='bx bx-add-to-queue'></i> Add </button>
+                      <button class="btn btn-outline-primary btn-block" type="button" data-toggle="modal" data-target="#modalaccounting" style="float: left;"><i class='bx bx-add-to-queue'></i> Add </button>
                     </div>
                   </div>
-                  <table>
+                  <table style="border:2px solid;" class="table-bordered">
                     <thead>
                       <th>ID</th>
                       <th>name</th>
@@ -311,7 +320,7 @@
       <!-- modal for roles -->
       <!-- modal para sa pag add ng roles -->
       <div class="modal fade" id="modalroles" tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="false">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-lg">
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="header"> USER </h5>
@@ -506,7 +515,7 @@
       <!-- modal para sa apag add ng user-->
 
       <div class="modal fade modal-static" id="modaluser" tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="false">
-        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-dialog modal-lg">
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="header"> USER</h5>
@@ -711,7 +720,7 @@
   </section>
   <!-- CONTENT -->
 
-  <script>
+   <script type="text/javascript">
     function myFunction() {
       document.getElementById("myDropdown").classList.toggle("show");
     }
