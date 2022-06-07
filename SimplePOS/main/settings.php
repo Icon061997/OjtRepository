@@ -101,9 +101,9 @@
       font-size: 24px;
     }
 
-    /* .modalcontent {
+    .modalcontent {
       color: var(--dark);
-    } */
+    }
   </style>
 
 
@@ -257,7 +257,7 @@
                       <button class="btn btn-outline-primary btn-block" type="button" data-toggle="modal" data-target="#modaluser"><i class='bx bx-add-to-queue' style="font-size: 24px"></i> Add </button>
                     </div>
                   </div>
-                  <table>
+                  <table style="border:2px solid;" class="table-bordered">
                     <thead>
                       <th>ID</th>
                       <th>Username</th>
@@ -288,7 +288,7 @@
                       <button class="btn btn-outline-primary btn-block" type="button" data-toggle="modal" data-target="#modalaccounting" style="float: left;"><i class='bx bx-add-to-queue'></i> Add </button>
                     </div>
                   </div>
-                  <table>
+                  <table style="border:2px solid;" class="table-bordered">
                     <thead>
                       <th>ID</th>
                       <th>name</th>
@@ -320,7 +320,7 @@
       <!-- modal for roles -->
       <!-- modal para sa pag add ng roles -->
       <div class="modal fade" id="modalroles" tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="false">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-lg">
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="header"> USER </h5>
@@ -515,7 +515,7 @@
       <!-- modal para sa apag add ng user-->
 
       <div class="modal fade modal-static" id="modaluser" tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="false">
-        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-dialog modal-lg">
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="header"> USER</h5>

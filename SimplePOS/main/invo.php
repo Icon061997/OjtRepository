@@ -44,7 +44,9 @@
         border-radius: 5px;
         margin-bottom: 15px;
         border: none;
-
+        background-color: none;
+        background: none;
+        color: var(--dark);
     }
 
     .formgroup {
@@ -118,6 +120,7 @@
         border-radius: 3px;
         padding: 6px 12px;
         color: var(--dark);
+
     }
 </style>
 
@@ -231,12 +234,12 @@
 
                         <div class="row my-4" style="margin-bottom: 0 ;">
                             <div class="col-12 ">
-                                <button class="sim-button btn btn-secondary m-2 mr-4"><i class="bi bi-chevron-left"></i> back </button>
+                                <a href="sales.php" class="sim-button btn btn-secondary m-2 mr-4"><i class="bi bi-chevron-left"></i> back </a>
                                 <button class="sim-button btn btn-success mt-2 mr-4"><i class="bi bi-receipt"></i> Generate Invoice </button>
                                 <button class="sim-button-green btn m-2 mr-4"><i class="bi bi-envelope-fill"></i> Email Envoice</button>
-
                             </div>
-                            <div class="col-6 my-2">
+                            <hr>
+                            <div class="col-6" style="margin-top: 0 ;">
                                 <div class="formgroup row ">
                                     <div class="col-md-3  col-form-label">Status:</div>
                                     <input class="col-sm-7 invoice-input" type="text" disabled>
@@ -257,7 +260,7 @@
                                 </div>
                                 <div class="formgroup row ">
                                     <div class="col-md-3  col-form-label">Date & Time:</div>
-                                    <input class="col-sm-7 invoice-input" type="text  disabled">
+                                    <input class="col-sm-7 invoice-input" type="text" disabled>
                                 </div>
                                 <div class="formgroup row">
                                     <div class="col-md-3  col-form-label">Total</div>
@@ -268,25 +271,87 @@
 
                         </div>
                         <div class="mytabs">
-                            <input type="radio" id="tabroles" name="mytabs" checked="checked" style="display:none;">
-                            <label for="tabroles" class="labels">User Roles</label>
+                            <input type="radio" id="tabdetails" name="mytabs" checked="checked" style="display:none;">
+                            <label for="tabdetails" class="labels">Details</label>
 
                             <div class="tab">
+                                <div class="container">
+                                    <div class="head" style="margin-bottom: 0;">
+                                        <h3>Details</h3>
+                                    </div>
+                                    <div class="formgroup row">
+                                        <div class="col-md-3  col-form-label">Subtotal:</div>
+                                        <input class="col-sm-7 invoice-input" type="text" value="200" disabled>
+                                    </div>
+                                    <div class="formgroup row">
+                                        <div class="col-md-3  col-form-label">Total:</div>
+                                        <input class="col-sm-7 invoice-input" type="text" value="200" disabled>
+                                    </div>
 
-                                </table>
+                                </div>
                             </div>
-                            <input type="radio" id="tabusers" name="mytabs" style="display:none;">
-                            <label for="tabusers" class="labels">Users</label>
+
+                            <input type="radio" id="tabitems" name="mytabs" style="display:none;">
+                            <label for="tabitems" class="labels">Items</label>
                             <div class="tab">
 
+                                <div class="container">
+                                    <div class="head" style="margin-bottom: 0;">
+                                        <h3>Items</h3>
+                                    </div>
+                                    <div class="table-responsive">
+                                        <table class="table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th>Qty</th>
+                                                    <th>Name</th>
+                                                    <th>Tax</th>
+                                                    <th>Price</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>Faceshield</td>
+                                                    <td>.20</td>
+                                                    <td>500</td>
+                                                </tr>
+                                            </tbody>
 
-
+                                        </table>
+                                    </div>
+                                </div>
                             </div>
 
 
-                            <input type="radio" id="tabaccounting" name="mytabs" style="display:none;">
-                            <label for="tabaccounting" class="labels">Accounting</label>
+                            <input type="radio" id="tabpayment" name="mytabs" style="display:none;">
+                            <label for="tabpayment" class="labels">Payments</label>
                             <div class="tab">
+                            <div class="container">
+                                    <div class="head" style="margin-bottom: 0;">
+                                        <h3>Payments</h3>
+                                    </div>
+                                    <div class="table-responsive">
+                                        <table class="table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th>Method</th>
+                                                    <th>Amount</th>
+                                                    <th>Date</th>
+                                                    
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Cash</td>
+                                                    <td>200</td>
+                                                    <td>May 12 2022</td>
+                                                </tr>
+                                            </tbody>
+
+                                        </table>
+                                    </div>
+                                </div>
 
                             </div>
 
