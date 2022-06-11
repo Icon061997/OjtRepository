@@ -208,8 +208,8 @@
                 <div class="formgroup row">
                   <label class="col-sm-4 col-form-label">Supplier:</label>
                   <select class="sim-input mb-3" aria-label=".form-select-lg" id="itemmsuplier">
-                    <option value="1">Vat</option>
-                    <option value="2">GST</option>
+                    <option value="1">JOSHUA</option>
+                    <option value="2">JULUIS</option>
                   </select>
                 </div>
 
@@ -333,8 +333,8 @@
                       <div class="formgroup row">
                         <label class="col-sm-4 col-form-label">Supplier:</label>
                         <select class="sim-input mb-3" aria-label=".form-select-lg" id="itemmsuplier">
-                          <option value="1">Vat</option>
-                          <option value="2">GST</option>
+                          <option value="1">JOSHUA</option>
+                          <option value="2">JUSLUIS</option>
                         </select>
                       </div>
 
@@ -383,7 +383,7 @@
             openDropdown.classList.remove('show');
           }
         }
-      }
+      } 
     }
   </script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
