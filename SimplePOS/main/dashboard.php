@@ -38,6 +38,10 @@ session_start();
       color: transparent;
     }
 
+    .dropdown-nav{
+      color: var(--dark);
+    }
+
     td {
 
       text-align: center;

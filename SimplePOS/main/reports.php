@@ -48,7 +48,7 @@
     height: 36px;
   }
   
-  .myDiv{
+  .myselectable{
     border: none;
   }
 </style>
@@ -222,7 +222,7 @@
 
             </div>
             <hr>
-            <div class="myDiv" id="showitems">
+            <div class="mytableselect" id="viewitems">
             <table>
               <thead>
                 <th>Name</th>
@@ -273,7 +273,7 @@
             </table>
             </div>
 
-            <div class="myDiv" id="showcategories" style="display: none;">
+            <div class="mytableselect" id="viewcategories" style="display: none;">
             <table>
               <thead style="text-align: center;">
                 <th>Name</th>
@@ -332,8 +332,8 @@
     $(document).ready(function() {
       $('#myselection').on('change', function() {
         var demovalue = $(this).val();
-        $("div.myDiv").hide();
-        $("#show" + demovalue).show();
+        $("div.mytableselect").hide();
+        $("#view" + demovalue).show();
       });
     });
   </script>
