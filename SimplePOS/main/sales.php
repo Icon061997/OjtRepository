@@ -22,6 +22,16 @@
     font-size: 20px;
     font-weight: 200;
   }
+
+  thead {
+      border: solid var(--dark);
+      width: 36px;
+      height: 36px;
+    }
+
+  table{
+    border: 1px black;
+  }
 </style>
 
 <body>

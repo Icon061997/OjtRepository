@@ -28,17 +28,44 @@ session_start();
   <title>Suppliers</title>
 </head>
 <style>
-  input{
+  input {
     border-radius: 5px;
     outline-color: royalblue;
     border-color: lightgrey;
   }
 
-  input:hover{
+  input:hover {
     background-color: whitesmoke;
     border: 2px solid royalblue;
   }
 
+  td {
+
+    text-align: center;
+    border: 1px solid var(--dark-grey);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+
+  }
+
+  thead {
+    border: solid var(--dark);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    width: 36px;
+    height: 36px;
+  }
+
+  i.icon:hover {
+      color: blue;
+    }
+
+    .icon {
+      padding: 3px;
+      font-size: 24px;
+    }
 </style>
 
 <body>
@@ -129,7 +156,7 @@ session_start();
         </button>
 
         <ul class="dropdown-menu dropdown-menu-lg-end">
-          <a  class=" dropdown-item" href="account.php"><i class='bx bxs-user'></i> My Account</a>
+          <a class=" dropdown-item" href="account.php"><i class='bx bxs-user'></i> My Account</a>
           <a class="dropdown-item" href="logout.php"><i class='bx bx-log-out bx-rotate-180'></i> Logout</a>
         </ul>
       </div>
@@ -148,34 +175,34 @@ session_start();
               <div class="head">
                 <h3>SUPPLIER</h3>
               </div>
-                <div class="col-sm-auto col-form-label">
-                  <button class="btn btn-outline-success" data-toggle="modal" data-target="#modaladdsupplier"><i class="bx bx-add"></i> Add Supplier</button>
-                </div>
+              <div class="col-sm-auto col-form-label">
+                <button class="btn btn-outline-success" data-toggle="modal" data-target="#modaladdsupplier"><i class="bx bx-add"></i> Add Supplier</button>
               </div>
             </div>
-            <hr>
-            <!-- *************************tablee *********************************************8-->
-            <table class="table-bordered">
-              <thead style="text-align: center;">
-                <th>ID</th>
-                <th>NAME</th>
-                <th>NO. OF ITEMS</th>
-                <th>ACTION</th>
-
-              </thead>
-              <tbody style="text-align: center;">
-                <tr>
-                  <td>011101</td>
-                  <td>JUAN DELACUS</td>
-                  <td>1000</td>
-                  <td><i class="bx bx-pencil" data-toggle="modal" data-target="#modaleditcostumer"></i> <i class="bx bx-trash"></i></td>
-
-                </tr>
-              </tbody>
-            </table>
           </div>
+          <hr>
+          <!-- *************************tablee *********************************************8-->
+          <table>
+            <thead style="text-align: center;">
+              <th>ID</th>
+              <th>NAME</th>
+              <th>NO. OF ITEMS</th>
+              <th>ACTION</th>
 
+            </thead>
+            <tbody style="text-align: center;">
+              <tr>
+                <td>011101</td>
+                <td>JUAN DELACUS</td>
+                <td>1000</td>
+                <td><i class="bx bx-pencil icon" data-toggle="modal" data-target="#modaleditcostumer"></i> <i class="bx bx-trash icon"></i></td>
+
+              </tr>
+            </tbody>
+          </table>
         </div>
+
+      </div>
       </div>
 
       <!-- ******************************************************************** -->

@@ -10,7 +10,7 @@
   <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
   <script src="https://your-site-or-cdn.com/fontawesome/v6.1.1/js/all.js" data-search-pseudo-elements></script>
   <script src="https://your-site-or-cdn.com/fontawesome/v6.1.1/js/all.js" data-auto-a11y="true"></script>
- 
+
   <!-- CSS only -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
   <link rel="stylesheet" href="css/navside.css">
@@ -19,6 +19,35 @@
 
   <title>Categories</title>
 </head>
+
+<STYle>
+  td {
+
+    border: 1px solid var(--dark-grey);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+
+  }
+
+  thead {
+    border: solid var(--dark);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    width: 36px;
+    height: 36px;
+  }
+
+  i.icon:hover {
+    color: blue;
+  }
+
+  .icon {
+    padding: 3px;
+    font-size: 24px;
+  }
+</STYle>
 
 <body>
   <!-- SIDEBAR -->
@@ -108,7 +137,7 @@
         </button>
 
         <ul class="dropdown-menu dropdown-menu-lg-end">
-          <a  class=" dropdown-item" href="account.php"><i class='bx bxs-user'></i> My Account</a>
+          <a class=" dropdown-item" href="account.php"><i class='bx bxs-user'></i> My Account</a>
           <a class="dropdown-item" href="logout.php"><i class='bx bx-log-out bx-rotate-180'></i> Logout</a>
         </ul>
       </div>
@@ -131,7 +160,7 @@
                   <button class="btn btn-outline-primary btn-block" id="myBtn" type="button" data-toggle="modal" data-target="#modalroles"><i class='bx bx-add-to-queue' style="font-size: 24px ;"></i> Add</button>
                 </div>
               </div>
-              <table class="table-bordered">
+              <table>
                 <thead>
                   <th>ID</th>
                   <th>Name</th>
@@ -143,8 +172,8 @@
                   <td>1</td>
                   <td>Heath</td>
                   <td>200</td>
-                  <td><i class="bx bx-pencil " data-toggle="modal" data-target="#editmodalcat"></i>
-                    <i class="bx bx-trash">
+                  <td><i class="bx bx-pencil icon " data-toggle="modal" data-target="#editmodalcat"></i>
+                    <i class="bx bx-trash icon">
                   </td>
                 </tbody>
               </table>
@@ -152,6 +181,7 @@
           </div>
         </div>
       </div>
+
 
     </main>
     <!-- MAIN -->

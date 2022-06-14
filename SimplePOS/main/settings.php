@@ -66,12 +66,18 @@
     td {
 
       text-align: center;
+      border: 1px solid var(--dark-grey);
+      border-top: none;
+      border-left: none;
+      border-right: none;
 
     }
 
     thead {
-      background-color: var(--blue);
       border: solid var(--dark);
+      border-top: none;
+      border-left: none;
+      border-right: none;
       width: 36px;
       height: 36px;
     }
@@ -92,11 +98,11 @@
       color: var(--dark);
     }
 
-    i:hover {
+    i.icon:hover {
       color: blue;
     }
 
-    i {
+    .icon {
       padding: 3px;
       font-size: 24px;
     }
@@ -228,7 +234,7 @@
                       <button class="btn btn-outline-primary btn-block" id="myBtn" type="button" data-toggle="modal" data-target="#modalroles"><i class='bx bx-add-to-queue' style="font-size: 24px ;"></i> Add</button>
                     </div>
                   </div>
-                  <table style="border:2px solid;" class="table-bordered">
+                  <table>
                     <thead>
                       <th>ID</th>
                       <th>Role Name</th>
@@ -240,8 +246,8 @@
                       <td>1</td>
                       <td>222222</td>
                       <td>@username</td>
-                      <td><i class="bx bx-pencil " data-toggle="modal" data-target="#editmodalroles"></i>
-                        <i class="bx bx-trash">
+                      <td><i class="bx bx-pencil icon " data-toggle="modal" data-target="#editmodalroles"></i>
+                        <i class="bx bx-trash icon">
                       </td>
                     </tbody>
                   </table>
@@ -257,7 +263,7 @@
                       <button class="btn btn-outline-primary btn-block" type="button" data-toggle="modal" data-target="#modaluser"><i class='bx bx-add-to-queue' style="font-size: 24px"></i> Add </button>
                     </div>
                   </div>
-                  <table style="border:2px solid;" class="table-bordered">
+                  <table>
                     <thead>
                       <th>ID</th>
                       <th>Username</th>
@@ -273,7 +279,7 @@
                       <td>admin</td>
                       <td>jojo@gmail.com</td>
                       <td>active</td>
-                      <td><i class="bx bx-pencil" data-toggle="modal" data-target="#editmodaluser"></i> <i class="bx bx-trash"></i></td>
+                      <td><i class="bx bx-pencil icon" data-toggle="modal" data-target="#editmodaluser"></i> <i class="bx bx-trash icon"></i></td>
                     </tbody>
                   </table>
                 </div>
@@ -288,7 +294,7 @@
                       <button class="btn btn-outline-primary btn-block" type="button" data-toggle="modal" data-target="#modalaccounting" style="float: left;"><i class='bx bx-add-to-queue'></i> Add </button>
                     </div>
                   </div>
-                  <table style="border:2px solid;" class="table-bordered">
+                  <table>
                     <thead>
                       <th>ID</th>
                       <th>name</th>
@@ -302,7 +308,7 @@
                       <td>222222</td>
                       <td>@username</td>
                       <td>10%</>
-                      <td><i class="bx bx-pencil" data-toggle="modal" data-target="#editmodalaccounting"> </i><i class="bx bx-trash"></i></td>
+                      <td><i class="bx bx-pencil icon" data-toggle="modal" data-target="#editmodalaccounting"> </i><i class="bx bx-trash icon"></i></td>
                     </tbody>
                   </table>
 

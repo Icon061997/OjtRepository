@@ -19,21 +19,52 @@
 </head>
 
 <style>
-  input,  select{
+  input,
+  select {
     border-radius: 5px;
     outline-color: royalblue;
     border-color: lightgrey;
   }
 
-  input:hover, textarea:hover, select:hover{
+  input:hover,
+  textarea:hover,
+  select:hover {
     background-color: whitesmoke;
     border: 2px solid royalblue;
   }
 
-  select{
+  select {
     height: 30px;
     outline-color: royalblue;
   }
+
+  td {
+
+    text-align: center;
+    border: 1px solid var(--dark-grey);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+
+  }
+
+  thead {
+    border: solid var(--dark);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    width: 36px;
+    height: 36px;
+  }
+
+  i.icon:hover {
+      color: blue;
+    }
+
+    .icon {
+      padding: 3px;
+      font-size: 24px;
+    }
 </style>
 
 <body>
@@ -114,7 +145,7 @@
         <i class='bx bxs-bell'></i>
         <span class="num">8</span>
       </a>
-     
+
       <div class="dropdown-nav">
         <button class="dropdown-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
           <img src="images/user.png" class="profile-pic" alt="">
@@ -125,11 +156,11 @@
         </button>
 
         <ul class="dropdown-menu dropdown-menu-lg-end">
-          <a  class=" dropdown-item" href="account.php"><i class='bx bxs-user'></i> My Account</a>
+          <a class=" dropdown-item" href="account.php"><i class='bx bxs-user'></i> My Account</a>
           <a class="dropdown-item" href="logout.php"><i class='bx bx-log-out bx-rotate-180'></i> Logout</a>
         </ul>
       </div>
-      
+
     </nav>
     </nav>
     <!-- NAVBAR -->
@@ -137,173 +168,173 @@
     <!-- MAIN -->
     <main>
 
-          <div class="table-data">
-            <div class="order">
-              <div class="col-12 my-2">
-                <div class="row my-2">
-                  <div class="head">
-                    <h3>Customers</h3>
-                  </div>
-                    <div class="col-sm-auto col-form-label">
-                      <button class="btn btn-outline-success" data-toggle="modal" data-target="#modaladdcostumer"><i class="bx bx-add"></i> Add Customers</button>
-                    </div>
-                  </div>
-                </div>
-                <hr>
-                <!-- *************************tablee *********************************************8-->
-                <table class="table-bordered">
-                  <thead style="text-align: center;">
-                    <th>ID</th>
-                    <th>NAME</th>
-                    <th>GENDER</th>
-                    <th>EMAIL</th>
-                    <th>TEL NO.</th>
-                    <th>MOBILE NO</th>
-                    <th>ACTION</th>
-
-                  </thead>
-                  <tbody style="text-align: center;">
-                    <tr>
-                      <td>011101</td>
-                      <td>JUAN DELACUS</td>
-                      <td>MALE</td>
-                      <td>@GMAILC.COM</td>
-                      <td>1992001-23</td>
-                      <td>09562623111</td>
-                      <td><i class="bx bx-pencil" data-toggle="modal" data-target="#modaleditcostumer"></i> <i class="bx bx-trash"></i></td>
-
-                    </tr>
-                  </tbody>
-                </table>
+      <div class="table-data">
+        <div class="order">
+          <div class="col-12 my-2">
+            <div class="row my-2">
+              <div class="head">
+                <h3>Customers</h3>
+              </div>
+              <div class="col-sm-auto col-form-label">
+                <button class="btn btn-outline-success" data-toggle="modal" data-target="#modaladdcostumer"><i class="bx bx-add"></i> Add Customers</button>
               </div>
             </div>
           </div>
+          <hr>
+          <!-- *************************tablee *********************************************8-->
+          <table>
+            <thead style="text-align: center;">
+              <th>ID</th>
+              <th>NAME</th>
+              <th>GENDER</th>
+              <th>EMAIL</th>
+              <th>TEL NO.</th>
+              <th>MOBILE NO</th>
+              <th>ACTION</th>
 
-          <!-- ******************************************************************** -->
-          <div class="modal fade modal-static" id="modaladdcostumer" tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="false">
-            <div class="modal-dialog modal-dialog-centered">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="header"> ADD COSTUMER </h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="border: none; background:none;">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <div class="container">
-                    <form action="" method="">
+            </thead>
+            <tbody style="text-align: center;">
+              <tr>
+                <td>011101</td>
+                <td>JUAN DELACUS</td>
+                <td>MALE</td>
+                <td>@GMAILC.COM</td>
+                <td>1992001-23</td>
+                <td>09562623111</td>
+                <td><i class="bx bx-pencil icon" data-toggle="modal" data-target="#modaleditcostumer"></i> <i class="bx bx-trash icon"></i></td>
+
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      </div>
+
+      <!-- ******************************************************************** -->
+      <div class="modal fade modal-static" id="modaladdcostumer" tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="header"> ADD COSTUMER </h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="border: none; background:none;">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="container">
+                <form action="" method="">
 
 
-                      <div class="form-group row mb-2">
-                        <div class="col-sm-5 col-form-label">NAME:</div>
-                        <input class="col-sm-7 pos-input" type="text">
-                      </div>
-
-                      <div class="form-group row">
-                        <div class="col-sm-5 col-form-label">Gender:</div>
-                        <select class=" col-sm-7 pos-input mb-3" aria-label=".form-select-lg example">
-                          <option value="1">SELECT</option>
-                          <option value="2">MALE</option>
-                          <option value="3">FEMALE</option>
-                        </select>
-                      </div>
-
-                      <div class="form-group row mb-2">
-                        <div class="col-sm-5 col-form-label">EMAIL:</div>
-                        <input class="col-sm-7 pos-input" type="text">
-                      </div>
-
-                      <div class="form-group row mb-2">
-                        <div class="col-sm-5 col-form-label">TEL NO.</div>
-                        <input class="col-sm-7 pos-input" type="number">
-                      </div>
-
-                      <div class="form-group row mb-2">
-                        <div class="col-sm-5 col-form-label">MOBILE NO:</div>
-                        <input class="col-sm-7 pos-input" type="number">
-                      </div>
-
-                      <div class="form-group row mb-2">
-                        <div class="col-sm-5 col-form-label">ADDRRESS:</div>
-                        <textarea class="col-sm-7" type="text"></textarea>
-                      </div>
-                    </form>
+                  <div class="form-group row mb-2">
+                    <div class="col-sm-5 col-form-label">NAME:</div>
+                    <input class="col-sm-7 pos-input" type="text">
                   </div>
-                </div>
 
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save</button>
-                </div>
+                  <div class="form-group row">
+                    <div class="col-sm-5 col-form-label">Gender:</div>
+                    <select class=" col-sm-7 pos-input mb-3" aria-label=".form-select-lg example">
+                      <option value="1">SELECT</option>
+                      <option value="2">MALE</option>
+                      <option value="3">FEMALE</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group row mb-2">
+                    <div class="col-sm-5 col-form-label">EMAIL:</div>
+                    <input class="col-sm-7 pos-input" type="text">
+                  </div>
+
+                  <div class="form-group row mb-2">
+                    <div class="col-sm-5 col-form-label">TEL NO.</div>
+                    <input class="col-sm-7 pos-input" type="number">
+                  </div>
+
+                  <div class="form-group row mb-2">
+                    <div class="col-sm-5 col-form-label">MOBILE NO:</div>
+                    <input class="col-sm-7 pos-input" type="number">
+                  </div>
+
+                  <div class="form-group row mb-2">
+                    <div class="col-sm-5 col-form-label">ADDRRESS:</div>
+                    <textarea class="col-sm-7" type="text"></textarea>
+                  </div>
+                </form>
               </div>
             </div>
-          </div>
-          <!-- for editing -->
-          <div class="modal fade modal-static" id="modaleditcostumer" tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="false">
-            <div class="modal-dialog modal-dialog-centered">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="header"> Edit Costumer</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="border: none; background:none;">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <div class="container">
-                    <form action="" method="">
 
-
-                      <div class="form-group row mb-2">
-                        <div class="col-sm-5 col-form-label">NAME:</div>
-                        <input class="col-sm-7 pos-input" type="text">
-                      </div>
-
-                      <div class="form-group row">
-                        <div class="col-sm-5 col-form-label">Role:</div>
-                        <select class=" col-sm-7 pos-input mb-3" aria-label=".form-select-lg example">
-                          <option value="1">SELECT</option>
-                          <option value="2">MALE</option>
-                          <option value="3">FEMALE</option>
-                        </select>
-                      </div>
-
-                      <div class="form-group row mb-2">
-                        <div class="col-sm-5 col-form-label">EMAIL:</div>
-                        <input class="col-sm-7 pos-input" type="text">
-                      </div>
-
-                      <div class="form-group row mb-2">
-                        <div class="col-sm-5 col-form-label">TEL NO.</div>
-                        <input class="col-sm-7 pos-input" type="number">
-                      </div>
-
-                      <div class="form-group row mb-2">
-                        <div class="col-sm-5 col-form-label">MOBILE NO:</div>
-                        <input class="col-sm-7 pos-input" type="number">
-                      </div>
-
-                      <div class="form-group row mb-2">
-                        <div class="col-sm-5 col-form-label">ADDRRESS:</div>
-                        <textarea class="col-sm-7" type="text"></textarea>
-                      </div>
-                    </form>
-                  </div>
-                </div>
-
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save</button>
-                </div>
-              </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save</button>
             </div>
           </div>
-        </main>
-      </section>
+        </div>
+      </div>
+      <!-- for editing -->
+      <div class="modal fade modal-static" id="modaleditcostumer" tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="header"> Edit Costumer</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="border: none; background:none;">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="container">
+                <form action="" method="">
 
 
+                  <div class="form-group row mb-2">
+                    <div class="col-sm-5 col-form-label">NAME:</div>
+                    <input class="col-sm-7 pos-input" type="text">
+                  </div>
 
+                  <div class="form-group row">
+                    <div class="col-sm-5 col-form-label">Role:</div>
+                    <select class=" col-sm-7 pos-input mb-3" aria-label=".form-select-lg example">
+                      <option value="1">SELECT</option>
+                      <option value="2">MALE</option>
+                      <option value="3">FEMALE</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group row mb-2">
+                    <div class="col-sm-5 col-form-label">EMAIL:</div>
+                    <input class="col-sm-7 pos-input" type="text">
+                  </div>
+
+                  <div class="form-group row mb-2">
+                    <div class="col-sm-5 col-form-label">TEL NO.</div>
+                    <input class="col-sm-7 pos-input" type="number">
+                  </div>
+
+                  <div class="form-group row mb-2">
+                    <div class="col-sm-5 col-form-label">MOBILE NO:</div>
+                    <input class="col-sm-7 pos-input" type="number">
+                  </div>
+
+                  <div class="form-group row mb-2">
+                    <div class="col-sm-5 col-form-label">ADDRRESS:</div>
+                    <textarea class="col-sm-7" type="text"></textarea>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
-    <!-- MAIN -->
+  </section>
+
+
+
+  </main>
+  <!-- MAIN -->
   </section>
   <!-- CONTENT -->
 
