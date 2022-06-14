@@ -17,15 +17,39 @@
   <title>Reports</title>
 </head>
 <style>
-  input:hover, input:focus{
-      border: 2px solid royalblue;
+  input:hover,
+  input:focus {
+    border: 2px solid royalblue;
 
   }
-  
-  select:hover{
+
+  select:hover {
 
     border: 2px solid royalblue;
 
+  }
+
+  td {
+
+   
+    border: 1px solid var(--dark-grey);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+
+  }
+
+  thead {
+    border: solid var(--dark);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    width: 36px;
+    height: 36px;
+  }
+  
+  .myDiv{
+    border: none;
   }
 </style>
 
@@ -117,7 +141,7 @@
         </button>
 
         <ul class="dropdown-menu dropdown-menu-lg-end">
-          <a  class=" dropdown-item" href="account.php"><i class='bx bxs-user'></i> My Account</a>
+          <a class=" dropdown-item" href="account.php"><i class='bx bxs-user'></i> My Account</a>
           <a class="dropdown-item" href="logout.php"><i class='bx bx-log-out bx-rotate-180'></i> Logout</a>
         </ul>
       </div>
@@ -132,77 +156,75 @@
 
       <div class="table-data">
         <div class="order">
-
-
           <div class="col-12 my-2">
-
             <div class="row my-2">
               <div class="head">
                 <h3>REPORTS</h3>
-                
+
               </div>
               <div class="row">
-              <div class="col-md-auto my-2">
-                <form class="form-group row">
-                  <div class="col-sm-auto col-form-label">
-                    View by:
-                  </div>
+                <div class="col-md-auto my-2">
+                  <form class="form-group row">
+                    <div class="col-sm-auto col-form-label">
+                      View by:
+                    </div>
 
-                  <div class="col-sm-auto">
-                    <select class="form-select mb-3" aria-label=".form-select-lg example">
-                      <option value="1">Items</option>
-                      <option value="2">Categories</option>
-                    </select>
-                  </div>
-                </form>
-
-              </div>
-            
-
-              <div class="col-sm-auto my-2">
-                <div class="form-group row">
-                  <div class="col-sm-auto col-form-label">
-                    Range:
-                  </div>
-                  <div class="col-sm-auto">
-                    <input type="date" class="form-control btn-outline-primary">
-                  </div>
-
-                  <div class="col-sm-auto col-form-label">
-                    to
-                  </div>
-
-                  <div class="col-sm-auto">
-                    <input type="date" class="form-control btn-outline-primary">
-                  </div>
+                    <div class="col-sm-auto">
+                      <select class="form-select mb-3" id="myselection">
+                        <option value="items">Items</option>
+                        <option value="categories">Categories</option>
+                      </select>
+                    </div>
+                  </form>
 
                 </div>
 
-              </div>
-              <div class="col-sm-auto my-2">
-                <div class="dropdown">
-                  <button class="btn btn-outline-success dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class='bx bx-printer'></i> Export
-                  </button>
-                  <div class="dropdown-menu">
-                  <button class="dropdown-item" type="button"><i class="icon bi bi-filetype-csv"></i> CSV</button>
-                  <button class="dropdown-item" type="button"><i class="icon bi bi-filetype-pdf"></i> PDF</button>
-                 
+
+                <div class="col-sm-auto my-2">
+                  <div class="form-group row">
+                    <div class="col-sm-auto col-form-label">
+                      Range:
+                    </div>
+                    <div class="col-sm-auto">
+                      <input type="date" class="form-control btn-outline-primary">
+                    </div>
+
+                    <div class="col-sm-auto col-form-label">
+                      to
+                    </div>
+
+                    <div class="col-sm-auto">
+                      <input type="date" class="form-control btn-outline-primary">
+                    </div>
+
+                  </div>
+
+                </div>
+                <div class="col-sm-auto my-2">
+                  <div class="dropdown">
+                    <button class="btn btn-outline-success dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <i class='bx bx-printer'></i> Export
+                    </button>
+                    <div class="dropdown-menu">
+                      <button class="dropdown-item" type="button"><i class="icon bi bi-filetype-csv"></i> CSV</button>
+                      <button class="dropdown-item" type="button"><i class="icon bi bi-filetype-pdf"></i> PDF</button>
+
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <div class="col-sm-auto my-2">
-                <button class="btn btn-outline-primary btn-block" type="button"><i class='bx bx-printer'></i> print</button>
-              </div>
+                <div class="col-sm-auto my-2">
+                  <button class="btn btn-outline-primary btn-block" type="button"><i class='bx bx-printer'></i> print</button>
+                </div>
               </div>
 
 
 
             </div>
             <hr>
-            <table class="table-bordered">
-              <thead style="text-align: center; background-color:lightgrey; border:1px solid grey; " >
+            <div class="myDiv" id="showitems">
+            <table>
+              <thead>
                 <th>Name</th>
                 <th>No. sold</th>
                 <th>Discount</th>
@@ -249,28 +271,73 @@
                 </tr>
               </tbody>
             </table>
+            </div>
 
+            <div class="myDiv" id="showcategories" style="display: none;">
+            <table>
+              <thead style="text-align: center;">
+                <th>Name</th>
+                <th>No. sold</th>
+                <th>Total</th>
+                <th>No.Refund</th>
+                <th>Total</th>
+                <th>Balance</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Electronics</td>
+                  <td>22</td>
+                  <td>200</td>
+                  <td>30</td>
+                  <td>0</td>
+                  <td>300</td>
+                </tr>
 
+                <tr>
+                <td>Health</td>
+                  <td>22</td>
+                  <td>200</td>
+                  <td>30</td>
+                  <td>0</td>
+                  <td>300</td>
+                </tr>
+
+                <tr>
+                <td>Food</td>
+                  <td>22</td>
+                  <td>200</td>
+                  <td>30</td>
+                  <td>0</td>
+                  <td>300</td>
+                </tr>
+              </tbody>
+            </table>
+            </div>
           </div>
-
-
         </div>
-
-
       </div>
       </div>
-      
 
 
 
 
 
-      </main>
-      <!-- MAIN -->
+
+
+    </main>
+    <!-- MAIN -->
   </section>
   <!-- CONTENT -->
+  <script>
+    $(document).ready(function() {
+      $('#myselection').on('change', function() {
+        var demovalue = $(this).val();
+        $("div.myDiv").hide();
+        $("#show" + demovalue).show();
+      });
+    });
+  </script>
 
-  
   <script>
     function myFunction() {
       document.getElementById("myDropdown").classList.toggle("show");

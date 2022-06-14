@@ -37,6 +37,25 @@ session_start();
       background: transparent;
       color: transparent;
     }
+
+    td {
+
+      text-align: center;
+      border: 1px solid var(--dark-grey);
+      border-top: none;
+      border-left: none;
+      border-right: none;
+
+    }
+
+    thead {
+      border: solid var(--dark);
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      width: 36px;
+      height: 36px;
+    }
   </style>
 </head>
 
@@ -131,7 +150,7 @@ session_start();
         </button>
 
         <ul class="dropdown-menu dropdown-menu-lg-end">
-          <a  class=" dropdown-item" href="account.php"><i class='bx bxs-user'></i> My Account</a>
+          <a class=" dropdown-item" href="account.php"><i class='bx bxs-user'></i> My Account</a>
           <a class="dropdown-item" href="logout.php"><i class='bx bx-log-out bx-rotate-180'></i> Logout</a>
         </ul>
       </div>

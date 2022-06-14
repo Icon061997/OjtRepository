@@ -96,15 +96,22 @@
     td {
 
         text-align: center;
+        border: 1px solid var(--dark-grey);
+        border-top: none;
+        border-left: none;
+        border-right: none;
 
     }
 
     thead {
-        background-color: var(--blue);
         border: solid var(--dark);
+        border-top: none;
+        border-left: none;
+        border-right: none;
         width: 36px;
         height: 36px;
     }
+
 
     h5 {
         color: var(--dark)
@@ -327,7 +334,7 @@
                             <input type="radio" id="tabpayment" name="mytabs" style="display:none;">
                             <label for="tabpayment" class="labels">Payments</label>
                             <div class="tab">
-                            <div class="container">
+                                <div class="container">
                                     <div class="head" style="margin-bottom: 0;">
                                         <h3>Payments</h3>
                                     </div>
@@ -338,7 +345,7 @@
                                                     <th>Method</th>
                                                     <th>Amount</th>
                                                     <th>Date</th>
-                                                    
+
                                                 </tr>
                                             </thead>
                                             <tbody>
