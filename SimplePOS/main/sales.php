@@ -107,10 +107,18 @@
       </form>
       <input type="checkbox" id="switch-mode" hidden>
       <label for="switch-mode" class="switch-mode"></label>
-      <a href="#" class="notification">
+      <div class="dropdown">
+        <button class="notification" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border: none; background: none;">
         <i class='bx bxs-bell'></i>
         <span class="num">8</span>
-      </a>
+        </button>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
+          <a class="dropdown-item" href=""><b>Notification: </b> New added Costumer</button>
+          <a class="dropdown-item" href=""><b>Notification: </b> New Item added</a>
+          <a class="dropdown-item" href=""><b>Notification: </b> new Item added</a>
+        </div>
+      </div>
+
       <div class="dropdown-nav">
         <button class="dropdown-btn" onclick="myFunction()">
           <img src="images/user.png" class="profile-pic" alt="">
