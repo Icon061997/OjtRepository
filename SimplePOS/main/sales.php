@@ -310,32 +310,6 @@
   </script>
 
 
-<script>
-    function downloadPDF() {
-        var sTable = document.getElementById("pdf-download").innerHTML;
-
-        var style = "<style>";
-        style = style + "table {width: 100%;font: 17px Calibri;}";
-        style = style + "table, th, td {border: solid 1px #DDD; border-collapse: collapse;";
-        style = style + "padding: 2px 3px;text-align: center;}";
-        style = style + "</style>";
-
-        var win = window.open('', '', 'height=700,width=700');
-
-        win.document.write('<html><head>');
-        win.document.write('<title>Sales</title>'); 
-        win.document.write(style);        
-        win.document.write('</head>');
-        win.document.write('<body>');
-        win.document.write(sTable);       
-        win.document.write('</body></html>');
-
-        win.document.close(); 	
-
-        win.print();   
-    }
-</script>
-
   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
   <script src="js/script.js"></script>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
