@@ -46,7 +46,7 @@
     }
 
     .mytabs input[type="radio"]:checked+.labels {
-      border: 5px solid lightblue;
+      border: 5px solid royalblue;
       border-top: none;
       border-left: none;
       border-right: none;
@@ -300,6 +300,8 @@
                   <div class="row">
                     <div class="head">
                       <h3>tax rules</h3>
+                      </div>
+                    <div class="head" style="margin-top: 0;">
                       <button class="btn btn-outline-primary btn-block" type="button" data-toggle="modal" data-target="#modalaccounting" style="float: left;"><i class='bx bx-add-to-queue'></i> Add </button>
                     </div>
                   </div>
