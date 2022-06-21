@@ -17,8 +17,7 @@
   <title>Reports</title>
 </head>
 <style>
-  input:hover,
-  input:focus {
+  input:hover{
     border: 2px solid royalblue;
 
   }
@@ -31,7 +30,7 @@
 
   td {
 
-   
+
     border: 1px solid var(--dark-grey);
     border-top: none;
     border-left: none;
@@ -47,13 +46,8 @@
     width: 36px;
     height: 36px;
   }
-  
-  .myselectable{
-    border: none;
-  }
 
-  .myDiv{
-
+  .myDiv {
     border: none;
   }
 </style>
@@ -211,8 +205,8 @@
                       <i class='bx bx-printer'></i> Export
                     </button>
                     <div class="dropdown-menu">
-                      <button class="dropdown-item" type="button"><i class="icon bi bi-filetype-csv"></i> CSV</button>
-                      <button class="dropdown-item" type="button"><i class="icon bi bi-filetype-pdf"></i> PDF</button>
+                      <button class="dropdown-item" type="button" id="cvs-download"><i class="icon bi bi-filetype-csv"></i> CSV</button>
+                      <button class="dropdown-item" type="button" id="pdf-download" onclick="createPDF()"><i class="icon bi bi-filetype-pdf"></i> PDF</button>
 
                     </div>
                   </div>
@@ -227,96 +221,96 @@
 
             </div>
             <hr>
-            <div class="mytableselect" id="viewitems">
-            <table>
-              <thead>
-                <th>Name</th>
-                <th>No. sold</th>
-                <th>Discount</th>
-                <th>tax</th>
-                <th>total</th>
-                <th>No. Refunded</th>
-                <th>Total</th>
-                <th>Balance</th>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Face Mask</td>
-                  <td>22</td>
-                  <td>0.00</td>
-                  <td>1.12</td>
-                  <td>200</td>
-                  <td>200</td>
-                  <td>1500</td>
-                  <td>200</td>
-                </tr>
+            <div class="myDiv" id="showitems">
+              <table>
+                <thead>
+                  <th>Name</th>
+                  <th>No. sold</th>
+                  <th>Discount</th>
+                  <th>tax</th>
+                  <th>total</th>
+                  <th>No. Refunded</th>
+                  <th>Total</th>
+                  <th>Balance</th>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Face Mask</td>
+                    <td>22</td>
+                    <td>0.00</td>
+                    <td>1.12</td>
+                    <td>200</td>
+                    <td>200</td>
+                    <td>1500</td>
+                    <td>200</td>
+                  </tr>
 
-                <tr>
-                  <td>Face Mask</td>
-                  <td>22</td>
-                  <td>0.00</td>
-                  <td>1.12</td>
-                  <td>200</td>
-                  <td>200</td>
-                  <td>1500</td>
-                  <td>200</td>
-                </tr>
+                  <tr>
+                    <td>Face Mask</td>
+                    <td>22</td>
+                    <td>0.00</td>
+                    <td>1.12</td>
+                    <td>200</td>
+                    <td>200</td>
+                    <td>1500</td>
+                    <td>200</td>
+                  </tr>
 
-                <tr>
-                  <td>Face Mask</td>
-                  <td>22</td>
-                  <td>0.00</td>
-                  <td>1.12</td>
-                  <td>200</td>
-                  <td>200</td>
-                  <td>1500</td>
-                  <td>200</td>
+                  <tr>
+                    <td>Face Mask</td>
+                    <td>22</td>
+                    <td>0.00</td>
+                    <td>1.12</td>
+                    <td>200</td>
+                    <td>200</td>
+                    <td>1500</td>
+                    <td>200</td>
 
 
-                </tr>
-              </tbody>
-            </table>
+                  </tr>
+                </tbody>
+              </table>
             </div>
 
-            <div class="mytableselect" id="viewcategories" style="display: none;">
-            <table>
-              <thead style="text-align: center;">
-                <th>Name</th>
-                <th>No. sold</th>
-                <th>Total</th>
-                <th>No.Refund</th>
-                <th>Total</th>
-                <th>Balance</th>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Electronics</td>
-                  <td>22</td>
-                  <td>200</td>
-                  <td>30</td>
-                  <td>0</td>
-                  <td>300</td>
-                </tr>
+            <div class="myDiv" id="showcategories" style="display: none;">
+              <table>
+                <thead style="text-align: center;">
+                  <th>Name</th>
+                  <th>No. sold</th>
+                  <th>Total</th>
+                  <th>No.Refund</th>
+                  <th>Total</th>
+                  <th>Balance</th>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Electronics</td>
+                    <td>22</td>
+                    <td>200</td>
+                    <td>30</td>
+                    <td>0</td>
+                    <td>300</td>
+                  </tr>
 
-                <tr>
-                <td>Health</td>
-                  <td>22</td>
-                  <td>200</td>
-                  <td>30</td>
-                  <td>0</td>
-                  <td>300</td>
-                </tr>
+                  <tr>
+                    <td>Health</td>
+                    <td>22</td>
+                    <td>200</td>
+                    <td>30</td>
+                    <td>0</td>
+                    <td>300</td>
+                  </tr>
 
-                <tr>
-                <td>Food</td>
-                  <td>22</td>
-                  <td>200</td>
-                  <td>30</td>
-                  <td>0</td>
-                  <td>300</td>
-                </tr>
-              </tbody>
-            </table>
+                  <tr>
+                    <td>Food</td>
+                    <td>22</td>
+                    <td>200</td>
+                    <td>30</td>
+                    <td>0</td>
+                    <td>300</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
@@ -337,31 +331,89 @@
     $(document).ready(function() {
       $('#myselection').on('change', function() {
         var demovalue = $(this).val();
-        $("div.mytableselect").hide();
-        $("#view" + demovalue).show();
+        $("div.myDiv").hide();
+        $("#show" + demovalue).show();
       });
     });
   </script>
 
   <script>
-    function myFunction() {
-      document.getElementById("myDropdown").classList.toggle("show");
-    }
+    function htmlToCSV(html, filename) {
+      var data = [];
+      var rows = document.querySelectorAll("table tr");
 
-    // Close the dropdown menu if the user clicks outside of it
-    window.onclick = function(event) {
-      if (!event.target.matches('.dropdown-btn')) {
-        var dropdowns = document.getElementsByClassName("dropdown-content");
-        var i;
-        for (i = 0; i < dropdowns.length; i++) {
-          var openDropdown = dropdowns[i];
-          if (openDropdown.classList.contains('show')) {
-            openDropdown.classList.remove('show');
-          }
+      for (var i = 0; i < rows.length; i++) {
+        var row = [],
+          cols = rows[i].querySelectorAll("td, th");
+
+        for (var j = 0; j < cols.length; j++) {
+          row.push(cols[j].innerText);
         }
+
+        data.push(row.join(","));
       }
+
+      downloadCSVFile(data.join("\n"), filename);
     }
   </script>
+
+
+  <script>
+    function downloadCSVFile(csv, filename) {
+      var csv_file, download_link;
+
+      csv_file = new Blob([csv], {
+        type: "text/csv"
+      });
+
+      download_link = document.createElement("a");
+
+      download_link.download = filename;
+
+      download_link.href = window.URL.createObjectURL(csv_file);
+
+      download_link.style.display = "none";
+
+      document.body.appendChild(download_link);
+
+      download_link.click();
+    }
+  </script>
+
+  <script>
+    document.getElementById("cvs-download").addEventListener("click", function() {
+      var html = document.querySelector("table").outerHTML;
+      htmlToCSV(html, "pos-reports.csv");
+    });
+  </script>
+
+
+<script>
+    function createPDF() {
+        var sTable = document.getElementsByClassName('myDiv').innerHTML;
+
+        var style = "<style>";
+        style = style + "table {width: 100%;font: 17px Calibri;}";
+        style = style + "table, th, td {border: solid 1px #DDD; border-collapse: collapse;";
+        style = style + "padding: 2px 3px;text-align: center;}";
+        style = style + "</style>";
+
+        // CREATE A WINDOW OBJECT.
+        var win = window.open('', '', 'height=700,width=700');
+
+        win.document.write('<html><head>');
+        win.document.write('<title>Reports</title>');   // <title> FOR PDF HEADER.
+        win.document.write(style);          // ADD STYLE INSIDE THE HEAD TAG.
+        win.document.write('</head>');
+        win.document.write('<body>');
+        win.document.write(sTable);         // THE TABLE CONTENTS INSIDE THE BODY TAG.
+        win.document.write('</body></html>');
+
+        win.document.close(); 	// CLOSE THE CURRENT WINDOW.
+
+        win.print();    // PRINT THE CONTENTS.
+    }
+</script>
 
   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
   <script src="js/script.js"></script>
