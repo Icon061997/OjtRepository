@@ -23,14 +23,23 @@
     font-weight: 200;
   }
 
-  thead {
-      border: solid var(--dark);
-      width: 36px;
-      height: 36px;
-    }
+  td {
 
-  table{
-    border: 1px black;
+    text-align: center;
+    border: 1px solid var(--dark-grey);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+
+  }
+
+  thead {
+    border: solid var(--dark);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    width: 36px;
+    height: 36px;
   }
 </style>
 

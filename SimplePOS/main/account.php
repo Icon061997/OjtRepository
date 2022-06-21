@@ -23,7 +23,7 @@
             width: 100px;
             height: 50px;
             display: none;
-            
+
         }
 
         .edit {
@@ -115,21 +115,21 @@
                 <span class="num">8</span>
             </a>
             <div class="dropdown-nav">
-        <button class="dropdown-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-          <img src="images/user.png" class="profile-pic" alt="">
-          <div class="username admin">
-            <b>Jimuel Leal</b><br> Admin
-          </div>
-          <i class='bx bx-chevron-down' style="font-size: 24px;"></i>
-        </button>
+                <button class="dropdown-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="images/user.png" class="profile-pic" alt="">
+                    <div class="username admin">
+                        <b>Jimuel Leal</b><br> Admin
+                    </div>
+                    <i class='bx bx-chevron-down' style="font-size: 24px;"></i>
+                </button>
 
-        <ul class="dropdown-menu dropdown-menu-lg-end">
-          <a  class=" dropdown-item" href="account.php"><i class='bx bxs-user'></i> My Account</a>
-          <a class="dropdown-item" href="logout.php"><i class='bx bx-log-out bx-rotate-180'></i> Logout</a>
-        </ul>
-      </div>
-    </nav>
-    <!-- NAVBAR -->
+                <ul class="dropdown-menu dropdown-menu-lg-end">
+                    <a class=" dropdown-item" href="account.php"><i class='bx bxs-user'></i> My Account</a>
+                    <a class="dropdown-item" href="logout.php"><i class='bx bx-log-out bx-rotate-180'></i> Logout</a>
+                </ul>
+            </div>
+        </nav>
+        <!-- NAVBAR -->
         </nav>
         <!-- NAVBAR -->
 
