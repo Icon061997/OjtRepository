@@ -387,34 +387,6 @@
     });
   </script>
 
-
-<script>
-    function createPDF() {
-        var sTable = document.getElementsByClassName('myDiv').innerHTML;
-
-        var style = "<style>";
-        style = style + "table {width: 100%;font: 17px Calibri;}";
-        style = style + "table, th, td {border: solid 1px #DDD; border-collapse: collapse;";
-        style = style + "padding: 2px 3px;text-align: center;}";
-        style = style + "</style>";
-
-        // CREATE A WINDOW OBJECT.
-        var win = window.open('', '', 'height=700,width=700');
-
-        win.document.write('<html><head>');
-        win.document.write('<title>Reports</title>');   // <title> FOR PDF HEADER.
-        win.document.write(style);          // ADD STYLE INSIDE THE HEAD TAG.
-        win.document.write('</head>');
-        win.document.write('<body>');
-        win.document.write(sTable);         // THE TABLE CONTENTS INSIDE THE BODY TAG.
-        win.document.write('</body></html>');
-
-        win.document.close(); 	// CLOSE THE CURRENT WINDOW.
-
-        win.print();    // PRINT THE CONTENTS.
-    }
-</script>
-
   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
   <script src="js/script.js"></script>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
