@@ -51,6 +51,11 @@
   .myselectable{
     border: none;
   }
+
+  .myDiv{
+
+    border: none;
+  }
 </style>
 
 <body>
