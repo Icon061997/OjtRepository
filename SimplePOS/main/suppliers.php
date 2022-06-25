@@ -41,7 +41,6 @@ session_start();
 
   td {
 
-    text-align: center;
     border: 1px solid var(--dark-grey);
     border-top: none;
     border-left: none;
@@ -59,70 +58,70 @@ session_start();
   }
 
   i.icon:hover {
-      color: blue;
-    }
+    color: blue;
+  }
 
-    .icon {
-      padding: 3px;
-      font-size: 24px;
-    }
+  .icon {
+    padding: 3px;
+    font-size: 24px;
+  }
 </style>
 
 <body>
   <!-- SIDEBAR -->
   <section id="sidebar">
     <a href="dashboard.php" class="brand">
-      <i class='bx bxl-shopify'></i>
-      <span class="text">EzShop</span>
+    <i class='bx bxl-shopify' style="font-size: 40px;"></i>
+      <span class="text" style="font-family: var(--poppins);">EzShop</span>
     </a>
     <ul class="side-menu top">
       <li>
         <a href="dashboard.php">
           <i class='bx bxs-dashboard'></i>
-          <span class="text">Dashboard</span>
+          <span class="text" style="font-family: var(--poppins);">Dashboard</span>
         </a>
       </li>
       <li>
         <a href="sales.php">
           <i class='bx bx-coin-stack'></i>
-          <span class="text">Sales</span>
+          <span class="text" style="font-family: var(--poppins);">Sales</span>
         </a>
       </li>
       <li>
         <a href="reports.php">
           <i class='bx bxs-report'></i>
-          <span class="text">Reports</span>
+          <span class="text" style="font-family: var(--poppins);">Reports</span>
         </a>
       </li>
       <li>
         <a href="items.php">
           <i class='bx bx-package'></i>
-          <span class="text">Items</span>
+          <span class="text" style="font-family: var(--poppins);">Items</span>
         </a>
       </li>
       <li>
         <a href="categories.php">
           <i class='bx bx-category-alt'></i>
-          <span class="text">Categories</span>
+          <span class="text" style="font-family: var(--poppins);">Categories</span>
         </a>
       </li>
       <li>
         <a href="customers.php">
           <i class='bx bx-face'></i>
-          <span class="text">Customers</span>
+          <span class="text" style="font-family: var(--poppins);">Customers</span>
         </a>
       </li>
 
       <li class="active">
         <a href="suppliers.php  ">
           <i class='bx bxs-truck'></i>
-          <span class="text">Supplier</span>
+          <span class="text" style="font-family: var(--poppins);">Supplier</span>
         </a>
       </li>
       <li>
         <a href="settings.php">
           <i class='bx bx-cog'></i>
-          <span class="text">Settings</span>
+          <span class="text" style="font-family: var(--poppins);">Settings</span>
         </a>
       </li>
     </ul>
@@ -144,29 +143,34 @@ session_start();
       <label for="switch-mode" class="switch-mode"></label>
       <div class="dropdown">
         <button class="notification" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border: none; background: none;">
-        <i class='bx bxs-bell'></i>
-        <span class="num">8</span>
+          <i class='bx bxs-bell'></i>
+          <span class="num">8</span>
         </button>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
           <a class="dropdown-item" href=""><b>Notification: </b> New added Costumer</button>
-          <a class="dropdown-item" href=""><b>Notification: </b> New Item added</a>
-          <a class="dropdown-item" href=""><b>Notification: </b> new Item added</a>
+            <a class="dropdown-item" href=""><b>Notification: </b> New Item added</a>
+            <a class="dropdown-item" href=""><b>Notification: </b> new Item added</a>
         </div>
       </div>
 
-      <div class="dropdown-nav">
-        <button class="dropdown-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-          <img src="images/user.png" class="profile-pic" alt="">
-          <div class="username admin">
-            <b>Jimuel Leal</b><br> Admin
-          </div>
-          <i class='bx bx-chevron-down' style="font-size: 24px;"></i>
-        </button>
 
-        <ul class="dropdown-menu dropdown-menu-lg-end">
-          <a class=" dropdown-item" href="account.php"><i class='bx bxs-user'></i> My Account</a>
-          <a class="dropdown-item" href="logout.php"><i class='bx bx-log-out bx-rotate-180'></i> Logout</a>
-        </ul>
+      <div class="dropdown-nav">
+        <div class="dropdown">
+          <button class="dropdown-btn" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <img src="images/user.png" class="profile-pic" alt="">
+            <div class="username admin">
+              <b>Jimuel Leal</b><br> Admin
+            </div>
+            <i class='bx bx-chevron-down' style="font-size: 24px;"></i>
+          </button>
+
+
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2" style="min-width: 140px;">
+            <a class=" dropdown-item" href="account.php"><i class='bx bxs-user'></i> My Account</a>
+            <a class="dropdown-item" href="logout.php"><i class='bx bx-log-out bx-rotate-180'></i> Logout</a>
+            </ul>
+          </div>
+        </div>
       </div>
     </nav>
     <!-- NAVBAR -->
@@ -184,21 +188,21 @@ session_start();
                 <h3>SUPPLIER</h3>
               </div>
               <div class="col-sm-auto col-form-label">
-                <button class="btn btn-outline-success" data-toggle="modal" data-target="#modaladdsupplier"><i class="bx bx-add"></i> Add Supplier</button>
+                <button class="btn btn-outline-success" data-toggle="modal" data-target="#modaladdsupplier"><i class="bx bx-add"  style="font-size: 16px ;"></i> Add Supplier</button>
               </div>
             </div>
           </div>
           <hr>
           <!-- *************************tablee *********************************************8-->
           <table>
-            <thead style="text-align: center;">
+            <thead >
               <th>ID</th>
-              <th>NAME</th>
-              <th>NO. OF ITEMS</th>
-              <th>ACTION</th>
+              <th>Name</th>
+              <th>No. of Items</th>
+              <th>Action</th>
 
             </thead>
-            <tbody style="text-align: center;">
+            <tbody >
               <tr>
                 <td>011101</td>
                 <td>JUAN DELACUS</td>

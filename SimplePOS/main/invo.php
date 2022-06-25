@@ -19,16 +19,18 @@
 
 <style>
     .sim-button {
-        height: 30px;
+        height: 38px;
         width: fit-content;
         font-size: 14px;
-        padding: 5px;
+        padding-top: 8px;
         float: left;
+        color: white;
+
 
     }
 
     .sim-button-green {
-        height: 30px;
+        height: 38px;
         width: fit-content;
         font-size: 14px;
         padding: 5px;
@@ -95,7 +97,6 @@
 
     td {
 
-        text-align: center;
         border: 1px solid var(--dark-grey);
         border-top: none;
         border-left: none;
@@ -137,57 +138,57 @@
     <!-- SIDEBAR -->
     <section id="sidebar">
         <a href="dashboard.php" class="brand">
-            <i class='bx bxl-shopify'></i>
-            <span class="text">EzShop</span>
+            <i class='bx bxl-shopify' style="font-size: 40px;"></i>
+            <span class="text" style="font-family: var(--poppins);">EzShop</span>
         </a>
         <ul class="side-menu top" onclick="myfunction(event)">
             <li>
                 <a href="dashboard.php">
                     <i class='bx bxs-dashboard'></i>
-                    <span class="text">Dashboard</span>
+                    <span class="text" style="font-family: var(--poppins);">Dashboard</span>
                 </a>
             </li>
             <li class="active">
                 <a href="sales.php">
                     <i class='bx bx-coin-stack'></i>
-                    <span class="text">Sales</span>
+                    <span class="text" style="font-family: var(--poppins);">Sales</span>
                 </a>
             </li>
             <li>
                 <a href="reports.php">
                     <i class='bx bxs-report'></i>
-                    <span class="text">Reports</span>
+                    <span class="text" style="font-family: var(--poppins);">Reports</span>
                 </a>
             </li>
             <li>
                 <a href="items.php">
                     <i class='bx bx-package'></i>
-                    <span class="text">Items</span>
+                    <span class="text" style="font-family: var(--poppins);">Items</span>
                 </a>
             </li>
             <li>
                 <a href="categories.php">
                     <i class='bx bx-category-alt'></i>
-                    <span class="text">Categories</span>
+                    <span class="text" style="font-family: var(--poppins);">Categories</span>
                 </a>
             </li>
             <li>
                 <a href="customers.php">
                     <i class='bx bx-face'></i>
-                    <span class="text">Customers</span>
+                    <span class="text" style="font-family: var(--poppins);">Customers</span>
                 </a>
             </li>
 
             <li>
                 <a href="suppliers.php  ">
                     <i class='bx bxs-truck'></i>
-                    <span class="text">Supplier</span>
+                    <span class="text" style="font-family: var(--poppins);">Supplier</span>
                 </a>
             </li>
             <li>
                 <a href="settings.php">
                     <i class='bx bx-cog'></i>
-                    <span class="text">Settings</span>
+                    <span class="text" style="font-family: var(--poppins);">Settings</span>
                 </a>
             </li>
         </ul>
@@ -236,42 +237,43 @@
                 <div class="order">
                     <div class="col-12">
                         <div class="head" style="margin-bottom: 0;">
-                            <h3>Transaction invoice</h3>
+                            <h3>Transaction Invoice</h3>
                         </div>
 
                         <div class="row my-4" style="margin-bottom: 0 ;">
                             <div class="col-12 ">
-                                <a href="sales.php" class="sim-button btn btn-secondary m-2 mr-4"><i class="bi bi-chevron-left"></i> back </a>
+                                <a href="sales.php" class="sim-button btn btn-secondary m-2 mr-4" role="button"><i class="bi bi-chevron-left"></i>Back </a>
                                 <button class="sim-button btn btn-success mt-2 mr-4"><i class="bi bi-receipt"></i> Generate Invoice </button>
                                 <button class="sim-button-green btn m-2 mr-4"><i class="bi bi-envelope-fill"></i> Email Envoice</button>
                             </div>
                             <hr>
+                            
                             <div class="col-6" style="margin-top: 0 ;">
                                 <div class="formgroup row ">
                                     <div class="col-md-3  col-form-label">Status:</div>
-                                    <input class="col-sm-7 invoice-input" type="text" disabled>
+                                    <input class="col-sm-7 invoice-input" type="text" value="<?php echo $status; ?>" disabled>
                                 </div>
                                 <div class="formgroup row ">
                                     <div class="col-md-3  col-form-label">ID:</div>
-                                    <input class="col-sm-7 invoice-input" type="text" disabled>
+                                    <input class="col-sm-7 invoice-input" type="text" value="<?php echo $id; ?>" disabled>
                                 </div>
                                 <div class="formgroup row">
                                     <div class="col-md-3  col-form-label">Referrence No:</div>
-                                    <input class="col-sm-7 invoice-input" type="text" value="" disabled>
+                                    <input class="col-sm-7 invoice-input" type="text" value="<?php echo $referrenceno; ?>" disabled>
                                 </div>
                             </div>
                             <div class="col-6 my-2">
                                 <div class="formgroup row ">
                                     <div class="col-md-3  col-form-label">User:</div>
-                                    <input class="col-sm-7 invoice-input" type="text" disabled>
+                                    <input class="col-sm-7 invoice-input" type="text" value="<?php echo $user; ?>" disabled>
                                 </div>
                                 <div class="formgroup row ">
                                     <div class="col-md-3  col-form-label">Date & Time:</div>
-                                    <input class="col-sm-7 invoice-input" type="text" disabled>
+                                    <input class="col-sm-7 invoice-input" type="text" value="<?php echo $date_time; ?>" disabled>
                                 </div>
                                 <div class="formgroup row">
                                     <div class="col-md-3  col-form-label">Total</div>
-                                    <input class="col-sm-7 invoice-input" type="text" disabled>
+                                    <input class="col-sm-7 invoice-input" type="text" value="<?php echo $total; ?>" disabled>
                                 </div>
                             </div>
 
@@ -284,7 +286,7 @@
                             <div class="tab">
                                 <div class="container">
                                     <div class="head" style="margin-bottom: 0;">
-                                        <h3>Details</h3>
+                                        <h3>Details:</h3>
                                     </div>
                                     <div class="formgroup row">
                                         <div class="col-md-3  col-form-label">Subtotal:</div>
@@ -304,10 +306,10 @@
 
                                 <div class="container">
                                     <div class="head" style="margin-bottom: 0;">
-                                        <h3>Items</h3>
+                                        <h3>Items:</h3>
                                     </div>
                                     <div class="table-responsive">
-                                        <table class="table-bordered">
+                                        <table>
                                             <thead>
                                                 <tr>
                                                     <th>Qty</th>
@@ -336,10 +338,10 @@
                             <div class="tab">
                                 <div class="container">
                                     <div class="head" style="margin-bottom: 0;">
-                                        <h3>Payments</h3>
+                                        <h3>Payments:</h3>
                                     </div>
                                     <div class="table-responsive">
-                                        <table class="table-bordered">
+                                        <table>
                                             <thead>
                                                 <tr>
                                                     <th>Method</th>

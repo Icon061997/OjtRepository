@@ -51,21 +51,25 @@
       border-left: none;
       border-right: none;
     }
-    input,  select{
-    border-radius: 5px;
-    outline-color: royalblue;
-    border-color: lightgrey;
-  }
 
-  input:hover, textarea:hover, select:hover, input[type="radio"]:hover{
-    background-color: whitesmoke;
-    border: 2px solid royalblue;
-  }
+    input,
+    select {
+      border-radius: 5px;
+      outline-color: royalblue;
+      border-color: lightgrey;
+    }
+
+    input:hover,
+    textarea:hover,
+    select:hover,
+    input[type="radio"]:hover {
+      background-color: whitesmoke;
+      border: 2px solid royalblue;
+    }
 
 
     td {
 
-      text-align: center;
       border: 1px solid var(--dark-grey);
       border-top: none;
       border-left: none;
@@ -122,57 +126,57 @@
   <!-- SIDEBAR -->
   <section id="sidebar">
     <a href="dashboard.php" class="brand">
-      <i class='bx bxl-shopify'></i>
-      <span class="text">EzShop</span>
+    <i class='bx bxl-shopify' style="font-size: 40px;"></i>
+      <span class="text" style="font-family: var(--poppins);">EzShop</span>
     </a>
     <ul class="side-menu top">
       <li>
         <a href="dashboard.php">
           <i class='bx bxs-dashboard'></i>
-          <span class="text">Dashboard</span>
+          <span class="text" style="font-family: var(--poppins);">Dashboard</span>
         </a>
       </li>
       <li>
         <a href="sales.php">
           <i class='bx bx-coin-stack'></i>
-          <span class="text">Sales</span>
+          <span class="text" style="font-family: var(--poppins);">Sales</span>
         </a>
       </li>
       <li>
         <a href="reports.php">
           <i class='bx bxs-report'></i>
-          <span class="text">Reports</span>
+          <span class="text" style="font-family: var(--poppins);">Reports</span>
         </a>
       </li>
       <li>
         <a href="items.php">
           <i class='bx bx-package'></i>
-          <span class="text">Items</span>
+          <span class="text" style="font-family: var(--poppins);">Items</span>
         </a>
       </li>
       <li>
         <a href="categories.php">
           <i class='bx bx-category-alt'></i>
-          <span class="text">Categories</span>
+          <span class="text" style="font-family: var(--poppins);">Categories</span>
         </a>
       </li>
       <li>
         <a href="customers.php">
           <i class='bx bx-face'></i>
-          <span class="text">Customers</span>
+          <span class="text" style="font-family: var(--poppins);">Customers</span>
         </a>
       </li>
 
       <li>
         <a href="suppliers.php  ">
           <i class='bx bxs-truck'></i>
-          <span class="text">Supplier</span>
+          <span class="text" style="font-family: var(--poppins);">Supplier</span>
         </a>
       </li>
       <li class="active">
         <a href="settings.php">
           <i class='bx bx-cog'></i>
-          <span class="text">Settings</span>
+          <span class="text" style="font-family: var(--poppins);">Settings</span>
         </a>
       </li>
     </ul>
@@ -195,35 +199,38 @@
 
       <div class="dropdown">
         <button class="notification" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border: none; background: none;">
-        <i class='bx bxs-bell'></i>
-        <span class="num">8</span>
+          <i class='bx bxs-bell'></i>
+          <span class="num">8</span>
         </button>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
           <a class="dropdown-item" href=""><b>Notification: </b> New added Costumer</button>
-          <a class="dropdown-item" href=""><b>Notification: </b> New Item added</a>
-          <a class="dropdown-item" href=""><b>Notification: </b> new Item added</a>
+            <a class="dropdown-item" href=""><b>Notification: </b> New Item added</a>
+            <a class="dropdown-item" href=""><b>Notification: </b> new Item added</a>
         </div>
       </div>
 
-      <div class="dropdown-nav">
-        <button class="dropdown-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-          <img src="images/user.png" class="profile-pic" alt="">
-          <div class="username admin">
-            <b>Jimuel Leal</b><br> Admin
-          </div>
-          <i class='bx bx-chevron-down' style="font-size: 24px;"></i>
-        </button>
 
-        <ul class="dropdown-menu dropdown-menu-lg-end">
-          <a  class=" dropdown-item" href="account.php"><i class='bx bxs-user'></i> My Account</a>
-          <a class="dropdown-item" href="logout.php"><i class='bx bx-log-out bx-rotate-180'></i> Logout</a>
-        </ul>
+      <div class="dropdown-nav">
+        <div class="dropdown">
+          <button class="dropdown-btn" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <img src="images/user.png" class="profile-pic" alt="">
+            <div class="username admin">
+              <b>Jimuel Leal</b><br> Admin
+            </div>
+            <i class='bx bx-chevron-down' style="font-size: 24px;"></i>
+          </button>
+
+
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2" style="min-width: 140px;">
+            <a class=" dropdown-item" href="account.php"><i class='bx bxs-user'></i> My Account</a>
+            <a class="dropdown-item" href="logout.php"><i class='bx bx-log-out bx-rotate-180'></i> Logout</a>
+            </ul>
+          </div>
+        </div>
       </div>
     </nav>
     <!-- NAVBAR -->
-    </nav>
-    <!-- NAVBAR -->
-
+  
     <!-- MAIN -->
     <main>
       <div class="table-data">
@@ -236,19 +243,20 @@
               <!-- mytabs user roles -->
               <div class="mytabs">
                 <input type="radio" id="tabroles" name="mytabs" checked="checked" style="display:none;">
-                <label for="tabroles" class="labels">User Roles</label>
+                <label for="tabroles" class="labels">User-Roles</label>
                 <div class="tab">
                   <div class="row">
                     <div class="head">
-                      <button class="btn btn-outline-primary btn-block" id="myBtn" type="button" data-toggle="modal" data-target="#modalroles"><i class='bx bx-add-to-queue' style="font-size: 24px ;"></i> Add</button>
+                      <button class="btn btn-outline-primary btn-block" id="myBtn" type="button" data-toggle="modal" data-target="#modalroles"><i class='bx bx-add-to-queue' style="font-size: 16px ;"></i> Add</button>
                     </div>
                   </div>
+                  <hr>
                   <table>
                     <thead>
                       <th>ID</th>
                       <th>Role Name</th>
                       <th>Status</th>
-                      <th>action</th>
+                      <th>Action</th>
                     </thead>
                     <tbody>
                       </tr>
@@ -269,16 +277,17 @@
 
                   <div class="row">
                     <div class="head">
-                      <button class="btn btn-outline-primary btn-block" type="button" data-toggle="modal" data-target="#modaluser"><i class='bx bx-add-to-queue' style="font-size: 24px"></i> Add </button>
+                      <button class="btn btn-outline-primary btn-block" type="button" data-toggle="modal" data-target="#modaluser"><i class='bx bx-add-to-queue' style="font-size: 16px"></i> Add </button>
                     </div>
                   </div>
+                  <hr>
                   <table>
                     <thead>
                       <th>ID</th>
                       <th>Username</th>
                       <th>Role</th>
                       <th>Email</th>
-                      <th>status</th>
+                      <th>Status</th>
                       <th>Action</th>
                     </thead>
                     <tbody>
@@ -299,16 +308,17 @@
                 <div class="tab">
                   <div class="row">
                     <div class="head">
-                      <h3>tax rules</h3>
-                      </div>
-                    <div class="head" style="margin-top: 0;">
-                      <button class="btn btn-outline-primary btn-block" type="button" data-toggle="modal" data-target="#modalaccounting" style="float: left;"><i class='bx bx-add-to-queue'></i> Add </button>
+                      <h3>Tax Rules</h3>
+                    </div>
+                    <div class="head" style="margin-top: 0px;">
+                      <button class="btn btn-outline-primary btn-block" type="button" data-toggle="modal" data-target="#modalaccounting" style="float: left;" style="font-size: 16px ; margin-top: 0px;"><i class='bx bx-add-to-queue'></i> Add </button>
                     </div>
                   </div>
+                  <hr>
                   <table>
                     <thead>
                       <th>ID</th>
-                      <th>name</th>
+                      <th>Name</th>
                       <th>Price Inclusive</th>
                       <th>Value</th>
                       <th>Action</th>
@@ -360,12 +370,12 @@
                     <div class="col-sm-12">
                       <h5>Permission</h5>
                       <div class="table-responsive">
-                        <table class="table table-hover table-bordered">
+                        <table class="table table-hover ">
                           <tr>
                             <th> Pages </th>
                             <th> <input type="checkbox" id="checkcreate"> Create</th>
-                            <th> <input type="checkbox" id="checkread">Read </th>
-                            <th> <input type="checkbox" id="checkupdate">Update </th>
+                            <th> <input type="checkbox" id="checkread"> Read </th>
+                            <th> <input type="checkbox" id="checkupdate"> Update </th>
                             <th><input type="checkbox" id="checkdelete"> Delete</th>
                           </tr>
 
@@ -434,10 +444,10 @@
 
       <!-- modal para sa edit ng ng roles -->
       <div class="modal fade " id="editmodalroles" tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="false">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-lg">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="header"> Edit user roles </h5>
+              <h5 class="header"> USER </h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="border: none; background:none;">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -457,12 +467,12 @@
                     <div class="col-sm-12">
                       <h5>Permission</h5>
                       <div class="table-responsive">
-                        <table class="table table-hover table-bordered">
+                        <table class="table table-hover ">
                           <tr>
                             <th> Pages </th>
                             <th> <input type="checkbox" id="checkcreate"> Create</th>
-                            <th> <input type="checkbox" id="checkread">Read </th>
-                            <th> <input type="checkbox" id="checkupdate">Update </th>
+                            <th> <input type="checkbox" id="checkread"> Read </th>
+                            <th> <input type="checkbox" id="checkupdate"> Update </th>
                             <th><input type="checkbox" id="checkdelete"> Delete</th>
                           </tr>
 
@@ -527,7 +537,6 @@
           </div>
         </div>
       </div>
-
 
       <!-- modal para sa apag add ng user-->
 
@@ -660,11 +669,11 @@
                   <div class="form-group row mb-2">
                     <div class="col-sm-5 px-0">Price Inclusive:</div>
                     <label class="col-sm-3" for="inclusive">
-                      <input class="" type="radio" value="inclusive" id="inclusive">inclusive
+                      <input class="" type="radio" value="inclusive" id="inclusive"> Inclusive
                     </label>
 
                     <label class="col-sm-3" for="exclusive" id="exclusive">
-                      <input type="radio" value="exclusive">exclusive
+                      <input type="radio" value="exclusive"> Exclusive
                     </label>
                   </div>
 
@@ -706,11 +715,11 @@
                   <div class="form-group row mb-2">
                     <div class="col-sm-5 px-0">Price Inclusive:</div>
                     <label class="col-sm-3" for="inclusive">
-                      <input class="" type="radio" value="inclusive" id="inclusive">inclusive
+                      <input class="" type="radio" value="inclusive" id="inclusive"> Inclusive
                     </label>
 
                     <label class="col-sm-3" for="exclusive" id="exclusive">
-                      <input type="radio" value="exclusive">exclusive
+                      <input type="radio" value="exclusive"> Exclusive
                     </label>
                   </div>
 
@@ -737,7 +746,7 @@
   </section>
   <!-- CONTENT -->
 
-   <script type="text/javascript">
+  <script type="text/javascript">
     function myFunction() {
       document.getElementById("myDropdown").classList.toggle("show");
     }

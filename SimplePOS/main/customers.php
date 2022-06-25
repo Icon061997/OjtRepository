@@ -12,35 +12,64 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
   <link rel="stylesheet" href="css/navside.css">
   <!-- chart import -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- Popper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <!-- Latest compiled JavaScript -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.18/datatables.min.css" />
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-
+  <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.18/datatables.min.js"></script>
   <title>Customers</title>
 </head>
 
 <style>
   input,
   select {
+    width: 200px;
+    height: 40px;
     border-radius: 5px;
+    border: 2px solid grey;
     outline-color: royalblue;
-    border-color: lightgrey;
+
   }
+
+  .form-group {
+    margin-bottom: 8px;
+  }
+
 
   input:hover,
   textarea:hover,
   select:hover {
-    background-color: whitesmoke;
     border: 2px solid royalblue;
   }
 
   select {
-    height: 30px;
+    border-radius: 5px;
     outline-color: royalblue;
+    border: 2px solid grey;
+
+
+  }
+
+  body .dark {
+    --light: #0C0C1E;
+    --grey: #060714;
+    --dark: #FBFBFB;
+  }
+
+  textarea {
+    width: 200px;
+    height: 100px;
+    border-radius: 5px;
+    outline-color: royalblue;
+    border: 2px solid grey;
   }
 
   td {
 
-    text-align: center;
     border: 1px solid var(--dark-grey);
     border-top: none;
     border-left: none;
@@ -58,70 +87,70 @@
   }
 
   i.icon:hover {
-      color: blue;
-    }
+    color: blue;
+  }
 
-    .icon {
-      padding: 3px;
-      font-size: 24px;
-    }
+  .icon {
+    padding: 3px;
+    font-size: 24px;
+  }
 </style>
 
 <body>
   <!-- SIDEBAR -->
   <section id="sidebar">
     <a href="dashboard.php" class="brand">
-      <i class='bx bxl-shopify'></i>
-      <span class="text">EzShop</span>
+      <i class='bx bxl-shopify' style="font-size: 40px;"></i>
+      <span class="text" style="font-family: var(--poppins);">EzShop</span>
     </a>
     <ul class="side-menu top">
       <li>
         <a href="dashboard.php">
           <i class='bx bxs-dashboard'></i>
-          <span class="text">Dashboard</span>
+          <span class="text" style="font-family: var(--poppins);">Dashboard</span>
         </a>
       </li>
       <li>
         <a href="sales.php">
           <i class='bx bx-coin-stack'></i>
-          <span class="text">Sales</span>
+          <span class="text" style="font-family: var(--poppins);">Sales</span>
         </a>
       </li>
       <li>
         <a href="reports.php">
           <i class='bx bxs-report'></i>
-          <span class="text">Reports</span>
+          <span class="text" style="font-family: var(--poppins);">Reports</span>
         </a>
       </li>
       <li>
         <a href="items.php">
           <i class='bx bx-package'></i>
-          <span class="text">Items</span>
+          <span class="text" style="font-family: var(--poppins);">Items</span>
         </a>
       </li>
       <li>
         <a href="categories.php">
           <i class='bx bx-category-alt'></i>
-          <span class="text">Categories</span>
+          <span class="text" style="font-family: var(--poppins);">Categories</span>
         </a>
       </li>
       <li class="active">
         <a href="customers.php">
           <i class='bx bx-face'></i>
-          <span class="text">Customers</span>
+          <span class="text" style="font-family: var(--poppins);">Customers</span>
         </a>
       </li>
 
       <li>
         <a href="suppliers.php  ">
           <i class='bx bxs-truck'></i>
-          <span class="text">Supplier</span>
+          <span class="text" style="font-family: var(--poppins);">Supplier</span>
         </a>
       </li>
       <li>
         <a href="settings.php">
           <i class='bx bx-cog'></i>
-          <span class="text">Settings</span>
+          <span class="text" style="font-family: var(--poppins);">Settings</span>
         </a>
       </li>
     </ul>
@@ -141,36 +170,39 @@
       </form>
       <input type="checkbox" id="switch-mode" hidden>
       <label for="switch-mode" class="switch-mode"></label>
-      
+
       <div class="dropdown">
         <button class="notification" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border: none; background: none;">
-        <i class='bx bxs-bell'></i>
-        <span class="num">8</span>
+          <i class='bx bxs-bell'></i>
+          <span class="num">8</span>
         </button>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
           <a class="dropdown-item" href=""><b>Notification: </b> New added Costumer</button>
-          <a class="dropdown-item" href=""><b>Notification: </b> New Item added</a>
-          <a class="dropdown-item" href=""><b>Notification: </b> new Item added</a>
+            <a class="dropdown-item" href=""><b>Notification: </b> New Item added</a>
+            <a class="dropdown-item" href=""><b>Notification: </b> new Item added</a>
         </div>
       </div>
 
 
       <div class="dropdown-nav">
-        <button class="dropdown-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-          <img src="images/user.png" class="profile-pic" alt="">
-          <div class="username admin">
-            <b>Jimuel Leal</b><br> Admin
-          </div>
-          <i class='bx bx-chevron-down' style="font-size: 24px;"></i>
-        </button>
+        <div class="dropdown">
+          <button class="dropdown-btn" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <img src="images/user.png" class="profile-pic" alt="">
+            <div class="username admin">
+              <b>Jimuel Leal</b><br> Admin
+            </div>
+            <i class='bx bx-chevron-down' style="font-size: 24px;"></i>
+          </button>
 
-        <ul class="dropdown-menu dropdown-menu-lg-end">
-          <a class=" dropdown-item" href="account.php"><i class='bx bxs-user'></i> My Account</a>
-          <a class="dropdown-item" href="logout.php"><i class='bx bx-log-out bx-rotate-180'></i> Logout</a>
-        </ul>
+
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2" style="min-width: 140px;">
+            <a class=" dropdown-item" href="account.php"><i class='bx bxs-user'></i> My Account</a>
+            <a class="dropdown-item" href="logout.php"><i class='bx bx-log-out bx-rotate-180'></i> Logout</a>
+            </ul>
+          </div>
+        </div>
       </div>
 
-    </nav>
     </nav>
     <!-- NAVBAR -->
 
@@ -190,33 +222,63 @@
             </div>
           </div>
           <hr>
+
+
+
           <!-- *************************tablee *********************************************8-->
-          <table>
-            <thead style="text-align: center;">
-              <th>ID</th>
-              <th>NAME</th>
-              <th>GENDER</th>
-              <th>EMAIL</th>
-              <th>TEL NO.</th>
-              <th>MOBILE NO</th>
-              <th>ACTION</th>
 
-            </thead>
-            <tbody style="text-align: center;">
+
+          <?php
+          $conn = mysqli_connect("localhost", "root", "");
+          $db = mysqli_select_db($conn, 'pointofsale');
+          $query = "SELECT * FROM customers";
+          $query_run = mysqli_query($conn, $query);
+          ?>
+          <table id="data-table">
+
+            <thead>
               <tr>
-                <td>011101</td>
-                <td>JUAN DELACUS</td>
-                <td>MALE</td>
-                <td>@GMAILC.COM</td>
-                <td>1992001-23</td>
-                <td>09562623111</td>
-                <td><i class="bx bx-pencil icon" data-toggle="modal" data-target="#modaleditcostumer"></i> <i class="bx bx-trash icon"></i></td>
-
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Email</th>
+                <th scope="col">Tel No.</th>
+                <th scope="col">Mobile No.</th>
+                <th scope="col">Address</th>
+                <th scope="col">Action</th>
               </tr>
-            </tbody>
+            </thead>
+            <?php
+            if ($query_run) {
+              foreach ($query_run as $row) {
+            ?>
+                <tbody>
+
+                  <tr>
+                    <td><?php echo $row['id']; ?></td>
+                    <td><?php echo $row['name']; ?></td>
+                    <td><?php echo $row['gender']; ?></td>
+                    <td><?php echo $row['email']; ?></td>
+                    <td><?php echo $row['telno']; ?></td>
+                    <td><?php echo $row['mobileno']; ?></td>
+                    <td><?php echo $row['address']; ?></td>
+                    <td>
+                      <a class="editbtn"><i class="bx bx-pencil icon"></i> </a>
+                      <input type="hidden" class="delete_id_value" value="<?php echo $row['id']; ?>" onclick="remmove()">
+                      <a href="javascript:void(0)"> <i class="bx bx-trash icon delete_btn_ajax"></i></a>
+
+                    </td>
+
+
+                  </tr>
+
+                </tbody>
+            <?php }
+            } else {
+              echo "No Record Found";
+            } ?>
           </table>
         </div>
-      </div>
       </div>
 
       <!-- ******************************************************************** -->
@@ -229,55 +291,61 @@
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <div class="modal-body">
-              <div class="container">
-                <form action="" method="">
+            <form action="config.php" method="POST">
+
+              <div class="modal-body">
+                <div class="container">
 
 
                   <div class="form-group row mb-2">
-                    <div class="col-sm-5 col-form-label">NAME:</div>
-                    <input class="col-sm-7 pos-input" type="text">
+                    <div class="col-sm-5 col-form-label">Name:</div>
+                    <input class="col-sm-7 pos-input" type="text" name="name" required>
                   </div>
 
                   <div class="form-group row">
                     <div class="col-sm-5 col-form-label">Gender:</div>
-                    <select class=" col-sm-7 pos-input mb-3" aria-label=".form-select-lg example">
-                      <option value="1">SELECT</option>
-                      <option value="2">MALE</option>
-                      <option value="3">FEMALE</option>
+                    <select class=" col-sm-7 pos-input" aria-label=".form-select-lg example" name="gender">
+                      <option value="1">Select</option>
+                      <option value="2">Male</option>
+                      <option value="3">Female</option>
                     </select>
                   </div>
 
                   <div class="form-group row mb-2">
-                    <div class="col-sm-5 col-form-label">EMAIL:</div>
-                    <input class="col-sm-7 pos-input" type="text">
+                    <div class="col-sm-5 col-form-label">Email:</div>
+                    <input class="col-sm-7 pos-input" type="email" name="email" required>
                   </div>
 
                   <div class="form-group row mb-2">
-                    <div class="col-sm-5 col-form-label">TEL NO.</div>
-                    <input class="col-sm-7 pos-input" type="number">
+                    <div class="col-sm-5 col-form-label">Tel No.:</div>
+                    <input class="col-sm-7 pos-input" type="text" name="telno" required>
                   </div>
 
                   <div class="form-group row mb-2">
-                    <div class="col-sm-5 col-form-label">MOBILE NO:</div>
-                    <input class="col-sm-7 pos-input" type="number">
+                    <div class="col-sm-5 col-form-label">Mobile No.:</div>
+                    <input class="col-sm-7 pos-input" type="text" name="mobileno" required>
                   </div>
 
                   <div class="form-group row mb-2">
-                    <div class="col-sm-5 col-form-label">ADDRRESS:</div>
-                    <textarea class="col-sm-7" type="text"></textarea>
+                    <div class="col-sm-5 col-form-label">Address:</div>
+                    <textarea class="col-sm-7" type="text" name="address" required></textarea>
                   </div>
-                </form>
+
+                </div>
               </div>
-            </div>
 
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save</button>
-            </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button type="submit" name="insertdata" class="btn btn-success">Save</button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
+
+
+
+
       <!-- for editing -->
       <div class="modal fade modal-static" id="modaleditcostumer" tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="false">
         <div class="modal-dialog modal-dialog-centered">
@@ -288,52 +356,51 @@
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
+            <form action="config.php" method="POST">
+
               <div class="modal-body">
                 <div class="container">
-                <form action="" method="">
+                  <form action="" method="">
 
+                    <input type="hidden" name="update_id" id="update_id">
 
-                  <div class="form-group row mb-2">
-                    <div class="col-sm-5 col-form-label">NAME:</div>
-                    <input class="col-sm-7 pos-input" type="text">
-                  </div>
+                    <div class="form-group row mb-2">
+                      <div class="col-sm-5 col-form-label">Name:</div>
+                      <input class="col-sm-7 pos-input" type="text" name="name" id="name">
+                    </div>
 
-                  <div class="form-group row">
-                    <div class="col-sm-5 col-form-label">Role:</div>
-                    <select class=" col-sm-7 pos-input mb-3" aria-label=".form-select-lg example">
-                      <option value="1">SELECT</option>
-                      <option value="2">MALE</option>
-                      <option value="3">FEMALE</option>
-                    </select>
-                  </div>
+                    <div class="form-group row">
+                      <div class="col-sm-5 col-form-label">Gender:</div>
+                      <input class="col-sm-7 pos-input" type="text" name="gender" id="gender">
+                    </div>
 
-                  <div class="form-group row mb-2">
-                    <div class="col-sm-5 col-form-label">EMAIL:</div>
-                    <input class="col-sm-7 pos-input" type="text">
-                  </div>
+                    <div class="form-group row mb-2">
+                      <div class="col-sm-5 col-form-label">Email:</div>
+                      <input class="col-sm-7 pos-input" type="email" name="email" id="email">
+                    </div>
 
-                  <div class="form-group row mb-2">
-                    <div class="col-sm-5 col-form-label">TEL NO.</div>
-                    <input class="col-sm-7 pos-input" type="number">
-                  </div>
+                    <div class="form-group row mb-2">
+                      <div class="col-sm-5 col-form-label">Tel No.:</div>
+                      <input class="col-sm-7 pos-input" type="text" name="telno" id="telno">
+                    </div>
 
-                  <div class="form-group row mb-2">
-                    <div class="col-sm-5 col-form-label">MOBILE NO:</div>
-                    <input class="col-sm-7 pos-input" type="number">
-                  </div>
+                    <div class="form-group row mb-2">
+                      <div class="col-sm-5 col-form-label">Mobile No.:</div>
+                      <input class="col-sm-7 pos-input" type="text" name="mobileno" id="mobileno">
+                    </div>
 
-                  <div class="form-group row mb-2">
-                    <div class="col-sm-5 col-form-label">ADDRRESS:</div>
-                    <textarea class="col-sm-7" type="text"></textarea>
-                  </div>
-                </form>
+                    <div class="form-group row mb-2">
+                      <div class="col-sm-5 col-form-label">Address:</div>
+                      <textarea class="col-sm-7" type="text" name="address" id="address"></textarea>
+                    </div>
+                </div>
               </div>
-            </div>
 
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save</button>
-            </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button type="submit" name="update" class="btn btn-primary">Update</button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
@@ -342,12 +409,7 @@
 
 
 
-  </main>
-  <!-- MAIN -->
-  </section>
-  <!-- CONTENT -->
 
-  </script>
 
   <script>
     function myFunction() {
@@ -368,12 +430,124 @@
       }
     }
   </script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
   <script src="js/script.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+  <?php
+  if (isset($_SESSION['status']) && $_SESSION['status'] != '') {
+  ?>
+    <script>
+      swal({
+        text: "<?php echo $_SESSION['status']; ?>",
+        icon: "<?php echo $_SESSION['status_code']; ?>",
+        button: false,
+        timer: 800,
+
+      });
+    </script>
+  <?php
+    unset($_SESSION['status']);
+  }
+  ?>
+
+
+  <script>
+    $(document).ready(function() {
+
+      $('.delete_btn_ajax').click(function(e) {
+        e.preventDefault();
+
+        var deleteid = $(this).closest("tr").find('.delete_id_value').val();
+
+        swal({
+
+            text: " Are you sure you want to delete this?",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+          })
+          .then((willDelete) => {
+            if (willDelete) {
+
+              $.ajax({
+                type: "POST",
+                url: "config.php",
+                data: {
+                  "delete_btn_set": 1,
+                  "id": deleteid,
+                },
+                success: function(response) {
+                  swal("Data Deleted Successfully.!", {
+                    icon: "success",
+                    button: false,
+                    timer: 800,
+                  }).then((result) => {
+                    location.reload();
+                  });
+                }
+              });
+            }
+          });
+      });
+
+    });
+  </script>
+  <script>
+    function fun() {
+      document.getElementById("name").value = '';
+      document.getElementById("gender").value = '';
+      document.getElementById("email").value = '';
+      document.getElementById("telno").value = '';
+      document.getElementById("mobileno").value = '';
+      document.getElementById("address").value = '';
+    }
+  </script>
+
+
+
+
+  <script src="script.js"> </script>
+
+
+
+  <script>
+    $(document).ready(function() {
+      $('.editbtn').on('click', function() {
+        $('#modaleditcostumer').modal('show');
+
+        $tr = $(this).closest('tr');
+
+        var data = $tr.children("td").map(function() {
+          return $(this).text();
+        }).get();
+
+        console.log(data);
+
+        $('#update_id').val(data[0]);
+        $('#name').val(data[1]);
+        $('#gender').val(data[2]);
+        $('#email').val(data[3]);
+        $('#telno').val(data[4]);
+        $('#mobileno').val(data[5]);
+        $('#address').val(data[6]);
+
+      });
+    });
+  </script>
+
+
+  </script>
+
 
 </body>
 

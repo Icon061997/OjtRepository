@@ -11,6 +11,13 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 
   <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.18/datatables.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- Popper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <!-- Latest compiled JavaScript -->
+
+  <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.18/datatables.min.js"></script>
   <!-- My CSS -->
   <link rel="stylesheet" href="css/navside.css">
 
@@ -24,16 +31,17 @@
   }
 
   td {
-
-    text-align: center;
+    font-size: 16px;
     border: 1px solid var(--dark-grey);
     border-top: none;
     border-left: none;
     border-right: none;
+    padding: 12px;
 
   }
 
   thead {
+    font-size: 16px;
     border: solid var(--dark);
     border-top: none;
     border-left: none;
@@ -47,57 +55,57 @@
   <!-- SIDEBAR -->
   <section id="sidebar">
     <a href="dashboard.php" class="brand">
-      <i class='bx bxl-shopify'></i>
-      <span class="text">EzShop</span>
+      <i class='bx bxl-shopify' style="font-size: 40px;"></i>
+      <span class="text" style="font-family: var(--poppins);">EzShop</span>
     </a>
     <ul class="side-menu top">
       <li>
         <a href="dashboard.php">
           <i class='bx bxs-dashboard'></i>
-          <span class="text">Dashboard</span>
+          <span class="text" style="font-family: var(--poppins);">Dashboard</span>
         </a>
       </li>
       <li class="active">
         <a href="sales.php">
           <i class='bx bx-coin-stack'></i>
-          <span class="text">Sales</span>
+          <span class="text" style="font-family: var(--poppins);">Sales</span>
         </a>
       </li>
       <li>
         <a href="reports.php">
           <i class='bx bxs-report'></i>
-          <span class="text">Reports</span>
+          <span class="text" style="font-family: var(--poppins);">Reports</span>
         </a>
       </li>
       <li>
         <a href="items.php">
           <i class='bx bx-package'></i>
-          <span class="text">Items</span>
+          <span class="text" style="font-family: var(--poppins);">Items</span>
         </a>
       </li>
       <li>
         <a href="categories.php">
           <i class='bx bx-category-alt'></i>
-          <span class="text">Categories</span>
+          <span class="text" style="font-family: var(--poppins);">Categories</span>
         </a>
       </li>
       <li>
         <a href="customers.php">
           <i class='bx bx-face'></i>
-          <span class="text">Customers</span>
+          <span class="text" style="font-family: var(--poppins);">Customers</span>
         </a>
       </li>
 
       <li>
         <a href="suppliers.php  ">
           <i class='bx bxs-truck'></i>
-          <span class="text">Supplier</span>
+          <span class="text" style="font-family: var(--poppins);">Supplier</span>
         </a>
       </li>
       <li>
         <a href="settings.php">
           <i class='bx bx-cog'></i>
-          <span class="text">Settings</span>
+          <span class="text" style="font-family: var(--poppins);">Settings</span>
         </a>
       </li>
     </ul>
@@ -116,30 +124,37 @@
       </form>
       <input type="checkbox" id="switch-mode" hidden>
       <label for="switch-mode" class="switch-mode"></label>
+
+
       <div class="dropdown">
         <button class="notification" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border: none; background: none;">
-        <i class='bx bxs-bell'></i>
-        <span class="num">8</span>
+          <i class='bx bxs-bell'></i>
+          <span class="num">8</span>
         </button>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
           <a class="dropdown-item" href=""><b>Notification: </b> New added Costumer</button>
-          <a class="dropdown-item" href=""><b>Notification: </b> New Item added</a>
-          <a class="dropdown-item" href=""><b>Notification: </b> new Item added</a>
+            <a class="dropdown-item" href=""><b>Notification: </b> New Item added</a>
+            <a class="dropdown-item" href=""><b>Notification: </b> new Item added</a>
         </div>
       </div>
 
-      <div class="dropdown-nav">
-        <button class="dropdown-btn" onclick="myFunction()">
-          <img src="images/user.png" class="profile-pic" alt="">
-          <div class="username admin">
-            <font><b>Jimuel Leal</b><br> Admin </font>
-          </div>
-          <i class='bx bx-chevron-down' style="font-size: 24px;"></i>
-        </button>
 
-        <div id="myDropdown" class="dropdown-content">
-          <a href="#">My account</a>
-          <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+      <div class="dropdown-nav">
+        <div class="dropdown">
+          <button class="dropdown-btn" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <img src="images/user.png" class="profile-pic" alt="">
+            <div class="username admin">
+              <b>Jimuel Leal</b><br> Admin
+            </div>
+            <i class='bx bx-chevron-down' style="font-size: 24px;"></i>
+          </button>
+
+
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2" style="min-width: 140px;">
+            <a class=" dropdown-item" href="account.php"><i class='bx bxs-user'></i> My Account</a>
+            <a class="dropdown-item" href="logout.php"><i class='bx bx-log-out bx-rotate-180'></i> Logout</a>
+            </ul>
+          </div>
         </div>
       </div>
     </nav>
@@ -162,7 +177,7 @@
                 <button class="btn btn-outline-success dropdown-toggle" type="button" id="export" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class='bx bx-export'></i> Export
                 </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2" style="min-width: 115px; margin-top: 7px;">
                   <button class="dropdown-item" id="cvs-download" type="button"><i class="icon bi bi-filetype-csv"></i> CSV</button>
                   <button class="dropdown-item" id="pdf-download" type="button" onclick="downloadPDF()"><i class="icon bi bi-filetype-pdf"></i> PDF</button>
 
@@ -177,42 +192,53 @@
             <BR></BR>
             <HR>
             </HR>
-            <BR></BR>
 
           </div>
 
-          <table class="table-bordered">
+          <table id="data-table">
             <thead>
               <th>ID</th>
-              <th>Reference No.</th>
+              <th>Reference No</th>
               <th>User</th>
               <th>Quatity</th>
-              <th>Date and time</th>
+              <th>Date & time</th>
               <th>Total</th>
               <th>Status</th>
               <th>Action</th>
 
             </thead>
-            <tbody>
-              <tr>
-                <td>1</td>
-                <td>222222</td>
-                <td>@username</td>
-                <td>100</td>
-                <td>May 19 2021, 9:58 am</td>
-                <td>200</td>
-                <td><span class="status pending">Pending</span></td>
-                <td><a href="invo.php"><i class="bi bi-eye-fill"></i></a></td>
-              </tr>
 
-              <tr>
+            <tbody>
+
+
+              <?php
+              $connection = mysqli_connect("localhost", "root", "");
+              $db = mysqli_select_db($connection, 'pointofsale');
+
+              $query = "SELECT * FROM sales";
+              $query_run = mysqli_query($connection, $query);
+              while ($row = mysqli_fetch_array($query_run)) {
+              ?>
+                <tr>
+                  <td><?php echo $row['id']; ?></td>
+                  <td><?php echo $row['referenceno']; ?></td>
+                  <td><?php echo $row['user']; ?></td>
+                  <td><?php echo $row['quantity']; ?></td>
+                  <td><?php echo $row['date_time']; ?></td>
+                  <td><?php echo $row['total']; ?></td>
+                  <td><span class="status completed"><?php echo $row['status']; ?></span></td>
+                  <td><a href="invo.php"><i class="bi bi-eye-fill"></i></a></td>
+                </tr>
+              <?php
+              } ?>
+              <!-- <tr>
                 <td>1</td>
                 <td>333333</td>
                 <td>@username</td>
                 <td>100</td>
                 <td>May 19 2021, 9:58 am</td>
                 <td>200</td>
-                <td> <span class="status completed"> completed </span></td>
+                <td> <span class="status completed">Completed </span></td>
                 <td><a href="invo.php"><i class="bi bi-eye-fill"></i></a></td>
               </tr>
 
@@ -225,7 +251,7 @@
                 <td>200</td>
                 <td><span class="status process">Process</span></td>
                 <td><a href="invo.php"><i class="bi bi-eye-fill"></i></a></td>
-              </tr>
+              </tr> -->
 
 
 
@@ -259,7 +285,7 @@
 
 
 
-<script>
+  <script>
     function htmlToCSV(html, filename) {
       var data = [];
       var rows = document.querySelectorAll("table tr");
@@ -315,7 +341,10 @@
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 
 </html>

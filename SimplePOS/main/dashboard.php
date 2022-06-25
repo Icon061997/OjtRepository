@@ -38,13 +38,12 @@ session_start();
       color: transparent;
     }
 
-    .dropdown-nav{
+    .dropdown-nav {
       color: var(--dark);
     }
 
     td {
-
-      text-align: center;
+      font-size: 16px;
       border: 1px solid var(--dark-grey);
       border-top: none;
       border-left: none;
@@ -53,12 +52,12 @@ session_start();
     }
 
     thead {
+      font-size: 16px;
       border: solid var(--dark);
       border-top: none;
       border-left: none;
       border-right: none;
-      width: 36px;
-      height: 36px;
+      
     }
   </style>
 </head>
@@ -68,56 +67,56 @@ session_start();
   <section id="sidebar">
     <a href="dashboard.php" class="brand">
       <i class='bx bxl-shopify' style="font-size: 40px;"></i>
-      <span class="text">EzShop</span>
+      <span class="text" style="font-family: var(--poppins);">EzShop</span>
     </a>
     <ul class="side-menu top">
       <li class="active">
         <a href="dashboard.php">
           <i class='bx bxs-dashboard'></i>
-          <span class="text">Dashboard</span>
+          <span class="text" style="font-family: var(--poppins);">Dashboard</span>
         </a>
       </li>
       <li>
         <a href="sales.php">
           <i class='bx bx-coin-stack'></i>
-          <span class="text">Sales</span>
+          <span class="text" style="font-family: var(--poppins);">Sales</span>
         </a>
       </li>
       <li>
         <a href="reports.php">
           <i class='bx bxs-report'></i>
-          <span class="text">Reports</span>
+          <span class="text" style="font-family: var(--poppins);">Reports</span>
         </a>
       </li>
       <li>
         <a href="items.php">
           <i class='bx bx-package'></i>
-          <span class="text">Items</span>
+          <span class="text" style="font-family: var(--poppins);">Items</span>
         </a>
       </li>
       <li>
         <a href="categories.php">
           <i class='bx bx-category-alt'></i>
-          <span class="text">Categories</span>
+          <span class="text" style="font-family: var(--poppins);">Categories</span>
         </a>
       </li>
       <li>
         <a href="customers.php">
           <i class='bx bx-face'></i>
-          <span class="text">Customers</span>
+          <span class="text" style="font-family: var(--poppins);">Customers</span>
         </a>
       </li>
 
       <li>
         <a href="suppliers.php  ">
           <i class='bx bxs-truck'></i>
-          <span class="text">Supplier</span>
+          <span class="text" style="font-family: var(--poppins);">Supplier</span>
         </a>
       </li>
       <li>
         <a href="settings.php">
           <i class='bx bx-cog'></i>
-          <span class="text">Settings</span>
+          <span class="text" style="font-family: var(--poppins);">Settings</span>
         </a>
       </li>
     </ul>
@@ -157,15 +156,17 @@ session_start();
           <button class="dropdown-btn" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <img src="images/user.png" class="profile-pic" alt="">
             <div class="username admin">
-              <b>Jimuel Leal</b><br> Admin
+              <b>Eric Iwayan</b><br> Admin
             </div>
             <i class='bx bx-chevron-down' style="font-size: 24px;"></i>
           </button>
 
-          <ul class="dropdown-menu dropdown-menu-lg-end">
+
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2" style="min-width: 140px;">
             <a class=" dropdown-item" href="account.php"><i class='bx bxs-user'></i> My Account</a>
             <a class="dropdown-item" href="logout.php"><i class='bx bx-log-out bx-rotate-180'></i> Logout</a>
-          </ul>
+            </ul>
+          </div>
         </div>
       </div>
     </nav>
@@ -235,7 +236,7 @@ session_start();
                   <table>
                     <thead>
                       <tr>
-                        <th>Id</th>
+                        <th class="text-center" >Id</th>
                         <th>Name</th>
                         <th>Sales</th>
 
@@ -243,28 +244,28 @@ session_start();
                     </thead>
                     <tbody>
                       <tr>
-                        <td>1</td>
+                        <td class="text-center" >1</td>
                         <td>Face Mask</td>
                         <td>1300</td>
                       </tr>
                     </tbody>
                     <tbody>
                       <tr>
-                        <td>2</td>
+                        <td class="text-center" >2</td>
                         <td>Face Shield</td>
                         <td>800</td>
                       </tr>
                     </tbody>
                     <tbody>
                       <tr>
-                        <td>3</td>
+                        <td class="text-center" >3</td>
                         <td>Short</td>
                         <td>400</td>
                       </tr>
                     </tbody>
                     <tbody>
                       <tr>
-                        <td>4</td>
+                        <td class="text-center" >4</td>
                         <td>Umbrella</td>
                         <td>120</td>
                       </tr>
@@ -304,32 +305,32 @@ session_start();
                   <table>
                     <thead>
                       <tr>
-                        <th>No</th>
+                        <th class="text-center" >No</th>
                         <th>Item</th>
 
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td>1</td>
+                        <td class="text-center" >1</td>
                         <td>Face Mask</td>
                       </tr>
                     </tbody>
                     <tbody>
                       <tr>
-                        <td>2</td>
+                        <td class="text-center" > 2</td>
                         <td>Face Shield</td>
                       </tr>
                     </tbody>
                     <tbody>
                       <tr>
-                        <td>3</td>
+                        <td class="text-center" >3</td>
                         <td>Short</td>
                       </tr>
                     </tbody>
                     <tbody>
                       <tr>
-                        <td>4</td>
+                        <td class="text-center" >4</td>
                         <td>Umbrella</td>
                       </tr>
                     </tbody>

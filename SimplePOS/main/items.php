@@ -39,19 +39,19 @@
     padding: 5px;
     width: 200px;
     height: 100px;
-    border-radius: 10px;
-    outline: none;
-    margin-bottom: 5px;
+    border-radius: 5px;
+    outline-color: royalblue;
+    margin-bottom: 20px;
+    border: 2px solid grey;
 
   }
-
+/* 
   input.sim-input:hover {
-    background-color: lightgrey;
-  }
+    background-color: darkblue;
+  } */
 
   td {
 
-    text-align: center;
     border: 1px solid var(--dark-grey);
     border-top: none;
     border-left: none;
@@ -73,57 +73,57 @@
   <!-- SIDEBAR -->
   <section id="sidebar">
     <a href="dashboard.php" class="brand">
-      <i class='bx bxl-shopify'></i>
-      <span class="text">EzShop</span>
+    <i class='bx bxl-shopify' style="font-size: 40px;"></i>
+      <span class="text" style="font-family: var(--poppins);">EzShop</span>
     </a>
     <ul class="side-menu top">
       <li>
         <a href="dashboard.php">
           <i class='bx bxs-dashboard'></i>
-          <span class="text">Dashboard</span>
+          <span class="text" style="font-family: var(--poppins);">Dashboard</span>
         </a>
       </li>
       <li>
         <a href="sales.php">
           <i class='bx bx-coin-stack'></i>
-          <span class="text">Sales</span>
+          <span class="text" style="font-family: var(--poppins);">Sales</span>
         </a>
       </li>
       <li>
         <a href="reports.php">
           <i class='bx bxs-report'></i>
-          <span class="text">Reports</span>
+          <span class="text" style="font-family: var(--poppins);">Reports</span>
         </a>
       </li>
       <li class="active">
         <a href="items.php">
           <i class='bx bx-package'></i>
-          <span class="text">Items</span>
+          <span class="text" style="font-family: var(--poppins);">Items</span>
         </a>
       </li>
       <li>
         <a href="categories.php">
           <i class='bx bx-category-alt'></i>
-          <span class="text">Categories</span>
+          <span class="text" style="font-family: var(--poppins);">Categories</span>
         </a>
       </li>
       <li>
         <a href="customers.php">
           <i class='bx bx-face'></i>
-          <span class="text">Customers</span>
+          <span class="text" style="font-family: var(--poppins);">Customers</span>
         </a>
       </li>
 
       <li>
         <a href="suppliers.php  ">
           <i class='bx bxs-truck'></i>
-          <span class="text">Supplier</span>
+          <span class="text" style="font-family: var(--poppins);">Supplier</span>
         </a>
       </li>
       <li>
         <a href="settings.php">
           <i class='bx bx-cog'></i>
-          <span class="text">Settings</span>
+          <span class="text" style="font-family: var(--poppins);">Settings</span>
         </a>
       </li>
     </ul>
@@ -145,29 +145,34 @@
       <label for="switch-mode" class="switch-mode"></label>
       <div class="dropdown">
         <button class="notification" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border: none; background: none;">
-        <i class='bx bxs-bell'></i>
-        <span class="num">8</span>
+          <i class='bx bxs-bell'></i>
+          <span class="num">8</span>
         </button>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
           <a class="dropdown-item" href=""><b>Notification: </b> New added Costumer</button>
-          <a class="dropdown-item" href=""><b>Notification: </b> New Item added</a>
-          <a class="dropdown-item" href=""><b>Notification: </b> new Item added</a>
+            <a class="dropdown-item" href=""><b>Notification: </b> New Item added</a>
+            <a class="dropdown-item" href=""><b>Notification: </b> new Item added</a>
         </div>
       </div>
 
-      <div class="dropdown-nav">
-        <button class="dropdown-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-          <img src="images/user.png" class="profile-pic" alt="">
-          <div class="username admin">
-            <b>Jimuel Leal</b><br> Admin
-          </div>
-          <i class='bx bx-chevron-down' style="font-size: 24px;"></i>
-        </button>
 
-        <ul class="dropdown-menu dropdown-menu-lg-end">
-          <a class=" dropdown-item" href="account.php"><i class='bx bxs-user'></i> My Account</a>
-          <a class="dropdown-item" href="logout.php"><i class='bx bx-log-out bx-rotate-180'></i> Logout</a>
-        </ul>
+      <div class="dropdown-nav">
+        <div class="dropdown">
+          <button class="dropdown-btn" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <img src="images/user.png" class="profile-pic" alt="">
+            <div class="username admin">
+              <b>Jimuel Leal</b><br> Admin
+            </div>
+            <i class='bx bx-chevron-down' style="font-size: 24px;"></i>
+          </button>
+
+
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2" style="min-width: 140px;">
+            <a class=" dropdown-item" href="account.php"><i class='bx bxs-user'></i> My Account</a>
+            <a class="dropdown-item" href="logout.php"><i class='bx bx-log-out bx-rotate-180'></i> Logout</a>
+            </ul>
+          </div>
+        </div>
       </div>
     </nav>
     <!-- NAVBAR -->
@@ -194,7 +199,7 @@
                 </div>
 
                 <div class="formgroup row">
-                  <label class="col-sm-4 col-form-label ">unit cost:</label>
+                  <label class="col-sm-4 col-form-label ">Unit cost:</label>
                   <input class="sim-input col-sm-4" type="text" id="itemunitcost">
                 </div>
 
@@ -205,7 +210,7 @@
                 </div>
 
                 <div class="formgroup row">
-                  <label class="col-sm-4 col-form-label">tax:</label>
+                  <label class="col-sm-4 col-form-label">Tax:</label>
                   <select class="sim-input mb-3" aria-label=".form-select-lg" id="itemtax">
                     <option value="1">Vat</option>
                     <option value="2">GST</option>
@@ -246,8 +251,8 @@
                   <input type="file" class="form-control-file" id="itempicture">
                 </div>
 
-                <div class="row my-3 px-10">
-                  <button class="col-sm-auto btn btn-secondary"> cancel</button>
+                <div class="row my-3 px-10 m-0">
+                  <button class="col-sm-auto btn btn-secondary">Clear</button>
                   <button class="col-sm-auto btn btn-outline-success mr-2" style="margin-left: 2px ;"> Save</button>
                 </div>
               </form>
@@ -261,13 +266,14 @@
             <div class="order">
               <div class="head">
                 <h3>Items</h3>
-                <i class='bx bx-search'></i>
-                <i class='bx bx-filter'></i>
               </div>
+
+              <HR>
+              </HR>
               <table>
                 <thead>
                   <tr>
-                    <th>Id</th>
+                    <th>ID</th>
                     <th>Name</th>
                     <th>Stock</th>
                     <th>Category</th>
@@ -277,8 +283,8 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td> 1223</td>
-                    <td> guitar</td>
+                    <td>1223</td>
+                    <td>Guitar</td>
                     <td>20</td>
                     <td>Health</td>
                     <td>Si kuya mo eruc</td>
@@ -295,7 +301,7 @@
         <div class="modal-dialog modal-lg">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="header"> Edit items </h5>
+              <h5 class="header">Edit items </h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="border: none; background:none;">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -316,7 +322,7 @@
                       </div>
 
                       <div class="formgroup row">
-                        <label class="col-sm-4 col-form-label ">unit cost:</label>
+                        <label class="col-sm-4 col-form-label ">Unit cost:</label>
                         <input class="sim-input col-sm-4" type="text" id="itemunitcost">
                       </div>
 
@@ -327,7 +333,7 @@
                       </div>
 
                       <div class="formgroup row">
-                        <label class="col-sm-4 col-form-label">tax:</label>
+                        <label class="col-sm-4 col-form-label">Tax:</label>
                         <select class="sim-input mb-3" aria-label=".form-select-lg" id="itemtax">
                           <option value="1">Vat</option>
                           <option value="2">GST</option>
@@ -351,9 +357,9 @@
                         <label class="col-sm-4 col-form-label ">Category:</label>
                         <select class="sim-input mb-3" aria-label=".form-select-lg" id="itemcategory">
                           <option value="1">Items</option>
-                          <option value="2">instrument</option>
+                          <option value="2">Instrument</option>
                           <option value="2">Health</option>
-                          <option value="2">Furniature</option>
+                          <option value="2">Furniture</option>
                         </select>
                       </div>
 
@@ -377,7 +383,7 @@
             </div>
 
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
               <button type="button" class="btn btn-primary">Save</button>
             </div>
           </div>

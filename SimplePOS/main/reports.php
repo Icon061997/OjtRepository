@@ -17,7 +17,7 @@
   <title>Reports</title>
 </head>
 <style>
-  input:hover{
+  input:hover {
     border: 2px solid royalblue;
 
   }
@@ -56,57 +56,57 @@
   <!-- SIDEBAR -->
   <section id="sidebar">
     <a href="dashboard.php" class="brand">
-      <i class='bx bxl-shopify'></i>
-      <span class="text">EzShop</span>
+      <i class='bx bxl-shopify' style="font-size: 40px;"></i>
+      <span class="text" style="font-family: var(--poppins);">EzShop</span>
     </a>
     <ul class="side-menu top" onclick="myfunction(event)">
       <li>
         <a href="dashboard.php">
           <i class='bx bxs-dashboard'></i>
-          <span class="text">Dashboard</span>
+          <span class="text" style="font-family: var(--poppins);">Dashboard</span>
         </a>
       </li>
       <li>
         <a href="sales.php">
           <i class='bx bx-coin-stack'></i>
-          <span class="text">Sales</span>
+          <span class="text" style="font-family: var(--poppins);">Sales</span>
         </a>
       </li>
       <li class="active">
         <a href="reports.php">
           <i class='bx bxs-report'></i>
-          <span class="text">Reports</span>
+          <span class="text" style="font-family: var(--poppins);">Reports</span>
         </a>
       </li>
       <li>
         <a href="items.php">
           <i class='bx bx-package'></i>
-          <span class="text">Items</span>
+          <span class="text" style="font-family: var(--poppins);">Items</span>
         </a>
       </li>
       <li>
         <a href="categories.php">
           <i class='bx bx-category-alt'></i>
-          <span class="text">Categories</span>
+          <span class="text" style="font-family: var(--poppins);">Categories</span>
         </a>
       </li>
       <li>
         <a href="customers.php">
           <i class='bx bx-face'></i>
-          <span class="text">Customers</span>
+          <span class="text" style="font-family: var(--poppins);">Customers</span>
         </a>
       </li>
 
       <li>
         <a href="suppliers.php  ">
           <i class='bx bxs-truck'></i>
-          <span class="text">Supplier</span>
+          <span class="text" style="font-family: var(--poppins);">Supplier</span>
         </a>
       </li>
       <li>
         <a href="settings.php">
           <i class='bx bx-cog'></i>
-          <span class="text">Settings</span>
+          <span class="text" style="font-family: var(--poppins);">Settings</span>
         </a>
       </li>
     </ul>
@@ -126,23 +126,36 @@
       </form>
       <input type="checkbox" id="switch-mode" hidden>
       <label for="switch-mode" class="switch-mode"></label>
-      <a href="#" class="notification">
-        <i class='bx bxs-bell'></i>
-        <span class="num">8</span>
-      </a>
-      <div class="dropdown-nav">
-        <button class="dropdown-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-          <img src="images/user.png" class="profile-pic" alt="">
-          <div class="username admin">
-            <b>Jimuel Leal</b><br> Admin
-          </div>
-          <i class='bx bx-chevron-down' style="font-size: 24px;"></i>
+      <div class="dropdown">
+        <button class="notification" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border: none; background: none;">
+          <i class='bx bxs-bell'></i>
+          <span class="num">8</span>
         </button>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
+          <a class="dropdown-item" href=""><b>Notification: </b> New added Costumer</button>
+            <a class="dropdown-item" href=""><b>Notification: </b> New Item added</a>
+            <a class="dropdown-item" href=""><b>Notification: </b> new Item added</a>
+        </div>
+      </div>
 
-        <ul class="dropdown-menu dropdown-menu-lg-end">
-          <a class=" dropdown-item" href="account.php"><i class='bx bxs-user'></i> My Account</a>
-          <a class="dropdown-item" href="logout.php"><i class='bx bx-log-out bx-rotate-180'></i> Logout</a>
-        </ul>
+
+      <div class="dropdown-nav">
+        <div class="dropdown">
+          <button class="dropdown-btn" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <img src="images/user.png" class="profile-pic" alt="">
+            <div class="username admin">
+              <b>Jimuel Leal</b><br> Admin
+            </div>
+            <i class='bx bx-chevron-down' style="font-size: 24px;"></i>
+          </button>
+
+
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2" style="min-width: 140px;">
+            <a class=" dropdown-item" href="account.php"><i class='bx bxs-user'></i> My Account</a>
+            <a class="dropdown-item" href="logout.php"><i class='bx bx-log-out bx-rotate-180'></i> Logout</a>
+            </ul>
+          </div>
+        </div>
       </div>
     </nav>
     <!-- NAVBAR -->
@@ -158,7 +171,7 @@
           <div class="col-12 my-2">
             <div class="row my-2">
               <div class="head">
-                <h3>REPORTS</h3>
+                <h3>Reports</h3>
 
               </div>
               <div class="row">
@@ -204,7 +217,7 @@
                     <button class="btn btn-outline-success dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       <i class='bx bx-printer'></i> Export
                     </button>
-                    <div class="dropdown-menu">
+                    <div class="dropdown-menu" style="min-width: 115px; margin-top: 7px;">
                       <button class="dropdown-item" type="button" id="cvs-download"><i class="icon bi bi-filetype-csv"></i> CSV</button>
                       <button class="dropdown-item" type="button" id="pdf-download" onclick="createPDF()"><i class="icon bi bi-filetype-pdf"></i> PDF</button>
 
@@ -225,16 +238,38 @@
               <table>
                 <thead>
                   <th>Name</th>
-                  <th>No. sold</th>
+                  <th>No. Sold</th>
                   <th>Discount</th>
-                  <th>tax</th>
-                  <th>total</th>
+                  <th>Tax</th>
+                  <th>Total</th>
                   <th>No. Refunded</th>
                   <th>Total</th>
                   <th>Balance</th>
                 </thead>
                 <tbody>
-                  <tr>
+
+                  <?php
+                  $connection = mysqli_connect("localhost", "root", "");
+                  $db = mysqli_select_db($connection, 'pointofsale');
+
+                  $query = "SELECT * FROM reports";
+                  $query_run = mysqli_query($connection, $query);
+                  while ($row = mysqli_fetch_array($query_run)) {
+                  ?>
+                    <tr>
+                      <td><?php echo $row['name']; ?></td>
+                      <td><?php echo $row['sold']; ?></td>
+                      <td><?php echo $row['discount']; ?></td>
+                      <td><?php echo $row['tax']; ?></td>
+                      <td><?php echo $row['total']; ?></td>
+                      <td><?php echo $row['no_refund']; ?></td>
+                      <td><?php echo $row['paid']; ?></td>
+                      <td><?php echo $row['balance']; ?></td>
+                    </tr>
+                  <?php
+                  } ?>
+
+                  <!-- <tr>
                     <td>Face Mask</td>
                     <td>22</td>
                     <td>0.00</td>
@@ -253,18 +288,7 @@
                     <td>200</td>
                     <td>200</td>
                     <td>1500</td>
-                    <td>200</td>
-                  </tr>
-
-                  <tr>
-                    <td>Face Mask</td>
-                    <td>22</td>
-                    <td>0.00</td>
-                    <td>1.12</td>
-                    <td>200</td>
-                    <td>200</td>
-                    <td>1500</td>
-                    <td>200</td>
+                    <td>200</td> -->
 
 
                   </tr>
@@ -274,11 +298,11 @@
 
             <div class="myDiv" id="showcategories" style="display: none;">
               <table>
-                <thead style="text-align: center;">
+                <thead>
                   <th>Name</th>
-                  <th>No. sold</th>
+                  <th>No. Sold</th>
                   <th>Total</th>
-                  <th>No.Refund</th>
+                  <th>No. Refund</th>
                   <th>Total</th>
                   <th>Balance</th>
                 </thead>
