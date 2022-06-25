@@ -25,14 +25,36 @@
 </head>
 
 <style>
-  .icon {
-    font-size: 20px;
-    font-weight: 200;
+  input:hover,
+  input:focus {
+    border: 2px solid royalblue;
+
+  }
+
+  select:hover {
+
+    border: 2px solid royalblue;
+
+  }
+
+  td {
+
+
+    border: 1px solid var(--dark-grey);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    font-size: 16px;
+
   }
 
   td {
     font-size: 16px;
     border: 1px solid var(--dark-grey);
+  }
+
+  thead {
+    border: solid var(--dark);
     border-top: none;
     border-left: none;
     border-right: none;
@@ -48,6 +70,13 @@
     border-right: none;
     width: 36px;
     height: 36px;
+    font-size: 16px;
+
+  }
+
+  .myDiv {
+    border: none;
+
   }
 </style>
 
@@ -161,7 +190,6 @@
     <!-- NAVBAR -->
 
 
-
     <!-- MAIN -->
     <main>
 
@@ -190,12 +218,18 @@
             </div>
             <br>
             <BR></BR>
-            <HR>
-            </HR>
+            <<<<<<< Updated upstream <HR>
+              </HR>
+              =======
+              >>>>>>> Stashed changes
 
+
+              <<<<<<< Updated upstream <table id="data-table">
+                =======
           </div>
-
-          <table id="data-table">
+          <hr>
+          <table>
+            >>>>>>> Stashed changes
             <thead>
               <th>ID</th>
               <th>Reference No</th>

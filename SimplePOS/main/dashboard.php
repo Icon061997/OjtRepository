@@ -48,6 +48,7 @@ session_start();
       border-top: none;
       border-left: none;
       border-right: none;
+   
 
     }
 
