@@ -53,10 +53,7 @@
 
   }
 
-  td {
-    font-size: 16px;
-    border: 1px solid var(--dark-grey);
-  }
+
 
   thead {
     border: solid var(--dark);
@@ -67,17 +64,7 @@
 
   }
 
-  thead {
-    font-size: 16px;
-    border: solid var(--dark);
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    width: 36px;
-    height: 36px;
-    font-size: 16px;
 
-  }
 
   .myDiv {
     border: none;
