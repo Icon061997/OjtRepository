@@ -55,16 +55,18 @@
 
 
 
+
   thead {
+    font-size: 16px;
     border: solid var(--dark);
     border-top: none;
     border-left: none;
     border-right: none;
-    padding: 12px;
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
 
   }
-
-
 
   .myDiv {
     border: none;
@@ -210,18 +212,11 @@
             </div>
             <br>
             <BR></BR>
-            <<<<<<< Updated upstream <HR>
-              </HR>
-              =======
-              >>>>>>> Stashed changes
+           
 
-
-              <<<<<<< Updated upstream <table id="data-table">
-                =======
           </div>
           <hr>
           <table>
-            >>>>>>> Stashed changes
             <thead>
               <th>ID</th>
               <th>Reference No</th>
