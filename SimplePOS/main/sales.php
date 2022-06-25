@@ -25,7 +25,11 @@
 </head>
 
 <style>
-  input:hover,
+    .icon{
+      font-size: 16px;
+      font-weight: 200px;
+    }
+input:hover,
   input:focus {
     border: 2px solid royalblue;
 
