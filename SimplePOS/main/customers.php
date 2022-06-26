@@ -1,3 +1,8 @@
+<?php
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -209,6 +214,154 @@
     <!-- MAIN -->
     <main>
 
+      <!-- ADD CUSTOMERS -->
+      <div class="modal fade" id="modaladdcostumer" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="header" id="modaladdcustomer">Add Customer</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="config.php" method="POST">
+
+              <div class="modal-body">
+                <div class="container">
+
+
+                  <div class="form-group row mb-2">
+                    <div class="col-sm-5 col-form-label">Name:</div>
+                    <input class="col-sm-7 pos-input" type="text" name="name" required>
+                  </div>
+
+                  <div class="form-group row">
+                    <div class="col-sm-5 col-form-label">Gender:</div>
+                    <select class=" col-sm-7 pos-input" aria-label=".form-select-lg example" name="gender" required>
+                      <option value="1">Select</option>
+                      <option value="2">Male</option>
+                      <option value="3">Female</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group row mb-2">
+                    <div class="col-sm-5 col-form-label">Email:</div>
+                    <input class="col-sm-7 pos-input" type="email" name="email" required>
+                  </div>
+
+                  <div class="form-group row mb-2">
+                    <div class="col-sm-5 col-form-label">Tel No.:</div>
+                    <input class="col-sm-7 pos-input" type="text" name="telno" required>
+                  </div>
+
+                  <div class="form-group row mb-2">
+                    <div class="col-sm-5 col-form-label">Mobile No.:</div>
+                    <input class="col-sm-7 pos-input" type="text" name="mobileno" required>
+                  </div>
+
+                  <div class="form-group row mb-2">
+                    <div class="col-sm-5 col-form-label">Address:</div>
+                    <textarea class="col-sm-7" type="text" name="address" required></textarea>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+                <button type="submit" name="insertdata" class="btn btn-success">Save</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- ADD CUSTOMERS -->
+
+      <!-- EDIT CUSTOMER -->
+      <div class="modal fade" id="modaleditcostumer" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="header"> Edit Costumer</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="updatecode.php" method="POST">
+
+              <div class="modal-body">
+                <div class="container">
+
+                  <input type="hidden" name="update_id" id="update_id">
+
+                  <div class="form-group row mb-2">
+                    <div class="col-sm-5 col-form-label">Name:</div>
+                    <input class="col-sm-7 pos-input" type="text" name="name" id="name">
+                  </div>
+
+                  <div class="form-group row">
+                    <div class="col-sm-5 col-form-label">Gender:</div>
+                    <input class="col-sm-7 pos-input" type="text" name="gender" id="gender">
+                  </div>
+
+                  <div class="form-group row mb-2">
+                    <div class="col-sm-5 col-form-label">Email:</div>
+                    <input class="col-sm-7 pos-input" type="email" name="email" id="email">
+                  </div>
+
+                  <div class="form-group row mb-2">
+                    <div class="col-sm-5 col-form-label">Tel No.:</div>
+                    <input class="col-sm-7 pos-input" type="text" name="telno" id="telno">
+                  </div>
+
+                  <div class="form-group row mb-2">
+                    <div class="col-sm-5 col-form-label">Mobile No.:</div>
+                    <input class="col-sm-7 pos-input" type="text" name="mobileno" id="mobileno">
+                  </div>
+
+                  <div class="form-group row mb-2">
+                    <div class="col-sm-5 col-form-label">Address:</div>
+                    <textarea class="col-sm-7" type="text" name="address" id="address"></textarea>
+                  </div>
+                </div>
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" name="updatedata" class="btn btn-primary">Update Data</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- EDIT CUSTOMER -->
+
+      <!-- DELETE CUSTOMER -->
+      <!-- <div class="modal fade" id="deletemodal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel"> Delete Student Data </h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <form action="deletecode.php" method="POST">
+
+              <div class="modal-body">
+
+                <input type="hidden" name="delete_id" id="delete_id">
+
+                <h4> Do you want to Delete this Data ??</h4>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"> NO </button>
+                <button type="submit" name="deletedata" class="btn btn-danger"> Yes !! Delete it. </button>
+              </div>
+            </form>
+
+          </div>
+        </div>
+      </div> -->
+      <!-- DELETE CUSTOMER -->
+
+      <!-- TABLE -->
       <div class="table-data">
         <div class="order">
           <div class="col-12 my-2">
@@ -217,16 +370,11 @@
                 <h3>Customers</h3>
               </div>
               <div class="col-sm-auto col-form-label">
-                <button class="btn btn-outline-success" data-toggle="modal" data-target="#modaladdcostumer"><i class="bx bx-add"></i> Add Customers</button>
+                <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#modaladdcostumer"><i class="bx bx-add"></i> Add Customers</button>
               </div>
             </div>
           </div>
           <hr>
-
-
-
-          <!-- *************************tablee *********************************************8-->
-
 
           <?php
           $conn = mysqli_connect("localhost", "root", "");
@@ -263,9 +411,11 @@
                     <td><?php echo $row['mobileno']; ?></td>
                     <td><?php echo $row['address']; ?></td>
                     <td>
+
                       <a class="editbtn"><i class="bx bx-pencil icon"></i> </a>
-                      <input type="hidden" class="delete_id_value" value="<?php echo $row['id']; ?>" onclick="remmove()">
-                      <a href="javascript:void(0)"> <i class="bx bx-trash icon delete_btn_ajax"></i></a>
+                      <input type="hidden" class="delete_id_value" value="<?php echo $row['id']; ?>">
+                      <a href="javascript:void(0)" class="delete_btn_ajax"> <i class="bx bx-trash icon"></i></a>
+
 
                     </td>
 
@@ -280,168 +430,13 @@
           </table>
         </div>
       </div>
+      <!-- TABLE -->
 
-      <!-- ******************************************************************** -->
-      <div class="modal fade modal-static" id="modaladdcostumer" tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="false">
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="header"> ADD COSTUMER </h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="border: none; background:none;">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <form action="config.php" method="POST">
-
-              <div class="modal-body">
-                <div class="container">
-
-
-                  <div class="form-group row mb-2">
-                    <div class="col-sm-5 col-form-label">Name:</div>
-                    <input class="col-sm-7 pos-input" type="text" name="name" required>
-                  </div>
-
-                  <div class="form-group row">
-                    <div class="col-sm-5 col-form-label">Gender:</div>
-                    <select class=" col-sm-7 pos-input" aria-label=".form-select-lg example" name="gender">
-                      <option value="1">Select</option>
-                      <option value="2">Male</option>
-                      <option value="3">Female</option>
-                    </select>
-                  </div>
-
-                  <div class="form-group row mb-2">
-                    <div class="col-sm-5 col-form-label">Email:</div>
-                    <input class="col-sm-7 pos-input" type="email" name="email" required>
-                  </div>
-
-                  <div class="form-group row mb-2">
-                    <div class="col-sm-5 col-form-label">Tel No.:</div>
-                    <input class="col-sm-7 pos-input" type="text" name="telno" required>
-                  </div>
-
-                  <div class="form-group row mb-2">
-                    <div class="col-sm-5 col-form-label">Mobile No.:</div>
-                    <input class="col-sm-7 pos-input" type="text" name="mobileno" required>
-                  </div>
-
-                  <div class="form-group row mb-2">
-                    <div class="col-sm-5 col-form-label">Address:</div>
-                    <textarea class="col-sm-7" type="text" name="address" required></textarea>
-                  </div>
-
-                </div>
-              </div>
-
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                <button type="submit" name="insertdata" class="btn btn-success">Save</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-
-
-
-
-      <!-- for editing -->
-      <div class="modal fade modal-static" id="modaleditcostumer" tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="false">
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="header"> Edit Costumer</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="border: none; background:none;">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <form action="config.php" method="POST">
-
-              <div class="modal-body">
-                <div class="container">
-                  <form action="" method="">
-
-                    <input type="hidden" name="update_id" id="update_id">
-
-                    <div class="form-group row mb-2">
-                      <div class="col-sm-5 col-form-label">Name:</div>
-                      <input class="col-sm-7 pos-input" type="text" name="name" id="name">
-                    </div>
-
-                    <div class="form-group row">
-                      <div class="col-sm-5 col-form-label">Gender:</div>
-                      <input class="col-sm-7 pos-input" type="text" name="gender" id="gender">
-                    </div>
-
-                    <div class="form-group row mb-2">
-                      <div class="col-sm-5 col-form-label">Email:</div>
-                      <input class="col-sm-7 pos-input" type="email" name="email" id="email">
-                    </div>
-
-                    <div class="form-group row mb-2">
-                      <div class="col-sm-5 col-form-label">Tel No.:</div>
-                      <input class="col-sm-7 pos-input" type="text" name="telno" id="telno">
-                    </div>
-
-                    <div class="form-group row mb-2">
-                      <div class="col-sm-5 col-form-label">Mobile No.:</div>
-                      <input class="col-sm-7 pos-input" type="text" name="mobileno" id="mobileno">
-                    </div>
-
-                    <div class="form-group row mb-2">
-                      <div class="col-sm-5 col-form-label">Address:</div>
-                      <textarea class="col-sm-7" type="text" name="address" id="address"></textarea>
-                    </div>
-                </div>
-              </div>
-
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                <button type="submit" name="update" class="btn btn-primary">Update</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
     </main>
+    <!-- MAIN -->
   </section>
 
 
-
-
-
-  <script>
-    function myFunction() {
-      document.getElementById("myDropdown").classList.toggle("show");
-    }
-
-    // Close the dropdown menu if the user clicks outside of it
-    window.onclick = function(event) {
-      if (!event.target.matches('.dropdown-btn')) {
-        var dropdowns = document.getElementsByClassName("dropdown-content");
-        var i;
-        for (i = 0; i < dropdowns.length; i++) {
-          var openDropdown = dropdowns[i];
-          if (openDropdown.classList.contains('show')) {
-            openDropdown.classList.remove('show');
-          }
-        }
-      }
-    }
-  </script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-  <script src="js/script.js"></script>
-  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
   <?php
   if (isset($_SESSION['status']) && $_SESSION['status'] != '') {
@@ -481,7 +476,7 @@
 
               $.ajax({
                 type: "POST",
-                url: "config.php",
+                url: "deletecode.php",
                 data: {
                   "delete_btn_set": 1,
                   "id": deleteid,
@@ -502,23 +497,51 @@
 
     });
   </script>
+
   <script>
-    function fun() {
-      document.getElementById("name").value = '';
-      document.getElementById("gender").value = '';
-      document.getElementById("email").value = '';
-      document.getElementById("telno").value = '';
-      document.getElementById("mobileno").value = '';
-      document.getElementById("address").value = '';
+    function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    // Close the dropdown menu if the user clicks outside of it
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropdown-btn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
     }
   </script>
 
 
 
-
   <script src="script.js"> </script>
+  <!-- 
+  <script>
+    $(document).ready(function() {
 
+      $('.deletebtn').on('click', function() {
 
+        $('#deletemodal').modal('show');
+
+        $tr = $(this).closest('tr');
+
+        var data = $tr.children("td").map(function() {
+          return $(this).text();
+        }).get();
+
+        console.log(data);
+
+        $('#delete_id').val(data[0]);
+
+      });
+    });
+  </script> -->
 
   <script>
     $(document).ready(function() {
@@ -544,10 +567,27 @@
       });
     });
   </script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="js/script.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 
-  </script>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+
+  <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
 
 </body>
 

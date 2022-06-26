@@ -169,7 +169,7 @@
               <div class="head" style="margin-bottom: 0;">
                 <h3>Categories</h3>
               </div>
-              <br>
+              
               <div class="row">
                 <div class="col-sm-auto col-form-label">
                   <button class="btn btn-outline-primary btn-block" id="myBtn" type="button" data-toggle="modal" data-target="#modalroles"><i class='bx bx-add-to-queue' style="font-size: 16px ;"></i> Add</button>

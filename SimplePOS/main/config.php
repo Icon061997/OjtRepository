@@ -3,19 +3,10 @@
 
 session_start();
 
-$name = "";
-$gender = "";
-$email = "";
-$telno = "";
-$mobileno = "";
-$address = "";
-$id = 0;
-$edit_state = false;
-
 $db = mysqli_connect("localhost", "root", "", "pointofsale");
 
 
-if (isset($_POST['save'])) {
+if (isset($_POST['insertdata'])) {
 
 
     $name = $_POST['name'];
@@ -29,51 +20,20 @@ if (isset($_POST['save'])) {
     $query_run = mysqli_query($db, $query);
 
     if ($query_run) {
-        $_SESSION['status'] = "Register Successfully";
+
+        $_SESSION['status'] = "Customer Add Successfully";
         $_SESSION['status_code'] = "success";
-        header("Location: customers.php");
+        header("Location:customers.php");
     } else {
-        $_SESSION['status'] = "Data Not Register/Inserted";
+        $_SESSION['status'] = "Customer Not Inserted";
         $_SESSION['status_code'] = "error";
-        header("Location: customers.php");
-    }
-}
-if (isset($_POST['update'])) {
-
-    $id = $_POST['update_id'];
-    $name =   $_POST['name'];
-    $gender =  $_POST['gender'];
-    $email =  $_POST['email'];
-    $telno =    $_POST['telno'];
-    $mobileno = $_POST['mobileno'];
-    $address =  $_POST['address'];
-
-
-    $query = "UPDATE customers SET name='$name', gender='$gender', email='$email', telno='$telno', mobileno='$mobileno', address='$address' WHERE id='$id'";
-    $query_run = mysqli_query($db, $query);
-
-    if ($query_run) {
-        $_SESSION['status'] = "Data Update Successfully";
-        $_SESSION['status_code'] = "success";
-        header("Location: customers.php");
-    } else {
-        $_SESSION['status'] = "Data Not Update";
-        $_SESSION['status_code'] = "error";
-        header("Location: customers.php");
+        header("Location:customers.php");
     }
 }
 
 
 
 
-if (isset($_POST['delete_btn_set'])) {
-    $id = $_POST['id'];
-    $query = "DELETE FROM customers WHERE id='$id'";
-    $query_run = mysqli_query($db, $query);
-}
 
-
-
-$results = mysqli_query($db, "SELECT * FROM customers");
 
 ?>
