@@ -190,11 +190,11 @@
       <div class="table-data">
         <div class="order">
 
-          <div class="row MY-2">
+          <div class="row my-2">
             <div class="head">
               <h3>Sales</h3>
             </div>
-            <div class="col-sm-auto">
+            <div class="col-sm-auto col-form-label">
               <div class="dropdown">
                 <button class="btn btn-outline-success dropdown-toggle" type="button" id="export" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class='bx bx-export'></i> Export
@@ -207,10 +207,9 @@
               </div>
             </div>
 
-            <div class="col-sm-auto">
+            <div class="col-sm-auto col-form-label">
               <button class="btn btn-outline-primary btn-block" type="button"><i class='bx bx-printer'></i> print</button>
             </div>
-            <br>
             <BR></BR>
 
 

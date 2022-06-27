@@ -406,7 +406,7 @@ body {
 
 
 /* Change color of dropdown links on hover */
-#content nav .dropdown-menu a:hover {
+#content nav .dropdown-nav a:hover {
 	color: var(--blue);
 	background-color: transparent;
 }

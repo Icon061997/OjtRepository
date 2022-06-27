@@ -177,7 +177,7 @@ session_start();
       <label for="switch-mode" class="switch-mode"></label>
 
       <div class="dropdown">
-        <button class="notification" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border: none; background: none;">
+        <button class="notification" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border: none; background: none;">
           <i class='bx bxs-bell'></i>
           <span class="num">8</span>
         </button>
@@ -191,7 +191,7 @@ session_start();
 
       <div class="dropdown-nav">
         <div class="dropdown">
-          <button class="dropdown-btn" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <button class="dropdown-btn" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <img src="images/user.png" class="profile-pic" alt="">
             <div class="username admin">
               <b>Jimuel Leal</b><br> Admin
@@ -200,14 +200,13 @@ session_start();
           </button>
 
 
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2" style="min-width: 140px;">
+          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenu2" style="min-width: 140px;">
             <a class=" dropdown-item" href="account.php"><i class='bx bxs-user'></i> My Account</a>
             <a class="dropdown-item" href="logout.php"><i class='bx bx-log-out bx-rotate-180'></i> Logout</a>
             </ul>
           </div>
         </div>
       </div>
-
     </nav>
     <!-- NAVBAR -->
 
@@ -219,10 +218,10 @@ session_start();
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="header" id="modaladdcustomer">Add Customer</h5>
+              <h5 class="header">Add Customer</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="config.php" method="POST">
+            <form action="insertcode.php" method="POST">
 
               <div class="modal-body">
                 <div class="container">
@@ -235,10 +234,10 @@ session_start();
 
                   <div class="form-group row">
                     <div class="col-sm-5 col-form-label">Gender:</div>
-                    <select class=" col-sm-7 pos-input" aria-label=".form-select-lg example" name="gender" required>
-                      <option value="1">Select</option>
-                      <option value="2">Male</option>
-                      <option value="3">Female</option>
+                    <select class="col-sm-7 pos-input" aria-label=".form-select-lg" name="gender" required>
+                      <option disabled selected value>Select</option>
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
                     </select>
                   </div>
 
@@ -268,7 +267,7 @@ session_start();
               <div class="modal-footer">
                 <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 
-                <button type="submit" name="insertdata" class="btn btn-success">Save</button>
+                <button type="submit" name="insertcustomer" class="btn btn-success">Save</button>
               </div>
             </form>
           </div>
@@ -298,7 +297,11 @@ session_start();
 
                   <div class="form-group row">
                     <div class="col-sm-5 col-form-label">Gender:</div>
-                    <input class="col-sm-7 pos-input" type="text" name="gender" id="gender">
+                    <select class="col-sm-7 pos-input" aria-label=".form-select-lg" name="gender" id="gender" required>
+                      <option disabled selected value>Select</option>
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
+                    </select>
                   </div>
 
                   <div class="form-group row mb-2">
@@ -325,7 +328,7 @@ session_start();
 
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="submit" name="updatedata" class="btn btn-primary">Update Data</button>
+                <button type="submit" name="customer_updatedata" class="btn btn-primary">Update Data</button>
               </div>
             </form>
           </div>
@@ -370,7 +373,8 @@ session_start();
                 <h3>Customers</h3>
               </div>
               <div class="col-sm-auto col-form-label">
-                <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#modaladdcostumer"><i class="bx bx-add"></i> Add Customers</button>
+                <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#modaladdcostumer">
+                  <i class='bx bx-add-to-queue' style="font-size: 16px ;"></i> Add</button>
               </div>
             </div>
           </div>
@@ -414,7 +418,7 @@ session_start();
 
                       <a class="editbtn"><i class="bx bx-pencil icon"></i> </a>
                       <input type="hidden" class="delete_id_value" value="<?php echo $row['id']; ?>">
-                      <a href="javascript:void(0)" class="delete_btn_ajax"> <i class="bx bx-trash icon"></i></a>
+                      <a href="javascript:void(0)" class="delete_btn_ajax"> <i class="bx bx-trash icon" style="color: red;"></i></a>
 
 
                     </td>
@@ -567,20 +571,17 @@ session_start();
       });
     });
   </script>
+  <script src="js/script.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-  <script src="js/script.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
